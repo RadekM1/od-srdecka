@@ -3,3 +3,87 @@
 @tailwind utilities;
 
 
+@keyframes pulse-scale {
+    0%{
+      opacity: 0;
+    }
+    20%{
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    40% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    60%{
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    80%{
+      transform: scale(1);
+      opacity: 1;
+    }
+    100%{
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 100;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes opacityZeroToFull {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100;
+
+    }
+  }
+
+  .animate-pulse-scale {
+    animation: pulse-scale 5s  ease-in-out 2000ms 1 forwards ;
+  }
+
+  .animate-slideIn {
+    animation: slideIn  1s ease-in-out 100ms forwards ;
+  }
+
+  .animate-slideInTwo {
+    animation: slideIn  1s ease-in-out 800ms forwards ;
+  }
+
+  .animate-textInCircle {
+    animation: slideIn 1s ease-in-out 1400ms forwards;
+  }
+
+  .animate-opacity {
+    animation: opacityZeroToFull 500ms 1s  2s ease-in-out 500ms 
+  }
+
+  @keyframes rotation-logo {
+    0% {
+      transform: rotate(0deg);
+      opacity: 0;
+    }
+    80%{
+      opacity: 40;
+    }
+    100% {
+      transform: rotate(-10deg);
+      opacity: 100;
+    }
+  }
+  
+  .animate-rotation-logo {
+    animation: rotation-logo 5s 2000ms forwards  ;
+  }

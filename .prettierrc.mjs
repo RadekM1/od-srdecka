@@ -1,13 +1,9 @@
 /** @type {import("prettier").Config} */
-const prettierConfig = {
-  useTabs: false,
-  singleQuote: true,
-  quoteProps: 'consistent',
-  trailingComma: 'none',
-  arrowParens: 'avoid',
-  endOfLine: 'auto',
-  tabWidth: 2,
-  plugins: ['prettier-plugin-tailwindcss']
-};
-
-export default prettierConfig;
+export const useTabs = false;
+export const singleQuote = true;
+export const quoteProps = "consistent";
+export const trailingComma = "none";
+export const arrowParens = "avoid";
+export const endOfLine = "auto";
+export const tabWidth = 2;
+export const plugins = ["prettier-plugin-tailwindcss"];

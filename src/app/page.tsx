@@ -1,11 +1,12 @@
-import Link from 'next/link';
+import LaunchSite from "@/components/index/launchSite";
+import WhatWeOfferSection from "@/components/index/whatWeofferSection";
 
 const Home = () => {
   return (
-    <div className="text-center font-satisfy">
-      index main component
-      <br />o nás: <Link href={'/o-nas'}>ODKAZ</Link>
-    </div>
+    <>
+      <LaunchSite/>
+      <WhatWeOfferSection/>
+    </>
   );
 };
 export default Home;

@@ -1,11 +1,11 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const page = () => {
   return (
     <>
       stránka o nás
       <br />
-      domů: <Link href={'/'}>ODKAZ</Link>
+      domů: <Link href={"/"}>ODKAZ</Link>
     </>
   );
 };
