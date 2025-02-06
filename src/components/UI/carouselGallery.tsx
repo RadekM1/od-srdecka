@@ -57,11 +57,6 @@ const CarouselGallery = ({ props }: CarouselProps) => {
       perView: 3,
       animationDuration: 700,
       gap: 8,
-      classes: {
-        nav: {
-          active: "[&>*]:bg-wuiSlate-700",
-        },
-      },
       breakpoints: {
         1200: {
           perView: 2,
