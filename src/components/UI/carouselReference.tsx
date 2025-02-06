@@ -18,11 +18,6 @@ const CarouselControlsInside = ({ props }: CarouselProps) => {
       perView: 4,
       animationDuration: 700,
       gap: 8,
-      classNames: {
-        nav: {
-          active: "[&>*]:bg-wuiSlate-700",
-        },
-      },
       breakpoints: {
         1024: {
           perView: 3,
