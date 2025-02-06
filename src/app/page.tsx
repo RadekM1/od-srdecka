@@ -12,17 +12,17 @@ import Flowers from "@/components/index/flowers";
 const Home = () => {
   return (
     <>
-      <LaunchSite/>
-      <HearthSnake/>
-      <Offer/>
-      <AboutUs/>
-      <Flowers/>
+      <LaunchSite />
+      <HearthSnake />
+      <Offer />
+      <AboutUs />
+      <Flowers />
       <SectionTitleBlue title="Kde nás najdete?" />
-      <WhereToFindUs/>
-      <Reference/>
-      <SectionLine/> 
-      <Gallery/>
-      <HearthSnake/>
+      <WhereToFindUs />
+      <Reference />
+      <SectionLine />
+      <Gallery />
+      <HearthSnake />
     </>
   );
 };

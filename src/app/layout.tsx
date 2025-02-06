@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {  Abhaya_Libre, Old_Standard_TT, Oooh_Baby } from "next/font/google";
+import { Abhaya_Libre, Old_Standard_TT, Oooh_Baby } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/UI/navbar";
 import React from "react";
@@ -10,7 +10,6 @@ const OoohBaby = Oooh_Baby({
   variable: "--font-OoohBaby",
   subsets: ["latin", "latin-ext"],
 });
-
 
 const abhaya = Abhaya_Libre({
   weight: "400",
@@ -44,8 +43,10 @@ export default async function RootLayout({
           <Navbar />
         </header>
         <div className="h-[56px]"></div>
-        <main className="text-center overflow-hidden flex w-auto flex-col">{children}</main>
-        <Footer/>
+        <main className="text-center overflow-hidden flex w-auto flex-col">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

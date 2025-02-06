@@ -1,16 +1,16 @@
-'use client'
+"use client";
 
-import { RefGallery } from "@/schema/uiObjects"
-import React, { useEffect } from "react"
-import Glide from "@glidejs/glide"
+import { RefGallery } from "@/schema/uiObjects";
+import React, { useEffect } from "react";
+import Glide from "@glidejs/glide";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 
-interface CarouselProps{
-  props: RefGallery[]
+interface CarouselProps {
+  props: RefGallery[];
 }
 
-const CarouselControlsInside = ({props} : CarouselProps) => {
+const CarouselControlsInside = ({ props }: CarouselProps) => {
   useEffect(() => {
     const slider2 = new Glide(".glide-02", {
       type: "carousel",
@@ -31,28 +31,25 @@ const CarouselControlsInside = ({props} : CarouselProps) => {
           perView: 2,
         },
       },
-    }).mount()
+    }).mount();
 
     return () => {
-      slider2.destroy()
-    }
-  }, [])
+      slider2.destroy();
+    };
+  }, []);
 
   return (
     <>
       <div className="glide-02 relative w-full flex self-center">
         <div className="overflow-hidden " data-glide-el="track">
           <div className="whitespace-no-wrap select-none flex-no-wrap flex [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
-            {props.map((img,i)=>{return(
-              <div
-              key={i}
-              >
-                <img
-                  src={img.src}
-                  className="m-auto  max-h-[350px]"
-                />
-              </div>
-            )})}
+            {props.map((img, i) => {
+              return (
+                <div key={i}>
+                  <img src={img.src} className="m-auto  max-h-[350px]" />
+                </div>
+              );
+            })}
           </div>
         </div>
         <div
@@ -75,9 +72,7 @@ const CarouselControlsInside = ({props} : CarouselProps) => {
           </button>
         </div>
       </div>
-
-
     </>
-  )
-}
-export default CarouselControlsInside
+  );
+};
+export default CarouselControlsInside;

@@ -9,13 +9,15 @@ import SwapBtn from "./swapBtn";
 import MenuPopover from "./menuPopover";
 import { menuItems } from "../../../public/content/menu";
 
-
 //{path === '/' ? 'je index' : 'není index, haha !'}
 
 const Navbar = () => {
-  const [popoverOpen, setPopoverOpen] = useState<boolean>(false)
+  const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
   const [isSideNavOpen, setIsSideNavOpen] = useState<boolean>(false);
-  const [targetedPopover, setTargetedPopover] = useState<number>(-1)
+  const [targetedPopover, setTargetedPopover] = useState<number>(-1);
+
+  //{path === '/' ? 'je index' : 'není index, haha !'}
+  // eslint-disable-next-line
   let path = usePathname();
   return (
     <header className="w-full z-50 pb-2 fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard">
@@ -30,23 +32,27 @@ const Navbar = () => {
         </div>
         <menu className="flex w-full h-10 justify-end flex-row">
           {menuItems.map((item, i) => {
-            const Component = item.menu ? "div" : Link
+            const Component = item.menu ? "div" : Link;
             return (
-               <Component
+              <Component
                 key={i}
                 className="hover:text-white/60 ease-in-out duration-500"
-                href={item.link || "#"} 
+                href={item.link || "#"}
               >
-                <button 
-                onMouseOver={()=>{setTargetedPopover(i);setPopoverOpen(true)}}
-                className="mx-2 lg:mx-3 hidden relative md:block self-center h-full">
+                <button
+                  onMouseOver={() => {
+                    setTargetedPopover(i);
+                    setPopoverOpen(true);
+                  }}
+                  className="mx-2 lg:mx-3 hidden relative md:block self-center h-full"
+                >
                   {item.label}
-                  <MenuPopover 
-                  id={i} 
-                  popoverOpen={popoverOpen} 
-                  setPopoverOpen={setPopoverOpen} 
-                  targetedPopover={targetedPopover}
-                  menuItems={item.menu}
+                  <MenuPopover
+                    id={i}
+                    popoverOpen={popoverOpen}
+                    setPopoverOpen={setPopoverOpen}
+                    targetedPopover={targetedPopover}
+                    menuItems={item.menu}
                   />
                 </button>
               </Component>

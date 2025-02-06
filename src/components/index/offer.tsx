@@ -1,106 +1,104 @@
-import SectionTitle from "../sectionTitle"
-import Link from "next/link"
-
+import SectionTitle from "../sectionTitle";
+import Link from "next/link";
 
 const OfferImg = [
-    {url: "index/dort.png", title: "Dorty", alt: "obrázek dortu", link: "#"},
-    {url: "index/sladky-bar.png", title: "Sladký bar", alt: "obrázek sladkého baru", link: "#"},
-]
+  { url: "index/dort.png", title: "Dorty", alt: "obrázek dortu", link: "#" },
+  {
+    url: "index/sladky-bar.png",
+    title: "Sladký bar",
+    alt: "obrázek sladkého baru",
+    link: "#",
+  },
+];
 
 const BlogImg = [
-    {url: "index/recepty.png", title: "Recepty", alt: "obrázek receptu", link: "#"},
-    {url: "index/nejcastejsi-dotazy.png", title: "Nejčastější dotazy", alt: "obrázek nejčastější dotaz", link: "#"},
-]
+  {
+    url: "index/recepty.png",
+    title: "Recepty",
+    alt: "obrázek receptu",
+    link: "#",
+  },
+  {
+    url: "index/nejcastejsi-dotazy.png",
+    title: "Nejčastější dotazy",
+    alt: "obrázek nejčastější dotaz",
+    link: "#",
+  },
+];
 
-const Offer = () =>{
-    return(
-        <div className="flex flex-col  px-2 text-xl max-w-6xl w-full text-center justify-center self-center items-center md:flex-row">
-            <div className="w-full relative  justify-center">
-                <SectionTitle title="Naše nabídka"/>
-                <img 
-                    src="/pozadi-text/peceme-od-srdecka.svg"
-                    className="absolute hidden lg:block top-[120px] -z-10" 
-                    alt="pozadí text pečeme od srdéčka" 
-                    
+const Offer = () => {
+  return (
+    <div className="flex flex-col  px-2 text-xl max-w-6xl w-full text-center justify-center self-center items-center md:flex-row">
+      <div className="w-full relative  justify-center">
+        <SectionTitle title="Naše nabídka" />
+        <img
+          src="/pozadi-text/peceme-od-srdecka.svg"
+          className="absolute hidden lg:block top-[120px] -z-10"
+          alt="pozadí text pečeme od srdéčka"
+        />
+        <div className="flex z-10  justify-center items-end w-full flex-row ">
+          <div className=" hidden md:block flex-col flex-grow justify-end items-end h-full">
+            <div className="flex mb-5 self-end">
+              <img src="/bocni-srdecka.svg" alt="boční grafika srdcí" />
+            </div>
+            <div className="invisible">.</div>
+          </div>
+          {OfferImg.map((img, i) => {
+            return (
+              <Link href={img.link} key={i}>
+                <div className="flex h-full group flex-col justify-center  w-full  items-center">
+                  <div className="flex h-full justify-center  w-full  items-center">
+                    <img
+                      className=" object-scale-down p-2 duration-300 ease-in-out group-hover:brightness-50 self-center flex"
+                      src={img.url}
+                      alt={img.alt}
+                      title={img.title}
                     />
-                <div className="flex z-10  justify-center items-end w-full flex-row ">
-                    <div className=" hidden md:block flex-col flex-grow justify-end items-end h-full">
-                        <div className="flex mb-5 self-end">
-                            <img src="/bocni-srdecka.svg" alt="boční grafika srdcí" />
-                        </div>
-                        <div className="invisible">
-                            .
-                        </div>
-                    </div>
-                    {OfferImg.map((img, i)=>{
-                        return(
-                            <Link
-                            href={img.link}
-                            key={i}
-                            >
-                                <div
-                                className="flex h-full group flex-col justify-center  w-full  items-center"
-                                >
-                                    <div 
-                                    className="flex h-full justify-center  w-full  items-center">
-                                        <img
-                                        className=" object-scale-down p-2 duration-300 ease-in-out group-hover:brightness-50 self-center flex"
-                                        src={img.url}
-                                        alt={img.alt}
-                                        title={img.title}
-                                        />
-                                    </div>
-                                    <div className="text-center lg:text-2xl font-OoohBaby tracking-wide group-hover:font-semibold mt-3">
-                                        {img.title}
-                                    </div>
-                                </div>
-                            </Link>
-                        )
-                    })} 
+                  </div>
+                  <div className="text-center lg:text-2xl font-OoohBaby tracking-wide group-hover:font-semibold mt-3">
+                    {img.title}
+                  </div>
                 </div>
-            </div>
-            <div className="w-full justify-center">
-                <SectionTitle title="Sladký blog"/>
-                <div className="flex justify-center flex-row w-full">
-                    {BlogImg.map((img, i)=>{
-                        return(
-                            <Link
-                            href={img.link}
-                            key={i}
-                            >
-                                <div
-                                className="flex h-full  group flex-col justify-center  w-full  items-center"
-                                >
-                                    <div 
-                                    className="flex   h-full justify-center  w-full  items-center">
-                                        <img
-                                        className=" object-scale-down p-2 duration-300 ease-in-out group-hover:brightness-50 self-center flex"
-                                        src={img.url}
-                                        alt={img.alt}
-                                        title={img.title}
-                                        />
-                                    </div>
-                                    <div className="text-center lg:text-2xl font-OoohBaby tracking-wide group-hover:font-semibold mt-3">
-                                        {img.title}
-                                    </div>
-                                </div>
-                            </Link>
-                        )
-                    })} 
-                    <div className=" hidden md:block flex-col flex-grow justify-end items-end h-full">
-                        <div className="flex mt-3 self-end">
-                            <img 
-                            className="rotate-180"
-                            src="/bocni-srdecka.svg" 
-                            alt="boční grafika srdcí" />
-                        </div>
-                        <div className="invisible">
-                            .
-                    </div>
-                    </div>
-                </div>
-            </div>
+              </Link>
+            );
+          })}
         </div>
-    )
-}
-export default Offer
+      </div>
+      <div className="w-full justify-center">
+        <SectionTitle title="Sladký blog" />
+        <div className="flex justify-center flex-row w-full">
+          {BlogImg.map((img, i) => {
+            return (
+              <Link href={img.link} key={i}>
+                <div className="flex h-full  group flex-col justify-center  w-full  items-center">
+                  <div className="flex   h-full justify-center  w-full  items-center">
+                    <img
+                      className=" object-scale-down p-2 duration-300 ease-in-out group-hover:brightness-50 self-center flex"
+                      src={img.url}
+                      alt={img.alt}
+                      title={img.title}
+                    />
+                  </div>
+                  <div className="text-center lg:text-2xl font-OoohBaby tracking-wide group-hover:font-semibold mt-3">
+                    {img.title}
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+          <div className=" hidden md:block flex-col flex-grow justify-end items-end h-full">
+            <div className="flex mt-3 self-end">
+              <img
+                className="rotate-180"
+                src="/bocni-srdecka.svg"
+                alt="boční grafika srdcí"
+              />
+            </div>
+            <div className="invisible">.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Offer;
