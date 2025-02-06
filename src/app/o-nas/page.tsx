@@ -5,7 +5,7 @@ const page = () => {
     <>
       stránka o nás
       <br />
-      domů: <Link href={"/"}>ODKAZ</Link>
+      domů: <Link href={"#"}>ODKAZ</Link>
     </>
   );
 };

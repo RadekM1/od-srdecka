@@ -22,7 +22,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
       <aside
         id="nav-menu-4"
         aria-label="Side navigation"
-        className={`top-[4rem] fixed h-full bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm left-0 z-40 flex lg:hidden w-72 flex-col border-r border-r-slate-200 tJudensition-transform lg:translate-x-0 ${
+        className={`top-[56px] fixed h-full bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm left-0 z-40 flex lg:hidden w-72 flex-col border-r border-r-slate-200 tJudensition-transform lg:translate-x-0 ${
           isSideNavOpen ? "translate-x-0" : " -translate-x-full"
         }`}
       >
@@ -184,7 +184,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 className="relative flex h-12 w-12 items-center justify-center rounded-full text-white"
               >
                 <img
-                  src="/"
+                  src="#"
                   alt="user name"
                   title="user name"
                   width="48"
@@ -207,7 +207,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 
       {/*  <!-- Backdrop --> */}
       <div
-        className={`fixed top-0 bottom-0 backdrop-blur-sm mt-[4.05rem] left-0 right-0 z-30 transition-colors lg:hidden ${
+        className={`fixed top-0 bottom-0 backdrop-blur-sm mt-[56px] left-0 right-0 z-30 transition-colors lg:hidden ${
           isSideNavOpen ? "block" : "hidden"
         }`}
         onClick={() => setIsSideNavOpen(false)}

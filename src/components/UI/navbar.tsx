@@ -7,49 +7,49 @@ import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import SwapBtn from "./swapBtn";
 import MenuPopover from "./menuPopover";
+import { menuItems } from "../../../public/content/menu";
 
-const menuItems = [
-  { label: "Úvod", link: "/", menu: null},
-  { label: "O nás", link: "/", menu: null},
-  { label: "Nabídka", link: "/", menu: ["Dorty", "Sladký bar"]},
-  { label: "Galerie", link: "/", menu: null},
-  { label: "Blog", link: "/", menu: null},
-  { label: "Aktuality", link: "/", menu: null},
-  { label: "Jak převážet?", link: "/", menu: null},
-  { label: "Kontakt", link: "/", menu: null},
-];
 
 //{path === '/' ? 'je index' : 'není index, haha !'}
 
 const Navbar = () => {
+  const [popoverOpen, setPopoverOpen] = useState<boolean>(false)
   const [isSideNavOpen, setIsSideNavOpen] = useState<boolean>(false);
+  const [targetedPopover, setTargetedPopover] = useState<number>(-1)
   let path = usePathname();
   return (
-    <div className="w-full bg-[#061E4C] flex flex-row justify-center font-oldStandard">
-      <div className="flex flex-row md:text-sm lg:text-base xl:text-xl mx-2 mt-4 w-full text-white">
-        <div className="flex">
-          <a href="/" target="_blank">
+    <header className="w-full z-50 pb-2 fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard">
+      <nav className="flex sticky top-0 flex-row md:text-sm lg:text-base xl:text-xl mx-2 mt-2 w-full text-white">
+        <div className="flex items-center h-full">
+          <a href="#" target="_blank">
             <IoLogoInstagram className="h-8 w-8 mx-2 hover:text-white/40 hover:-translate-y-1 ease-in-out duration-500 text-white/60" />
           </a>
-          <a href="/" target="_blank">
+          <a href="#" target="_blank">
             <FaFacebook className="h-8 w-8 text-white/60 hover:text-white/40 hover:-translate-y-1 ease-in-out duration-500" />
           </a>
         </div>
         <menu className="flex w-full h-10 justify-end flex-row">
           {menuItems.map((item, i) => {
+            const Component = item.menu ? "div" : Link
             return (
-              <Link
+               <Component
                 key={i}
                 className="hover:text-white/60 ease-in-out duration-500"
-                href={item.link}
+                href={item.link || "#"} 
               >
                 <button 
-                onClick={()=>{console.log(item.label)}}
-                className="mx-2 lg:mx-3 hidden md:block self-center h-full">
+                onMouseOver={()=>{setTargetedPopover(i);setPopoverOpen(true)}}
+                className="mx-2 lg:mx-3 hidden relative md:block self-center h-full">
                   {item.label}
-                  {i === 3 && <MenuPopover />}
+                  <MenuPopover 
+                  id={i} 
+                  popoverOpen={popoverOpen} 
+                  setPopoverOpen={setPopoverOpen} 
+                  targetedPopover={targetedPopover}
+                  menuItems={item.menu}
+                  />
                 </button>
-              </Link>
+              </Component>
             );
           })}
           <button className="text-base relative lg:text-xl hover:-translate-y-1 ease-in-out duration-500 bg-white/40 rounded-full hover:bg-white/20 px-3 ml-2 lg:px-5">
@@ -60,12 +60,12 @@ const Navbar = () => {
             setIsSideNavOpen={setIsSideNavOpen}
           />
         </menu>
-      </div>
+      </nav>
       <MobileMenu
         isSideNavOpen={isSideNavOpen}
         setIsSideNavOpen={setIsSideNavOpen}
       />
-    </div>
+    </header>
   );
 };
 export default Navbar;

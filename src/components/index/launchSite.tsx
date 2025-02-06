@@ -1,35 +1,20 @@
-import LogoTextAnim from "@/components/logoTextAnim";
 
 const LaunchSite = () =>{
     return (
-        <section className="text-center flex flex-col md:flex-row h-screen bg-[#061E4C] text-white font-satisfy">
-      <div className="flex relative h-72 md:h-full justify-center  order-2 w-full md:w-4/5 md:order-1 items-center">
-      
-        <div className="absolute justify-center opacity-0 animate-textInCircle  z-20 text-center self-center flex items-center">
-        <LogoTextAnim />
-        </div>
-        <div className="absolute justify-center self-center flex items-center">
+        <section className="text-center flex pb-10 flex-col md:flex-row h-full min-h-screen bg-[#061E4C] text-white font-OoohBaby">
+      <div className="flex  justify-center  order-2 w-full md:w-4/5 md:order-1 items-center">
         <img
-          className="object-scale-down opacity-0 animate-rotation-logo  h-full w-full"
-          src="logo_launch_obvod.svg"
+          className=" h-full sm:w-2/3 w-5/6 md:w-5/6 object-contain flex"
+          src="logoMain.png"
           alt="logo"
         />
-        </div>
-        <div className="absolute  translate-y-16 justify-center self-center flex items-center">
-        <img
-          className="object-scale-down opacity-0 animate-pulse-scale h-full w-full"
-          src="hearth.svg"
-          alt="srdce v logu obrázek"
-        />
-        </div>
       </div>
-      <div className="flex h-72 md:h-full w-full order-1 flex-col justify-center font-oldStandard items-center">
-        <span className="text-4xl opacity-0 animate-slideIn delay-500 md:text-5xl lg:text-6xl xl:text-[5rem]">
+      <div className="flex my-10 min-h-max md:my-0 w-full order-1 items-center flex-col justify-center font-oldStandard ">
+        <span className="text-4xl text-nowrap mx-1 justify-center self-center flex opacity-0 font-semibold tracking-wide animate-slideIn delay-500 md:text-5xl lg:text-6xl xl:text-[5rem]">
           Dorty a sladké bary
         </span>
         <span className="text-xl animate-slideInTwo opacity-0 lg:text-3xl">z Kašavy</span>
       </div>
-
     </section>
     )
 }
