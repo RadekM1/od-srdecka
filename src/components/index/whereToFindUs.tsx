@@ -31,7 +31,7 @@ const WhereToFindUs = () => {
             </div>
             <div className="flex items-end self-end h-full ">
               <div className=" hidden md:block flex-col flex-grow justify-end items-end h-full">
-                <div className="flex self-end mb-3">
+                <div className="flex self-end mb-11">
                   <img
                     src="/bocni-srdecka-bila.svg"
                     alt="boční grafika srdcí"
