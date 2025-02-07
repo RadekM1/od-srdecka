@@ -12,7 +12,7 @@ const LaunchSite = () => {
         <span className="text-3xl sm:text-4xl text-nowrap mx-1 justify-center self-center flex opacity-0 font-semibold tracking-wide animate-slideIn delay-500 md:text-4xl lg:text-5xl xl:text-6xl">
           Dorty a sladké bary
         </span>
-        <span className="text-xl mt-4 animate-slideInTwo opacity-0 lg:text-2xl">
+        <span className="text-xl mt-4 animate-slideInTwo opacity-0 lg:text-2xl xl:text-3xl">
           z Kašavy
         </span>
       </div>
