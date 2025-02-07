@@ -1,74 +1,53 @@
 "use client";
 
 import { RefGallery } from "@/schema/uiObjects";
-import React, { useEffect } from "react";
-import Glide from "@glidejs/glide";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
-import { IoIosArrowDroprightCircle } from "react-icons/io";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
+  IoIosArrowDropleftCircle,
+  IoIosArrowDroprightCircle,
+} from "react-icons/io";
 
 interface CarouselProps {
   props: RefGallery[];
 }
 
 const CarouselControlsInside = ({ props }: CarouselProps) => {
-  useEffect(() => {
-    const slider2 = new Glide(".glide-02", {
-      type: "carousel",
-      focusAt: "center",
-      perView: 3,
-      animationDuration: 700,
-      gap: 8,
-      breakpoints: {
-        1024: {
-          perView: 2,
-        },
-      },
-    }).mount();
-
-    return () => {
-      slider2.destroy();
-    };
-  }, [props]);
-
   return (
-    <>
-      <div className="glide-02 relative h-full w-full flex self-center">
-        <div className="overflow-hidden h-full " data-glide-el="track">
-          <div className="whitespace-no-wrap select-none h-full flex-no-wrap flex [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
-            {props.map((img, i) => {
-              return (
-                <div className="h-full min-h-[330px]" key={i}>
-                  <img
-                    alt={`referenční obrázek č.${i}`}
-                    src={img.src}
-                    className="m-auto min-h-full max-h-[350px]"
-                  />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div
-          className="absolute left-0 top-1/2 flex h-0 w-full items-center justify-between px-4 "
-          data-glide-el="controls"
-        >
-          <button
-            className="inline-flex items-center translate-x-0 md:-translate-x-16 xl:-translate-x-20 justify-center  text-gray-400 md:text-gray-300 transition duration-300  hover:text-[#061E4C]"
-            data-glide-dir="<"
-            aria-label="prev slide"
-          >
-            <IoIosArrowDropleftCircle className="h-12 w-12" />
-          </button>
-          <button
-            className="inline-flex translate-x-0 md:translate-x-16 xl:translate-x-20 items-center justify-center  text-gray-400 md:text-gray-300 transition duration-300  hover:text-[#061E4C]"
-            data-glide-dir=">"
-            aria-label="next slide"
-          >
-            <IoIosArrowDroprightCircle className="h-12 w-12" />
-          </button>
-        </div>
-      </div>
-    </>
+    <div className="w-full h-full select-none flex justify-center">
+      <Carousel className="w-full">
+        <CarouselContent className="w-full">
+          {props.map((img, i) => (
+            <CarouselItem key={i} className="basis-1/2 md:basis-1/2 lg:basis-1/3">
+              <div className="h-full min-w-max min-h-[330px] flex justify-center items-center">
+                <img
+                  alt={`referenční obrázek č.${i}`}
+                  src={img.src}
+                  className="m-auto min-h-full max-h-[350px]"
+                />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 hover:bg-[#061E4C]/80 hover:text-white bg-white/70 p-2 rounded-full shadow-md ">
+          <IoIosArrowDropleftCircle size={40} className="text-gray-700" />
+        </CarouselPrevious>
+
+        <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full shadow-md hover:bg-[#061E4C]/80 hover:text-white ">
+          <IoIosArrowDroprightCircle
+            size={40}
+            className="text-gray-700 w-6 h-6"
+          />
+        </CarouselNext>
+      </Carousel>
+    </div>
   );
 };
+
 export default CarouselControlsInside;

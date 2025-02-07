@@ -1,5 +1,5 @@
 import SectionTitle from "../sectionTitle";
-import CarouselReference from "../UI/carouselReference";
+import CarouselReference from "../ui/carouselReference";
 
 const reference = [
   { src: "reference/reference1.png", alt: "referenční print screen" },
@@ -11,7 +11,7 @@ const reference = [
 
 const Reference = () => {
   return (
-    <div className="max-w-full md:max-w-[660px] lg:max-w-[920px] xl:max-w-[1000px] flex flex-col self-center items-center">
+    <div className="w-full lg:w-[1000px]  flex flex-col self-center items-center">
       <SectionTitle title="Jak chutná našim zákazníkům?" />
       <CarouselReference props={reference} />
     </div>
