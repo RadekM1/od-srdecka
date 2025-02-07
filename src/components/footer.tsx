@@ -3,18 +3,18 @@ import { FaRegHeart } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="text-center py-6 px-2 md:px-4 w-full flex-col font-oldStandard flex pb-10 bg-[#061E4C] text-white">
+    <footer className="text-center py-12 px-2 md:px-4 w-full flex-col font-oldStandard flex pb-10 bg-[#061E4C] text-white">
       <div className="w-full h-full flex-row flex items-center self-center justify-center">
         <div className=" flex  w-1/2 md:w-1/3 justify-center items-center">
           <div className="self-center justify-center flex">
             <img
               src="logoMain.svg"
               alt="malé logo ve footeru"
-              className="w-1/2 self-center md:w-full md:p-8 lg:p-16 object-contain"
+              className=" self-center max-w-32 sm:max-w-44 md:max-w-60 md:p-8  object-contain"
             />
           </div>
         </div>
-        <div className="w-1/2 md:w-1/3  justify-center hidden md:block flex-col flex-grow">
+        <div className="w-1/2 md:w-1/3 p-4 justify-center hidden md:block flex-col flex-grow">
           <div className="flex  gap-6 self-center justify-center flex-row">
             <a href="#" target="_blank">
               <IoLogoInstagram className="h-8 w-8 md:h-12 md:w-12 hover:text-white/40 hover:-translate-y-1 ease-in-out duration-500 text-white/60" />
