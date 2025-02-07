@@ -37,8 +37,12 @@ const CarouselControlsInside = ({ props }: CarouselProps) => {
           <div className="whitespace-no-wrap select-none flex-no-wrap flex [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
             {props.map((img, i) => {
               return (
-                <div key={i}>
-                  <img src={img.src} className="m-auto  max-h-[350px]" />
+                <div className="h-full" key={i}>
+                  <img
+                    alt={`referenční obrázek č.${i}`}
+                    src={img.src}
+                    className="m-auto min-h-full max-h-[350px]"
+                  />
                 </div>
               );
             })}

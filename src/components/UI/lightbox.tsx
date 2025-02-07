@@ -6,7 +6,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import { Slide } from "yet-another-react-lightbox";
 import { Captions } from "yet-another-react-lightbox/plugins";
-import Video from "yet-another-react-lightbox/plugins/video";
+import { Video } from "yet-another-react-lightbox/plugins";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { ImgGallery } from "@/schema/uiObjects";
@@ -31,6 +31,7 @@ const LightBox = ({ input, active, toggler, setToggler }: lightBoxProps) => {
       return {
         src: item.src,
         alt: item.alt,
+        type: "image",
       };
     }
   });
