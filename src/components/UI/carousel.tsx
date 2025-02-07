@@ -4,8 +4,6 @@ import * as React from "react";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
-import { IoIosArrowDroprightCircle } from "react-icons/io";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -218,7 +216,11 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-       <img src="arrow-right.svg" className="h-full rotate-180 mr-1 w-full" alt="šipka posun doleva reference" />
+      <img
+        src="arrow-right.svg"
+        className="h-full rotate-180 mr-1 w-full"
+        alt="šipka posun doleva reference"
+      />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -247,7 +249,11 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <img src="arrow-right.svg" className="h-full ml-1 w-full" alt="šipka posun doprava reference" />
+      <img
+        src="arrow-right.svg"
+        className="h-full ml-1 w-full"
+        alt="šipka posun doprava reference"
+      />
     </Button>
   );
 });

@@ -8,16 +8,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  IoIosArrowDropleftCircle,
-  IoIosArrowDroprightCircle,
-} from "react-icons/io";
 
 interface CarouselProps {
   props: RefGallery[];
 }
 
-const CarouselControlsInside = ({ props }: CarouselProps) => {
+const CarouselReference = ({ props }: CarouselProps) => {
   return (
     <div className="w-full h-full select-none flex justify-center">
       <Carousel className="w-full items-center ">
@@ -34,12 +30,12 @@ const CarouselControlsInside = ({ props }: CarouselProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        
-        <CarouselPrevious className="absolute disabled:bg-gray-200 left-0 top-1/2 -translate-y-1/2 justify-center p-1 bg-gray-400 hover:bg-[#061E4C]/80 hover:text-white  rounded-full shadow-md "/> 
-        <CarouselNext className="absolute disabled:bg-gray-200 right-0 top-1/2 -translate-y-1/2 bg-gray-400 p-1 justify-center rounded-full shadow-md hover:bg-[#061E4C]/80 hover:text-white "/>
+
+        <CarouselPrevious className="absolute disabled:bg-gray-200 left-0 top-1/2 -translate-y-1/2 justify-center p-1 bg-gray-400 hover:bg-[#061E4C]/80 hover:text-white  rounded-full shadow-md " />
+        <CarouselNext className="absolute disabled:bg-gray-200 right-0 top-1/2 -translate-y-1/2 bg-gray-400 p-1 justify-center rounded-full shadow-md hover:bg-[#061E4C]/80 hover:text-white " />
       </Carousel>
     </div>
   );
 };
 
-export default CarouselControlsInside;
+export default CarouselReference;

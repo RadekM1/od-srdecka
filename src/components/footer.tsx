@@ -34,7 +34,11 @@ const Footer = () => {
             <button className="md:text-xl px-8 py-2 lg:text-2xl hover:-translate-y-1 ease-in-out duration-500 bg-white/40 rounded-full hover:bg-white/20">
               Objednat
             </button>
-            <img src="tel.svg" alt="telefonní číslo" className="w-max-[100px]" />
+            <img
+              src="tel.svg"
+              alt="telefonní číslo"
+              className="w-max-[100px]"
+            />
             <img src="email.svg" alt="email" className="w-max-[100px]" />
           </div>
         </div>
