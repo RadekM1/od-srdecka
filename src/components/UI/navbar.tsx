@@ -1,5 +1,4 @@
 "use client";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { IoLogoInstagram } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa";
@@ -14,10 +13,8 @@ const Navbar = () => {
   const [isSideNavOpen, setIsSideNavOpen] = useState<boolean>(false);
   const [targetedPopover, setTargetedPopover] = useState<number>(-1);
 
-  // eslint-disable-next-line
-  let path = usePathname();
   return (
-    <header className="w-full z-50 pb-2 fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard">
+    <header className="w-full z-40 pb-2 fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard">
       <nav className="flex sticky top-0 flex-row md:text-sm lg:text-base xl:text-xl mx-2 mt-2 w-full text-white">
         <div className="flex items-center h-full">
           <a href="#" target="_blank">
@@ -63,11 +60,11 @@ const Navbar = () => {
             setIsSideNavOpen={setIsSideNavOpen}
           />
         </menu>
+        <MobileMenu
+          isSideNavOpen={isSideNavOpen}
+          setIsSideNavOpen={setIsSideNavOpen}
+        />
       </nav>
-      <MobileMenu
-        isSideNavOpen={isSideNavOpen}
-        setIsSideNavOpen={setIsSideNavOpen}
-      />
     </header>
   );
 };
