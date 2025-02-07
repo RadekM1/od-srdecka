@@ -7,7 +7,7 @@ interface SwapBtnInterface {
 const SwapBtn = ({ isSideNavOpen, setIsSideNavOpen }: SwapBtnInterface) => {
   return (
     <button
-      className={`relative order-10 rounded-full bg-white/40 hover:bg-white/20  block h-10 w-10 mx-2 self-center lg:hidden
+      className={`relative order-10 rounded-full bg-white/40 hover:bg-white/20  block h-10 w-10 mx-2 self-center md:hidden
         ${
           isSideNavOpen
             ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:-rotate-45 [&_span:nth-child(3)]:w-0 "

@@ -25,7 +25,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
       <aside
         id="nav-menu-4"
         aria-label="Side navigation"
-        className={`top-[56px] fixed h-full bg-[#061E4C] backdrop-blur-sm left-0 z-40 flex lg:hidden w-72 flex-col border-r border-r-white/30 transition-transform lg:translate-x-0 ${
+        className={`top-[56px] fixed h-full bg-[#061E4C] backdrop-blur-sm left-0 z-40 flex md:hidden w-72 flex-col border-r border-r-white/30 transition-transform lg:translate-x-0 ${
           isSideNavOpen ? "translate-x-0" : " -translate-x-full"
         }`}
       >

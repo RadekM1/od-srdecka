@@ -15,14 +15,11 @@ const CarouselControlsInside = ({ props }: CarouselProps) => {
     const slider2 = new Glide(".glide-02", {
       type: "carousel",
       focusAt: "center",
-      perView: 4,
+      perView: 3,
       animationDuration: 700,
       gap: 8,
       breakpoints: {
         1024: {
-          perView: 3,
-        },
-        640: {
           perView: 2,
         },
       },

@@ -15,7 +15,6 @@ const CarouselGallery = ({ props }: CarouselProps) => {
   const [activeId, setActiveId] = useState<number>(0);
   const [toggler, setToggler] = useState(false);
 
-  // ✅ Použití useMemo pro stabilní výpočet `preparedGallery`
   const preparedGallery = useMemo(() => {
     let gallery = [];
     for (let i = 0; i < Math.floor(props?.length / 3); i++) {
@@ -42,9 +41,8 @@ const CarouselGallery = ({ props }: CarouselProps) => {
       };
     }
     return gallery;
-  }, [props]); // 🔥 Přepočet jen při změně `props`
+  }, [props]);
 
-  // ✅ Použití useCallback pro stabilní referenci
   const handleImgClick = useCallback((input: number) => {
     setToggler((prev) => !prev);
     setActiveId(input);
@@ -67,7 +65,6 @@ const CarouselGallery = ({ props }: CarouselProps) => {
       },
     });
 
-    // ✅ Použití useCallback reference, aby se listener nepřidával znovu
     const onClick = (event: Event) => {
       const target = event.target as HTMLElement;
       const img = target.closest(".carousel-img") as HTMLImageElement;
@@ -86,7 +83,7 @@ const CarouselGallery = ({ props }: CarouselProps) => {
         .querySelector(".glide-01")
         ?.removeEventListener("click", onClick);
     };
-  }, [handleImgClick]); // ✅ `handleImgClick` přidán jako závislost
+  }, [handleImgClick]);
 
   return (
     <div className="glide-01 relative w-full">

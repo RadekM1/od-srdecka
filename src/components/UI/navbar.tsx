@@ -9,14 +9,11 @@ import SwapBtn from "./swapBtn";
 import MenuPopover from "./menuPopover";
 import { menuItems } from "../../../public/content/menu";
 
-//{path === '/' ? 'je index' : 'není index, haha !'}
-
 const Navbar = () => {
   const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
   const [isSideNavOpen, setIsSideNavOpen] = useState<boolean>(false);
   const [targetedPopover, setTargetedPopover] = useState<number>(-1);
 
-  //{path === '/' ? 'je index' : 'není index, haha !'}
   // eslint-disable-next-line
   let path = usePathname();
   return (

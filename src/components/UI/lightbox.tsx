@@ -9,14 +9,23 @@ import { Captions } from "yet-another-react-lightbox/plugins";
 import Video from "yet-another-react-lightbox/plugins/video";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
+import { ImgGallery } from "@/schema/uiObjects";
 
-const LightBox = ({ input, active, toggler, setToggler }) => {
+interface lightBoxProps {
+  input: ImgGallery[];
+  active: number;
+  toggler: boolean;
+  // eslint-disable-next-line
+  setToggler: (toggler:boolean)=>void
+}
+
+const LightBox = ({ input, active, toggler, setToggler }: lightBoxProps) => {
   const filteredInput: Slide[] = input.map((item) => {
     if (item.media_type === "video") {
       return {
         type: "video",
         sources: [{ src: item.src, type: "video/mp4" }],
-        poster: item.thumbnail || "",
+        poster: item?.thumbnail ?? "",
       };
     } else {
       return {
