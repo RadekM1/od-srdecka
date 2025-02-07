@@ -33,7 +33,7 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
                   return (
                     <Link
                       key={i}
-                      className="flex flex-1 mx-4 border-b-0 items-center justify-between py-2 font-medium transition-all hover:text-gray-200 [&[data-state=open]>img]:rotate-180"
+                      className="flex flex-1 mx-4 border-b-0 my-2 items-center justify-between py-1 font-medium transition-all hover:text-gray-200 [&[data-state=open]>img]:rotate-180"
                       href={item.link}
                     >
                       {item.label}
@@ -45,17 +45,15 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
                     <AccordionTrigger>{item.label}</AccordionTrigger>
                     <AccordionContent>
                       {item.menu.map((innerItem, j) => (
-                        <div
+                        <Link
                           key={j}
-                          className="flex flex-col text-start gap-2 my-4"
+                          className="self-start text-start text-sm hover:font-semibold mx-4"
+                          href={innerItem.link}
                         >
-                          <Link
-                            className="self-start text-start text-base hover:font-semibold mx-4"
-                            href={innerItem.link}
-                          >
+                          <div className="flex flex-col px-4 text-start">
                             {innerItem.label}
-                          </Link>
-                        </div>
+                          </div>
+                        </Link>
                       ))}
                     </AccordionContent>
                   </AccordionItem>

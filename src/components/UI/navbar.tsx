@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { IoLogoInstagram } from "react-icons/io5";
-import { FaFacebook } from "react-icons/fa";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import SwapBtn from "./swapBtn";
@@ -19,9 +18,6 @@ const Navbar = () => {
         <div className="flex items-center h-full">
           <a href="#" target="_blank">
             <IoLogoInstagram className="h-8 w-8 mx-2 hover:text-white/40 hover:-translate-y-1 ease-in-out duration-500 text-white/60" />
-          </a>
-          <a href="#" target="_blank">
-            <FaFacebook className="h-8 w-8 text-white/60 hover:text-white/40 hover:-translate-y-1 ease-in-out duration-500" />
           </a>
         </div>
         <menu className="flex w-full h-10 justify-end flex-row">

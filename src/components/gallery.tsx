@@ -73,7 +73,7 @@ const gallery = [
 
 const Gallery = () => {
   return (
-    <div className="w-full mb-6 flex flex-col self-center items-center">
+    <div className="w-full  mb-6 flex flex-col self-center items-center">
       <SectionTitle title="Prozkoumejte naši galerii" />
       <CarouselGallery props={gallery} />
     </div>

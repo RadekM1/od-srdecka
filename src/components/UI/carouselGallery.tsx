@@ -106,7 +106,7 @@ const CarouselGallery = ({ props }: CarouselProps) => {
                     height={320}
                     src={`/${img.srcOne}`}
                     alt={img.altOne}
-                    className="rounded-xl object-cover carousel-img"
+                    className="rounded-xl border-white object-cover carousel-img"
                     data-index={i * 3}
                     style={{ width: "500px", height: "320px" }}
                   />

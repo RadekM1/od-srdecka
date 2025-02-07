@@ -26,14 +26,3 @@ export const menuItems = [
       {label:"Sociální sítě", link: "#"},
       ]},
   ];
-
-  export const footerItems = [
-    { label: "Úvod", link: "#"},
-    { label: "O nás", link: "#"},
-    { label: "Nabídka", link: "#"},
-    { label: "Galerie", link: "#"},
-    { label: "Blog", link: "#"},
-    { label: "Aktuality", link: "#"},
-    { label: "Dotazy", link: "#"},
-    { label: "Kontakt", link: "#"},
-  ];
