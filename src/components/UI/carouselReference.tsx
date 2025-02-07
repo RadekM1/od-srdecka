@@ -28,16 +28,16 @@ const CarouselControlsInside = ({ props }: CarouselProps) => {
     return () => {
       slider2.destroy();
     };
-  }, []);
+  }, [props]);
 
   return (
     <>
-      <div className="glide-02 relative w-full flex self-center">
-        <div className="overflow-hidden " data-glide-el="track">
-          <div className="whitespace-no-wrap select-none flex-no-wrap flex [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
+      <div className="glide-02 relative h-full w-full flex self-center">
+        <div className="overflow-hidden h-full " data-glide-el="track">
+          <div className="whitespace-no-wrap select-none h-full flex-no-wrap flex [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
             {props.map((img, i) => {
               return (
-                <div className="h-full" key={i}>
+                <div className="h-full min-h-[330px]" key={i}>
                   <img
                     alt={`referenční obrázek č.${i}`}
                     src={img.src}
