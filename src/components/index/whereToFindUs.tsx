@@ -18,12 +18,15 @@ const WhereToFindUs = () => {
         <div className="w-full justify-center">
           <div className="flex justify-center flex-row w-full">
             <div className="flex h-full flex-col justify-center  w-full  items-center">
-              <div className="flex h-full justify-center  w-full  items-center">
+              <div className="flex h-full flex-col justify-center  w-full  items-center">
                 <img
                   className=" object-scale-down w-2/3 md:w-full p-2 duration-300 ease-in-out self-center flex"
                   src="/index/mapa.png"
                   alt="fotka teamu"
                 />
+                <span className="text-white font-abhaya text-2xl text-center pl-0 md:text-start w-full md:pl-3">
+                  Kašava 33 , 736 19 Kašava
+                </span>
               </div>
             </div>
             <div className="flex items-end self-end h-full ">
