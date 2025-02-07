@@ -12,7 +12,7 @@ const AboutUs = () => {
             alt="pozadí text pečeme od srdéčka"
           />
           <div className="flex z-10  justify-center items-center w-full flex-row ">
-            <div className=" font-abhaya text-2xl flex-col self-center flex-grow  h-full">
+            <div className=" font-abhaya text-xl lg:text-2xl flex-col self-center flex-grow  h-full">
               <div>Jsme tři cérky z malé dědiny na</div>
               <div>Valašsku. Každá jiná, ale vše děláme od</div>
               <div>

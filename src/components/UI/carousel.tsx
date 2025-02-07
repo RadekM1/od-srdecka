@@ -164,7 +164,7 @@ const CarouselContent = React.forwardRef<
         ref={ref}
         className={cn(
           "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+          orientation === "horizontal" ? "" : "-mt-4 flex-col",
           className,
         )}
         {...props}
@@ -186,8 +186,8 @@ const CarouselItem = React.forwardRef<
       role="group"
       aria-roledescription="slide"
       className={cn(
-        "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
+        "min-w-0 shrink-0 justify-center self-center items-center flex grow-0 basis-full",
+        orientation === "horizontal" ? "" : "pt-4",
         className,
       )}
       {...props}
@@ -208,7 +208,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-8 w-8 rounded-full",
+        "absolute  h-12 w-12 rounded-full",
         orientation === "horizontal"
           ? "-left-12 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -218,7 +218,7 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      <IoIosArrowDropleftCircle className="h-4 w-4" />
+       <img src="arrow-right.svg" className="h-full rotate-180 mr-1 w-full" alt="šipka posun doleva reference" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -237,7 +237,7 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-8 w-8 rounded-full",
+        "absolute h-12 w-12 rounded-full",
         orientation === "horizontal"
           ? "-right-12 top-1/2 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -247,8 +247,7 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <IoIosArrowDroprightCircle className="h-8 w-8" />
-      <span className="sr-only">Next slide</span>
+      <img src="arrow-right.svg" className="h-full ml-1 w-full" alt="šipka posun doprava reference" />
     </Button>
   );
 });

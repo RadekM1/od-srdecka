@@ -6,11 +6,11 @@ const Footer = () => {
     <footer className="text-center py-12 px-2 md:px-4 w-full flex-col font-oldStandard flex pb-10 bg-[#061E4C] text-white">
       <div className="w-full h-full flex-row flex items-center self-center justify-center">
         <div className=" flex  w-1/2 md:w-1/3 justify-center items-center">
-          <div className="self-center justify-center flex">
+          <div className="self-center max-w-32 sm:max-w-44 md:max-w-60 justify-center flex">
             <img
               src="logoMain.svg"
               alt="malé logo ve footeru"
-              className=" self-center max-w-32 sm:max-w-44 md:max-w-60 md:p-8  object-contain"
+              className=" self-center  md:p-8  object-contain"
             />
           </div>
         </div>
@@ -29,12 +29,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex w-1/2 md:w-1/3 flex-col gap-4 md:gap-8 items-center justify-between h-full ">
-          <button className="md:text-xl px-8 py-2 lg:text-2xl hover:-translate-y-1 ease-in-out duration-500 bg-white/40 rounded-full hover:bg-white/20">
-            Objednat
-          </button>
-          <img src="tel.svg" alt="telefonní číslo" className="w-max-[100px]" />
-          <img src="email.svg" alt="email" className="w-max-[100px]" />
+        <div className="flex w-1/2 md:w-1/3 flex-col  items-center  h-full ">
+          <div className="max-w-32 flex flex-col gap-4 md:gap-8 justify-between  self-center items-center sm:max-w-44 md:max-w-60">
+            <button className="md:text-xl px-8 py-2 lg:text-2xl hover:-translate-y-1 ease-in-out duration-500 bg-white/40 rounded-full hover:bg-white/20">
+              Objednat
+            </button>
+            <img src="tel.svg" alt="telefonní číslo" className="w-max-[100px]" />
+            <img src="email.svg" alt="email" className="w-max-[100px]" />
+          </div>
         </div>
       </div>
 
@@ -51,14 +53,14 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex-row text-xs md:text-sm font-abhaya hover:text-gray-200 ease-in-out duration-500 md:pr-8 flex w-full justify-center md:justify-end">
+      <div className="flex-row text-xs mt-10 md:text-sm font-abhaya hover:text-gray-200 ease-in-out duration-500 md:pr-8 flex w-full justify-center md:justify-end">
         <a href="#" className="flex flex-row gap-2 ">
           <span>Od</span>
           <span>
             <FaRegHeart />
           </span>
           <span>vytvořil</span>
-          <span>Radek M.</span>
+          <span>Radek Morong</span>
         </a>
       </div>
     </footer>
