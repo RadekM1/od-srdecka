@@ -1,18 +1,13 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 
-interface menuItem {
-  label: "string";
-  link: "string";
-}
-
 interface MenuPopoverProps {
   popoverOpen: boolean;
   // eslint-disable-next-line
   setPopoverOpen: (popoverOpen: boolean) => void;
   id: number;
   targetedPopover: number;
-  menuItems: menuItem[] | null;
+  menuItems: { label: string; link: string }[] | null;
 }
 
 const index = true;
@@ -52,19 +47,20 @@ const MenuPopover = ({
           ref={popOverRef}
           className={`py-3 px-5 top-12 absolute flex flex-col shadow-xl  text-base right-1/2 min-w-[280px] translate-x-1/2 ${menuStyle} z-50  rounded-2xl`}
         >
-          {menuItems?.map((item, i) => {
-            return (
-              <li key={i} className="my-1">
-                <Link href={item.link}>
-                  <div
-                    className={`relative my-1 ${itemStyle} hover:font-semibold  cursor-pointer text-nowrap `}
-                  >
-                    <span>{item.label}</span>
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
+          {Array.isArray(menuItems) &&
+            menuItems.map((item, i) => {
+              return (
+                <li key={i} className="my-1">
+                  <Link href={item.link}>
+                    <div
+                      className={`relative my-1 ${itemStyle} hover:font-semibold  cursor-pointer text-nowrap `}
+                    >
+                      <span>{item.label}</span>
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
         </div>
       )}
     </>

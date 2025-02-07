@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { menuItems } from "../../../public/content/menu";
 import {
   Accordion,
@@ -16,19 +15,10 @@ interface MobileMenuProps {
   setIsSideNavOpen: (isSideNavOpen: boolean) => void;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({
-  isSideNavOpen,
-  setIsSideNavOpen,
-}) => {
+const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
   return (
     <>
-      <aside
-        id="nav-menu-4"
-        aria-label="Side navigation"
-        className={`top-[56px] fixed h-full bg-[#061E4C] backdrop-blur-sm left-0 z-40 flex md:hidden w-72 flex-col border-r border-r-white/30 transition-transform lg:translate-x-0 ${
-          isSideNavOpen ? "translate-x-0" : " -translate-x-full"
-        }`}
-      >
+      <aside id="nav-menu-4" aria-label="Side navigation">
         <nav
           aria-label="side navigation"
           className="flex-1 divide-y text-white font-oldStandard text-base divide-slate-100 overflow-auto"
