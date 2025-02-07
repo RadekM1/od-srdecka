@@ -5,7 +5,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/components/UI/accordion";
 import Link from "next/link";
 
 interface MobileMenuProps {

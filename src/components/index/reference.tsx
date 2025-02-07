@@ -1,5 +1,5 @@
 import SectionTitle from "../sectionTitle";
-import CarouselReference from "../ui/carouselReference";
+import CarouselReference from "../UI/carouselReference";
 
 const reference = [
   { src: "reference/reference1.png", alt: "referenční print screen" },

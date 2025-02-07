@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Abhaya_Libre, Old_Standard_TT, Oooh_Baby } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/ui/navbar";
+import Navbar from "@/components/UI/navbar";
 import React from "react";
 import Footer from "@/components/footer";
 

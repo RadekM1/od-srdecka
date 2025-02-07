@@ -1,5 +1,5 @@
 import SectionTitle from "./sectionTitle";
-import CarouselGallery from "./ui/carouselGallery";
+import CarouselGallery from "./UI/carouselGallery";
 
 const gallery = [
   {
