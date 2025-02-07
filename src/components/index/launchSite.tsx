@@ -9,10 +9,10 @@ const LaunchSite = () => {
         />
       </div>
       <div className="flex my-16 min-h-max md:my-0 w-full order-1 items-center flex-col justify-center font-oldStandard ">
-        <span className="text-3xl text-nowrap mx-1 justify-center self-center flex opacity-0 font-semibold tracking-wide animate-slideIn delay-500 md:text-3xl lg:text-4xl xl:text-5xl">
+        <span className="text-3xl sm:text-4xl text-nowrap mx-1 justify-center self-center flex opacity-0 font-semibold tracking-wide animate-slideIn delay-500 md:text-4xl lg:text-5xl xl:text-6xl">
           Dorty a sladké bary
         </span>
-        <span className="text-xl animate-slideInTwo opacity-0 lg:text-2xl">
+        <span className="text-xl mt-4 animate-slideInTwo opacity-0 lg:text-2xl">
           z Kašavy
         </span>
       </div>
