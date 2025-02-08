@@ -5,7 +5,7 @@ import AboutUsComponentTextAsideImg from "./aboutUsPageText";
 const Page = () => {
   return (
     <>
-      <section className="flex max-w-6xl mb-10 flex-col w-full">
+      <section className="flex max-w-6xl px-1 mb-10 flex-col w-full">
         <AboutUs
           title="Tři cérky z Valašska"
           textImg="/pozadi-text/nas-pribeh.svg"

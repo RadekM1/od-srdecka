@@ -21,7 +21,7 @@ const AboutUs = ({ title, textImg, children, indexPage }: aboutUsProps) => {
           />
           {children}
         </div>
-        <div className="w-5/6 justify-center">
+        <div className="w-5/6 flex self-center justify-center">
           <div className="flex justify-center flex-row w-full">
             <div className="flex h-full flex-col justify-center  w-full  items-center">
               <div className="flex   h-full justify-center  w-full  items-center">
