@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const SectionLine = () => {
+const IndexSectionLine = () => {
   return (
     <div className="flex w-full  select-none items-center justify-center">
       <Image
@@ -8,9 +8,9 @@ const SectionLine = () => {
         alt="oddělovač sekce"
         width={1283}
         height={20}
-        className="w-full self-center my-14 "
+        className="w-5/6 self-center my-14 "
       />
     </div>
   );
 };
-export default SectionLine;
+export default IndexSectionLine;

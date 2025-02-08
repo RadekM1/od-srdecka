@@ -5,7 +5,7 @@ import AboutUs from "@/components/aboutUs";
 import WhereToFindUs from "@/components/index/whereToFindUs";
 import Reference from "@/components/index/reference";
 import Gallery from "@/components/gallery";
-import SectionLine from "@/components/sectionLine";
+import IndexSectionLine from "@/components/indexSectionLine";
 import SectionTitleBlue from "@/components/sectionTitleBlue";
 import Flowers from "@/components/index/flowers";
 import AboutUsComponentIndexAsideImg from "@/components/index/aboutUsIndexText";
@@ -27,7 +27,7 @@ const Home = () => {
       <SectionTitleBlue title="Kde nás najdete?" />
       <WhereToFindUs />
       <Reference />
-      <SectionLine />
+      <IndexSectionLine />
       <Gallery />
       <HearthSnake />
     </>

@@ -33,12 +33,12 @@ const AboutUs = ({ title, textImg, children, indexPage }: aboutUsProps) => {
               </div>
             </div>
             <div className="flex items-end self-end h-full ">
-              <div className=" hidden md:block flex-col mb-5 flex-grow justify-end items-end h-full">
-                <div className="flex self-end">
+              <div className=" hidden md:block flex-col mb-2 flex-grow justify-end items-end h-full">
+                <div className="flex flex-grow h-full self-end">
                   <img
                     src="/bocni-srdecka.svg"
                     alt="boční grafika srdcí"
-                    className="rotate-180"
+                    className="rotate-180 self-end"
                   />
                 </div>
               </div>

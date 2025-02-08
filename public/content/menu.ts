@@ -13,12 +13,7 @@ export const menuItems = [
       {label:"Recepty", link: "/blog/recepty"}
     ]},
     { label: "Aktuality", link: "/aktuality", menu: null},
-    { label: "Dotazy", link: "/dotazy", menu: [
-      {label:"Otázky týkající se objednávek", link: "/dotazy/objednavky"},
-      {label:"Informace o alergenech", link: "/dotazy/alergeny"},
-      {label:"Platební a doručovací informace", link: "/dotazy/platba-a-doprava"},
-      {label:"Zásady ochrany osobních údajů", link: "/dotazy/ochrana-osobnich-udaju"},
-    ]},
+    { label: "Dotazy", link: "/dotazy", menu: null},
     { label: "Kontakt", link: "/kontakt", menu: [
       {label:"Kontaktní formulář", link: "/kontakt/kontaktni-formular"},
       {label:"Objednávkový formulář", link: "/kontakt/objednavkovy-formular"},

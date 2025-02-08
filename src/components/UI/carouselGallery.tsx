@@ -55,7 +55,7 @@ const CarouselGallery = ({ props }: CarouselProps) => {
 
   return (
     <>
-      <Carousel className="w-full items-center ">
+      <Carousel className="w-full select-none items-center ">
         <CarouselContent className="w-full">
           {preparedGallery.map((img, i) => {
             return (

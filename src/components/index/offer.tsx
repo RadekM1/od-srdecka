@@ -30,7 +30,7 @@ const Offer = () => {
   return (
     <div className="flex flex-col  px-2 text-xl max-w-6xl w-full text-center justify-center self-center items-center md:flex-row">
       <div className="w-full relative  justify-center">
-        <SectionTitle indexPage={false} title="Naše nabídka" />
+        <SectionTitle indexPage={true} title="Naše nabídka" />
         <img
           src="/pozadi-text/peceme-od-srdecka.svg"
           className="absolute hidden lg:block top-[120px] -z-10"
@@ -65,7 +65,7 @@ const Offer = () => {
         </div>
       </div>
       <div className="w-full justify-center">
-        <SectionTitle indexPage={false} title="Sladký blog" />
+        <SectionTitle indexPage={true} title="Sladký blog" />
         <div className="flex justify-center flex-row w-full">
           {BlogImg.map((img, i) => {
             return (
