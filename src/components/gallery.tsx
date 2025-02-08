@@ -72,8 +72,7 @@ const gallery = [
   },
 ];
 
-const shuffledArray = shuffleArray(gallery)
-
+const shuffledArray = shuffleArray(gallery);
 
 const Gallery = () => {
   return (

@@ -16,7 +16,10 @@ const Navbar = () => {
 
   return (
     <header className="w-full h-14 z-40 items-center fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard">
-      <nav role="navigaton" className="flex sticky items-center justify-center top-0 flex-row md:text-sm lg:text-base xl:text-xl mx-2 w-full text-white">
+      <nav
+        role="navigaton"
+        className="flex sticky items-center justify-center top-0 flex-row md:text-sm lg:text-base xl:text-xl mx-2 w-full text-white"
+      >
         <ul className="flex self-center align-middle items-center h-full">
           {path !== "/" && (
             <li className="self-center h-full justify-center items-center flex text-center">
@@ -33,42 +36,40 @@ const Navbar = () => {
           </a>
         </ul>
         <menu className="flex self-center text-nowrap items-center w-full h-full justify-end flex-row">
-          <ul 
-          className="h-full flex flex-row">
-          {menuItems.map((item, i) => {
-            const Component = item.menu ? "div" : Link;
-            return (
-              <li 
-              key={i}
-              className="w-full h-full flex flex-row">
-              <Component
-                
-                className="hover:text-gray-400 self-center h-full items-center ease-in-out duration-500"
-                href={item.menu ? '#' : item.link}
-                
-              >
-                <ul
-                  onMouseOver={() => {
-                    setTargetedPopover(i);
-                    setPopoverOpen(true);
-                  }}
-                  className="mx-2 lg:mx-3 hidden relative md:block self-center h-full"
-                >
-                  {item.label}
-                  <MenuPopover
-                    id={i}
-                    popoverOpen={popoverOpen}
-                    setPopoverOpen={setPopoverOpen}
-                    targetedPopover={targetedPopover}
-                    menuItems={item.menu}
-                  />
-                </ul>
-              </Component>
-              </li>
-            );
-          })}
+          <ul className="h-full flex flex-row">
+            {menuItems.map((item, i) => {
+              const Component = item.menu ? "div" : Link;
+              return (
+                <li key={i} className="w-full h-full flex flex-row">
+                  <Component
+                    className="hover:text-gray-400 self-center h-full items-center ease-in-out duration-500"
+                    href={item.menu ? "#" : item.link}
+                  >
+                    <ul
+                      onMouseOver={() => {
+                        setTargetedPopover(i);
+                        setPopoverOpen(true);
+                      }}
+                      className="mx-2 lg:mx-3 hidden relative md:block self-center h-full"
+                    >
+                      {item.label}
+                      <MenuPopover
+                        id={i}
+                        popoverOpen={popoverOpen}
+                        setPopoverOpen={setPopoverOpen}
+                        targetedPopover={targetedPopover}
+                        menuItems={item.menu}
+                      />
+                    </ul>
+                  </Component>
+                </li>
+              );
+            })}
           </ul>
-          <Link className="text-base relative py-1 lg:text-xl hover:-translate-y-1 ease-in-out duration-500 bg-white/40 rounded-full hover:bg-white/20 px-3 ml-2 lg:px-5" href="/kontakt/objednavkovy-formular">        
+          <Link
+            className="text-base relative py-1 lg:text-xl hover:-translate-y-1 ease-in-out duration-500 bg-white/40 rounded-full hover:bg-white/20 px-3 ml-2 lg:px-5"
+            href="/kontakt/objednavkovy-formular"
+          >
             Objednat
           </Link>
           <SwapBtn
