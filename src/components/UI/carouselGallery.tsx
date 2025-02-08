@@ -1,11 +1,16 @@
 "use client";
 
-import React, { useState, useEffect, useMemo, useCallback } from "react";
-import Glide from "@glidejs/glide";
+import React, { useState, useMemo } from "react";
 import { ImgGallery } from "@/schema/uiObjects";
 import LightBox from "./lightbox";
 import { RxVideo } from "react-icons/rx";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+
+} from "@/components/UI/carousel";
 
 interface CarouselProps {
   props: ImgGallery[];
@@ -17,6 +22,8 @@ const CarouselGallery = ({ props }: CarouselProps) => {
 
   const preparedGallery = useMemo(() => {
     let gallery = [];
+
+
     for (let i = 0; i < Math.floor(props?.length / 3); i++) {
       let j = i * 3;
       gallery[i] = {
@@ -43,122 +50,92 @@ const CarouselGallery = ({ props }: CarouselProps) => {
     return gallery;
   }, [props]);
 
-  const handleImgClick = useCallback((input: number) => {
-    setToggler((prev) => !prev);
-    setActiveId(input);
-  }, []);
-
-  useEffect(() => {
-    const slider2 = new Glide(".glide-01", {
-      type: "carousel",
-      focusAt: 0,
-      perView: 3,
-      animationDuration: 700,
-      gap: 8,
-      breakpoints: {
-        1200: {
-          perView: 2,
-        },
-        640: {
-          perView: 1,
-        },
-      },
-    });
-
-    const onClick = (event: Event) => {
-      const target = event.target as HTMLElement;
-      const img = target.closest(".carousel-img") as HTMLImageElement;
-      if (img) {
-        const index = parseInt(img.dataset.index || "0", 10);
-        handleImgClick(index);
-      }
-    };
-
-    document.querySelector(".glide-01")?.addEventListener("click", onClick);
-    slider2.mount();
-
-    return () => {
-      slider2.destroy();
-      document
-        .querySelector(".glide-01")
-        ?.removeEventListener("click", onClick);
-    };
-  }, [handleImgClick]);
+  const handleImgClick = (id:number) =>{
+    setActiveId(id)
+    setToggler(true)
+  }
 
   return (
-    <div className="glide-01 relative w-full">
-      <div className="overflow-hidden" data-glide-el="track">
-        <div className="relative select-none flex w-full overflow-hidden">
-          {preparedGallery.map((img, i) => (
-            <div
-              className="flex flex-row h-[320px] w-[500px] flex-none"
-              key={i}
-            >
-              <div className="flex h-full flex-col">
-                <div className="flex group w-full hover:brightness-50 relative ease-in-out duration-300 cursor-pointer">
-                  {img.typeOne === "video" && (
-                    <div className="absolute w-10 h-10 right-0">
-                      <RxVideo className="group-hover:text-gray-500 text-gray-300 h-8 w-8 duration-300 ease-in-out" />
-                    </div>
-                  )}
-                  <Image
-                    width={300}
-                    height={320}
-                    src={`/${img.srcOne}`}
-                    alt={img.altOne}
-                    className="rounded-xl border-white object-cover carousel-img"
-                    data-index={i * 3}
-                    style={{ width: "500px", height: "320px" }}
-                  />
+    <>
+     <Carousel className="w-full items-center ">
+      <CarouselContent className="w-full">
+        {preparedGallery.map((img, i) => {
+          return(
+            (
+              <CarouselItem key={i} className="sm:basis-1/2 px-1 lg:basis-1/3">
+                <div className="flex h-full flex-col">
+                  <div 
+                  onClick={()=>handleImgClick(i)}
+                  className="flex group w-full hover:brightness-50 relative ease-in-out duration-300 cursor-pointer">
+                    {img.typeOne === "video" && (
+                      <div className="absolute w-10 h-10 right-0">
+                        <RxVideo className="group-hover:text-gray-500 text-gray-300 h-8 w-8 duration-300 ease-in-out" />
+                      </div>
+                    )}
+                    <Image
+                      width={300}
+                      height={320}
+                      src={`/${img.srcOne}`}
+                      alt={img.altOne}
+                      className="rounded-xl border-white object-cover carousel-img"
+                      data-index={i * 3}
+                      style={{ width: "500px", height: "320px" }}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div style={{ width: "16px" }}>&nbsp;</div>
-              <div className="flex h-[320px] flex-col">
-                <div className="flex hover:brightness-50 w-full relative ease-in-out duration-300 cursor-pointer">
-                  {img.typeTwo === "video" && (
-                    <div className="absolute w-10 h-10 right-0">
-                      <RxVideo className="group-hover:text-gray-500 text-gray-300 h-8 w-8 duration-300 ease-in-out" />
-                    </div>
-                  )}
-                  <Image
-                    width={250}
-                    height={160}
-                    src={`/${img.srcTwo}`}
-                    alt={img.altTwo}
-                    className="rounded-xl object-cover carousel-img"
-                    data-index={i * 3 + 1}
-                    style={{ width: "500px", height: "156px" }}
-                  />
+                <div style={{ width: "16px" }}>&nbsp;</div>
+                <div className="flex h-[320px] flex-col">
+                  <div 
+                  onClick={()=>handleImgClick(i*2)}
+                  className="flex hover:brightness-50 w-full relative ease-in-out duration-300 cursor-pointer">
+                    {img.typeTwo === "video" && (
+                      <div className="absolute w-10 h-10 right-0">
+                        <RxVideo className="group-hover:text-gray-500 text-gray-300 h-8 w-8 duration-300 ease-in-out" />
+                      </div>
+                    )}
+                    <Image
+                      width={250}
+                      height={160}
+                      src={`/${img.srcTwo}`}
+                      alt={img.altTwo}
+                      className="rounded-xl object-cover carousel-img"
+                      data-index={i * 3 + 1}
+                      style={{ width: "500px", height: "156px" }}
+                    />
+                  </div>
+                  <div className="h-[8px] text-white">&nbsp;</div>
+                  <div 
+                  onClick={()=>handleImgClick(i*3)}
+                  className="flex w-full relative hover:brightness-50 ease-in-out duration-300 flex-grow cursor-pointer">
+                    {img.typeThree === "video" && (
+                      <div className="absolute w-10 h-10 right-0">
+                        <RxVideo className="group-hover:text-gray-500 text-gray-300 h-8 w-8 duration-300 ease-in-out" />
+                      </div>
+                    )}
+                    <Image
+                      width={250}
+                      height={160}
+                      src={`/${img.srcThree}`}
+                      alt={img.altThree}
+                      className="rounded-xl h-full object-cover carousel-img"
+                      data-index={i * 3 + 2}
+                      style={{ width: "500px", height: "156px" }}
+                    />
+                  </div>
                 </div>
-                <div className="h-[8px] text-white">&nbsp;</div>
-                <div className="flex w-full relative hover:brightness-50 ease-in-out duration-300 flex-grow cursor-pointer">
-                  {img.typeThree === "video" && (
-                    <div className="absolute w-10 h-10 right-0">
-                      <RxVideo className="group-hover:text-gray-500 text-gray-300 h-8 w-8 duration-300 ease-in-out" />
-                    </div>
-                  )}
-                  <Image
-                    width={250}
-                    height={160}
-                    src={`/${img.srcThree}`}
-                    alt={img.altThree}
-                    className="rounded-xl h-full object-cover carousel-img"
-                    data-index={i * 3 + 2}
-                    style={{ width: "500px", height: "156px" }}
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <LightBox
+              </CarouselItem>
+            )
+        )}
+        )}
+      </CarouselContent>
+    </Carousel>
+    <LightBox
         input={props}
         active={activeId}
         toggler={toggler}
         setToggler={setToggler}
       />
-    </div>
+    </>
   );
 };
 

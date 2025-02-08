@@ -19,7 +19,7 @@ const CarouselReference = ({ props }: CarouselProps) => {
       <Carousel className="w-full items-center ">
         <CarouselContent className="w-full">
           {props.map((img, i) => (
-            <CarouselItem key={i} className="sm:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={i} className="sm:basis-1/2 px-2 lg:basis-1/3">
               <div className="h-full w-full self-center  min-w-max min-h-[330px] flex justify-center items-center">
                 <img
                   alt={`referenční obrázek č.${i}`}
