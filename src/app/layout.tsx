@@ -42,10 +42,8 @@ export default async function RootLayout({
         <header>
           <Navbar />
         </header>
-        <div className="h-[56px]"></div>
-        <main className="text-center overflow-hidden flex w-auto flex-col">
-          {children}
-        </main>
+        <div className="h-[56px] bg-[#061E4C]"></div>
+        {children}
         <Footer />
       </body>
     </html>

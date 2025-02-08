@@ -2,7 +2,7 @@ import { IoLogoInstagram } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import Link from "next/link";
 
-const Footer = () => {
+const OthersFooter = () => {
   return (
     <footer className="text-center py-12 px-2 md:px-4 w-full flex-col font-oldStandard flex pb-10 bg-[#061E4C] text-white">
       <div className="w-full h-full flex-row flex items-center self-center justify-center">
@@ -77,4 +77,4 @@ const Footer = () => {
     </footer>
   );
 };
-export default Footer;
+export default OthersFooter;

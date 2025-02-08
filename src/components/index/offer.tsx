@@ -2,27 +2,27 @@ import SectionTitle from "../sectionTitle";
 import Link from "next/link";
 
 const OfferImg = [
-  { url: "index/dort.png", title: "Dorty", alt: "obrázek dortu", link: "#" },
+  { src: "/index/dort.png", title: "Dorty", alt: "obrázek dortu", link: "#" },
   {
-    url: "index/sladky-bar.png",
+    src: "/index/sladky-bar.png",
     title: "Sladký bar",
     alt: "obrázek sladkého baru",
-    link: "#",
+    link: "/nabidka/sladky-bar",
   },
 ];
 
 const BlogImg = [
   {
-    url: "index/recepty.png",
+    src: "/index/recepty.png",
     title: "Recepty",
     alt: "obrázek receptu",
-    link: "#",
+    link: "/blog/recepty",
   },
   {
-    url: "index/nejcastejsi-dotazy.png",
+    src: "index/nejcastejsi-dotazy.png",
     title: "Nejčastější dotazy",
     alt: "obrázek nejčastější dotaz",
-    link: "#",
+    link: "/dotazy/platba-a-doprava",
   },
 ];
 
@@ -50,7 +50,7 @@ const Offer = () => {
                   <div className="flex h-full justify-center  w-full  items-center">
                     <img
                       className=" object-scale-down p-2 duration-300 ease-in-out group-hover:brightness-50 self-center flex"
-                      src={img.url}
+                      src={img.src}
                       alt={img.alt}
                       title={img.title}
                     />
@@ -74,7 +74,7 @@ const Offer = () => {
                   <div className="flex   h-full justify-center  w-full  items-center">
                     <img
                       className=" object-scale-down p-2 duration-300 ease-in-out group-hover:brightness-50 self-center flex"
-                      src={img.url}
+                      src={img.src}
                       alt={img.alt}
                       title={img.title}
                     />

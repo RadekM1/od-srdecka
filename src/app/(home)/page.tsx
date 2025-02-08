@@ -1,13 +1,14 @@
 import LaunchSite from "@/components/index/launchSite";
 import HearthSnake from "@/components/index/hearthSnake";
 import Offer from "@/components/index/offer";
-import AboutUs from "@/components/index/aboutUs";
+import AboutUs from "@/components/aboutUs";
 import WhereToFindUs from "@/components/index/whereToFindUs";
 import Reference from "@/components/index/reference";
 import Gallery from "@/components/gallery";
 import SectionLine from "@/components/sectionLine";
 import SectionTitleBlue from "@/components/sectionTitleBlue";
 import Flowers from "@/components/index/flowers";
+import AboutUsComponentIndexAsideImg from "@/components/index/aboutUsIndexText";
 
 const Home = () => {
   return (
@@ -15,7 +16,13 @@ const Home = () => {
       <LaunchSite />
       <HearthSnake />
       <Offer />
-      <AboutUs />
+      <AboutUs
+        title={"O nás"}
+        textImg="/pozadi-text/sladke-z-valaska.svg"
+        indexPage={true}
+      >
+        <AboutUsComponentIndexAsideImg />
+      </AboutUs>
       <Flowers />
       <SectionTitleBlue title="Kde nás najdete?" />
       <WhereToFindUs />

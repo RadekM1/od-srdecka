@@ -217,7 +217,7 @@ const CarouselPrevious = React.forwardRef<
       {...props}
     >
       <img
-        src="arrow-right.svg"
+        src="/arrow-right.svg"
         className="h-full rotate-180 mr-1 w-full"
         alt="šipka posun doleva reference"
       />
@@ -250,7 +250,7 @@ const CarouselNext = React.forwardRef<
       {...props}
     >
       <img
-        src="arrow-right.svg"
+        src="/arrow-right.svg"
         className="h-full ml-1 w-full"
         alt="šipka posun doprava reference"
       />

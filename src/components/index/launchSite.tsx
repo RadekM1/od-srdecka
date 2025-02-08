@@ -4,7 +4,7 @@ const LaunchSite = () => {
       <div className="flex justify-center order-2 w-full md:order-1 items-center">
         <img
           className=" h-full w-1/2 md:w-5/6 lg:w-1/2 object-contain flex"
-          src="logoMain.svg"
+          src="/logoMain.svg"
           alt="logo"
         />
       </div>
