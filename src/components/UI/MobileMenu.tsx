@@ -35,7 +35,7 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
                       key={i}
                       className="flex flex-1 mx-4 border-b-0 my-2 items-center justify-between py-1 font-medium transition-all hover:text-gray-200 [&[data-state=open]>img]:rotate-180"
                       href={item.link}
-                      onClick={()=>setIsSideNavOpen(false)}
+                      onClick={() => setIsSideNavOpen(false)}
                     >
                       {item.label}
                     </Link>
@@ -50,7 +50,7 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
                           key={j}
                           className="self-start text-start text-sm hover:font-semibold mx-4"
                           href={innerItem.link}
-                          onClick={()=>setIsSideNavOpen(false)}
+                          onClick={() => setIsSideNavOpen(false)}
                         >
                           <div className="flex flex-col px-4 text-start">
                             {innerItem.label}
