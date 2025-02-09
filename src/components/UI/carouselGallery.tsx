@@ -20,10 +20,10 @@ const CarouselGallery = ({ props }: CarouselProps) => {
   const [toggler, setToggler] = useState(false);
 
   const preparedGallery = useMemo(() => {
-    let gallery = [];
+    const gallery = [];
 
     for (let i = 0; i < Math.floor(props?.length / 3); i++) {
-      let j = i * 3;
+      const j = i * 3;
       gallery[i] = {
         srcOne:
           props[j].media_type === "image"

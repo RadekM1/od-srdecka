@@ -1,6 +1,6 @@
 interface SwapBtnInterface {
   isSideNavOpen: boolean;
-  // eslint-disable-next-line
+
   setIsSideNavOpen: (open: boolean) => void;
 }
 

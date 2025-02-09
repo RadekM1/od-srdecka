@@ -10,7 +10,7 @@ import Link from "next/link";
 
 interface MobileMenuProps {
   isSideNavOpen: boolean;
-  // eslint-disable-next-line
+
   setIsSideNavOpen: (isSideNavOpen: boolean) => void;
 }
 

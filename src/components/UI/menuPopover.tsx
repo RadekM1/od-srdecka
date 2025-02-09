@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface MenuPopoverProps {
   popoverOpen: boolean;
-  // eslint-disable-next-line
+
   setPopoverOpen: (popoverOpen: boolean) => void;
   id: number;
   targetedPopover: number;
@@ -34,11 +34,15 @@ const MenuPopover = ({
         setPopoverOpen(false);
       }
     };
-    popoverOpen
-      ? document.addEventListener("mousedown", handleClickOutside)
-      : document.removeEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [popoverOpen, setPopoverOpen]);
+
+    if (popoverOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [popoverOpen]);
 
   return (
     <>

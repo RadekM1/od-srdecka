@@ -26,7 +26,7 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
   }, [wrapperRef]);
 
   useEffect(() => {
-    let html = document.querySelector("html");
+    const html = document.querySelector("html");
 
     if (html) {
       if (isShowing && html) {
