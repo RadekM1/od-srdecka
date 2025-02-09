@@ -25,7 +25,7 @@ const MiniGallery = ({ item, index }: MiniGalleryProps) => {
   const [activeId, setActiveId] = useState<number>(0);
   const [toggler, setToggler] = useState<boolean>(false);
 
-  const handleImgClick = (i:number) => {
+  const handleImgClick = (i: number) => {
     setActiveId(i);
     setToggler(true);
   };
