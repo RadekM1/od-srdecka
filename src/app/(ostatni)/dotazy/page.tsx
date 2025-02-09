@@ -13,8 +13,8 @@ const Page = () => {
         </span>
         <Faq />
         <SectionLine />
-        <Gallery />
       </section>
+      <Gallery />
     </>
   );
 };

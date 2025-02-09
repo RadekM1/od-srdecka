@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-const IndexSectionLine = () => {
+interface IndexSectionLineProps {
+  sectionAnchor: boolean;
+}
+
+const IndexSectionLine = ({ sectionAnchor }: IndexSectionLineProps) => {
   return (
     <div className="flex w-full mt-8 select-none items-center justify-center">
       <Image
@@ -8,7 +12,7 @@ const IndexSectionLine = () => {
         alt="oddělovač sekce"
         width={1283}
         height={20}
-        className="w-5/6 self-center my-14 "
+        className={`w-5/6 self-center ${sectionAnchor ? "mt-14" : "my-14"} `}
       />
     </div>
   );

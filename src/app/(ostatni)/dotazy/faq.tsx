@@ -17,7 +17,7 @@ const Faq = () => {
             value={`item-${i}`}
           >
             <AccordionTrigger>{item.question}</AccordionTrigger>
-            <AccordionContent className="mx-3">{item.answer}</AccordionContent>
+            <AccordionContent className=" p-2 ">{item.answer}</AccordionContent>
           </AccordionItem>
         );
       })}

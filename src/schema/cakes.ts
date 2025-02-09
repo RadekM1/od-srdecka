@@ -5,7 +5,8 @@ export const cakeProductSchema = z.object({
   alt: z.string(),
   title: z.string(),
   allergens: z.string(),
-  ingredients: z.array(z.string()),
+  variants: z.array(z.string()).nullable(),
+  price: z.number().optional(),
 });
 
 export const cakePriceList = z.object({

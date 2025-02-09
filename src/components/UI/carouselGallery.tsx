@@ -73,7 +73,7 @@ const CarouselGallery = ({ props }: CarouselProps) => {
                     <Image
                       width={300}
                       height={320}
-                      src={`/${img.srcOne}`}
+                      src={img.srcOne}
                       alt={img.altOne}
                       className="rounded-xl border-white object-cover carousel-img"
                       data-index={i * 3}
@@ -95,7 +95,7 @@ const CarouselGallery = ({ props }: CarouselProps) => {
                     <Image
                       width={250}
                       height={160}
-                      src={`/${img.srcTwo}`}
+                      src={img.srcTwo}
                       alt={img.altTwo}
                       className="rounded-xl object-cover carousel-img"
                       data-index={i * 3 + 1}
@@ -115,7 +115,7 @@ const CarouselGallery = ({ props }: CarouselProps) => {
                     <Image
                       width={250}
                       height={160}
-                      src={`/${img.srcThree}`}
+                      src={img.srcThree}
                       alt={img.altThree}
                       className="rounded-xl h-full object-cover carousel-img"
                       data-index={i * 3 + 2}

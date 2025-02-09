@@ -27,7 +27,7 @@ const Home = () => {
       <SectionTitleBlue title="Kde nás najdete?" />
       <WhereToFindUs />
       <Reference />
-      <IndexSectionLine />
+      <IndexSectionLine sectionAnchor={false} />
       <Gallery />
       <HearthSnake />
     </>

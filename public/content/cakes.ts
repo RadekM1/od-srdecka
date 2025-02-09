@@ -7,7 +7,7 @@ export const cakes : CakeProductSchema[] = [
         alt:'obrázek dortu - vanilkový korpus', 
         title:'Vanilkový korpus',
         allergens: '1,3,5,6,7,8',
-        ingredients: [
+        variants: [
             'vanilkový krém s ovocem (ovocné coulis nebo slaný karamel)',
             'čoko krém s ovocem (ovocné a nebo slaný karamel)',
             'pistáciový krém s malinami',
@@ -20,8 +20,14 @@ export const cakes : CakeProductSchema[] = [
         alt:'nevyplněno', 
         title:'Čokoládový korpus',
         allergens: 'nevyplněno',
-        ingredients: [
-            'nevyplněno'
+        variants: [
+            'vanilkový krém s ovocem',
+            'čoko krém s ovocem',
+            'čoko krém s malinami',
+            'čoko krém s oříšky a slaným karamelem',
+            'krém s kousky čokolády a banánem na způsob "krtka" a sl. karamelem nebo čoko ganáží',
+            'krém bílá čokoláda s malinami',
+            'pistáciový krém'
         ]
       },
       {
@@ -29,8 +35,8 @@ export const cakes : CakeProductSchema[] = [
         alt:'nevyplněno', 
         title:'Mrkvový dort',
         allergens: 'nevyplněno',
-        ingredients: [
-            'nevyplněno'
+        variants: [
+            's tvarohovým krémem, oříšky a slaným karamelem'
         ]
       },
       {
@@ -38,8 +44,8 @@ export const cakes : CakeProductSchema[] = [
         alt:'nevyplněno', 
         title:'Hruškový dort',
         allergens: 'nevyplněno',
-        ingredients: [
-            'nevyplněno'
+        variants: [
+            'čokoládový korpus, karamelový krém, hruškový rozvar',
         ]
       },
       {
@@ -47,8 +53,8 @@ export const cakes : CakeProductSchema[] = [
         alt:'nevyplněno', 
         title:'Pistáciový dort',
         allergens: 'nevyplněno',
-        ingredients: [
-            'nevyplněno'
+        variants: [
+            'pistáciový korpus, pistáciový krém s malinami'
         ]
       },
       

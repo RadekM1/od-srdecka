@@ -1,4 +1,8 @@
 import PageTitle from "@/components/pageTitle";
+import IndexSectionLine from "@/components/indexSectionLine";
+import Gallery from "@/components/gallery";
+import Desserts from "@/components/products/desserts";
+import { desserts } from "../../../../../public/content/desserts";
 
 const Page = () => {
   return (
@@ -8,10 +12,11 @@ const Page = () => {
         Pečeme sladké bary pro různé příležitosti - na svatby, narozeniny,
         Vánoce nebo jen tak ke kávě.
       </span>
-      <span className="text-center pb-10 px-2 ">Rády vám osladíme den!</span>
+      <span className="text-center pb-20 px-2 ">Rády vám osladíme den!</span>
       <PageTitle title="Menu" />
-      <a href=""></a>
-      <div>galerie dezertů</div>
+      <Desserts desserts={desserts} />
+      <IndexSectionLine sectionAnchor={false} />
+      <Gallery />
     </>
   );
 };
