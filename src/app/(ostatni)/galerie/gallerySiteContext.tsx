@@ -5,7 +5,7 @@ const offerProps = [
     src: "/gallery-site/dort-galerie.png",
     title: "Dorty",
     alt: "obrázek dortu",
-    link: "/nabidka/dorty",
+    link: "/galerie/dorty",
     sectionTitle: "Dorty",
     miniGallery: [
       {
@@ -29,7 +29,7 @@ const offerProps = [
     src: "/gallery-site/sladky-bar-galerie.png",
     title: "Sladký bar",
     alt: "obrázek sladkého baru",
-    link: "/nabidka/sladky-bar",
+    link: "/galerie/sladky-bar",
     sectionTitle: "Sladký bar",
     miniGallery: [
       {

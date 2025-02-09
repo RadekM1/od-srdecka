@@ -48,7 +48,7 @@ export default async function RootLayout({
   return (
     <html lang="cs">
       <body
-        className={`flex w-full text-[#061E4C] flex-col justify-center text-center ${satisfy.variable} ${OoohBaby.variable} ${abhaya.variable} ${oldStandard.variable} antialiased`}
+        className={`flex w-full text-[#061E4C]  flex-col justify-center text-center ${satisfy.variable} ${OoohBaby.variable} ${abhaya.variable} ${oldStandard.variable} antialiased`}
       >
         <header>
           <Navbar />

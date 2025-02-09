@@ -11,10 +11,10 @@ const offerProps = [
   },
   {
     src: "/offer-site/sladky-bar.png",
-    title: "Sladký bar",
+    title: "Dezerty",
     alt: "obrázek sladkého baru",
-    link: "/nabidka/sladky-bar",
-    sectionTitle: "Sladký bar",
+    link: "/nabidka/dezerty",
+    sectionTitle: "Dezerty",
   },
 ];
 

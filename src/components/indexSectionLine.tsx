@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const IndexSectionLine = () => {
   return (
-    <div className="flex w-full  select-none items-center justify-center">
+    <div className="flex w-full mt-8 select-none items-center justify-center">
       <Image
         src={"/heartsLine.svg"}
         alt="oddělovač sekce"

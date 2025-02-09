@@ -6,7 +6,7 @@ const Page = () => {
     <>
       <section className="flex max-w-6xl px-1 justify-center text-center mb-10 flex-col w-full">
         <PageTitle title="Galerie" />
-        <span className="text-center text-xl md:text-2xl">
+        <span className="text-center">
           Pokochejte se nad naší sladkou galerií a objevte, co všechno pro vás
           pečeme.
         </span>
