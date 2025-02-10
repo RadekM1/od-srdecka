@@ -4,7 +4,6 @@ import Link from "next/link";
 
 interface MobileMenuProps {
   isSideNavOpen: boolean;
-
   setIsSideNavOpen: (isSideNavOpen: boolean) => void;
 }
 
@@ -22,18 +21,17 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
             className="flex-1 divide-y text-white flex flex-col font-oldStandard text-lg divide-slate-100 overflow-auto"
           >
             {menuItems.map((item, i) => {
-              if (!item.menu) {
-                return (
-                  <Link
-                    key={i}
-                    className="flex flex-1 mx-4 border-b-0 my-2 items-center justify-between py-1 font-medium transition-all hover:text-gray-400 [&[data-state=open]>img]:rotate-180"
-                    href={item.link}
-                    onClick={() => setIsSideNavOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              }
+              return (
+                <Link
+                  key={i}
+                  className="flex flex-1 mx-4 border-b-0 my-2 items-center justify-between py-1 font-medium transition-all hover:text-gray-400 [&[data-state=open]>img]:rotate-180"
+                  href={item.link}
+                  onClick={() => setIsSideNavOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+
               {
                 /*
                   if (item.menu) {

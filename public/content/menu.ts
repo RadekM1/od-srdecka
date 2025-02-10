@@ -1,4 +1,7 @@
-export const menuItems = [
+export const menuItems : {
+  label: string, 
+  link: string
+}[] = [
   { label: "Úvod", link: "/" },
   { label: "O nás", link: "/o-nas" },
   {
