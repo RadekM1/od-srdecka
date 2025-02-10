@@ -9,9 +9,7 @@ const Page = () => {
     <>
       <section className="flex max-w-6xl px-1 items-center justify-center text-center mb-10 flex-col w-full">
         <PageTitle title="Galerie dortů" />
-        <span className="text-center font-oldStandard ">
-          Text k doplnění
-        </span>
+        <span className="text-center font-oldStandard ">Text k doplnění</span>
         <SectionLine />
         <ProductGallery productType="dessert" gallery={dessertsGallery} />
         <Reference />

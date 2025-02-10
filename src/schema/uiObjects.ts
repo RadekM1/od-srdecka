@@ -13,7 +13,5 @@ export const imgGallerySchema = z.object({
   thumbnail: z.string().optional(),
 });
 
-
-
 export type RefGallery = z.infer<typeof refGallerySchema>;
 export type ImgGallery = z.infer<typeof imgGallerySchema>;

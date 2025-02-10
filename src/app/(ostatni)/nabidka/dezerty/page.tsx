@@ -12,7 +12,9 @@ const Page = () => {
         Pečeme sladké bary pro různé příležitosti - na svatby, narozeniny,
         Vánoce nebo jen tak ke kávě.
       </span>
-      <span className="text-center font-oldStandard pb-20 px-2 ">Rády vám osladíme den!</span>
+      <span className="text-center font-oldStandard pb-20 px-2 ">
+        Rády vám osladíme den!
+      </span>
       <PageTitle title="Menu" />
       <Desserts desserts={desserts} />
       <IndexSectionLine sectionAnchor={false} />
