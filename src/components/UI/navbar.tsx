@@ -4,17 +4,13 @@ import { IoLogoInstagram } from "react-icons/io5";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import SwapBtn from "./swapBtn";
-import MenuPopover from "./menuPopover";
 import { menuItems } from "../../../public/content/menu";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const path = usePathname();
-  const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
-  const [isSideNavOpen, setIsSideNavOpen] = useState<boolean>(false);
-  const [targetedPopover, setTargetedPopover] = useState<number>(-1);
 
-  const isIndex: boolean = path === "/";
+  const [isSideNavOpen, setIsSideNavOpen] = useState<boolean>(false);
 
   return (
     <header className="w-full h-14 z-40 items-center fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard">
@@ -44,32 +40,17 @@ const Navbar = () => {
         <menu className="flex self-center text-nowrap items-center w-full h-full justify-end flex-row">
           <ul className="h-full flex flex-row">
             {menuItems.map((item, i) => {
-              const Component = item.menu ? "div" : Link;
               return (
-                <li key={i} className="w-full h-full flex flex-row">
-                  <Component
+                <ul key={i} className="w-full h-full flex flex-row">
+                  <Link
                     className="hover:text-gray-400 self-center h-full items-center ease-in-out duration-500"
-                    href={item.menu ? "#" : item.link}
+                    href={item.link}
                   >
-                    <ul
-                      onMouseOver={() => {
-                        setTargetedPopover(i);
-                        setPopoverOpen(true);
-                      }}
-                      className="mx-2 lg:mx-3 hidden relative md:block self-center h-full"
-                    >
+                    <li className="mx-2 lg:mx-3 hidden relative md:block self-center h-full">
                       {item.label}
-                      <MenuPopover
-                        index={isIndex}
-                        id={i}
-                        popoverOpen={popoverOpen}
-                        setPopoverOpen={setPopoverOpen}
-                        targetedPopover={targetedPopover}
-                        menuItems={item.menu}
-                      />
-                    </ul>
-                  </Component>
-                </li>
+                    </li>
+                  </Link>
+                </ul>
               );
             })}
           </ul>
