@@ -94,5 +94,6 @@ export default {
       "accordion-up": "accordion-up 0.2s ease-out",
     },
   },
-  plugins: [(await import("tailwindcss-animate")).default],
+  // eslint-disable-next-line
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
