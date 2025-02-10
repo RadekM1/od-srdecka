@@ -27,12 +27,12 @@ const ProductGallery = ({ gallery, productType }: ProductGallery) => {
 
   return (
     <>
-      <div className="flex flex-wrap gap-3 justify-center max-w-[1000px] w-full">
+      <div className="flex flex-wrap gap-3 justify-center w-full">
         {filteredGallery.map((img, i) => {
           return (
             <div
               key={i}
-              className={` ${productType === "cake" ? "w-[44%] md:w-[23%]" : "w-[30%] sm:w-[21%] md:w-[16%]"} 
+              className={` ${productType === "cake" ? "w-[44%] md:w-[24%]" : "w-[30%] sm:w-[21%] md:w-[19%]"} 
             rounded-md hover:bg-gray-700/80 hover:ease-in-out hover:duration-300  hover:text-white flex flex-col  
             text-center`}
             >

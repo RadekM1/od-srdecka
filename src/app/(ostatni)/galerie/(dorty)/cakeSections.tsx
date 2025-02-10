@@ -12,7 +12,6 @@ interface CakeSectionProps {
 
 const CakeSections = ({ cakeSections }: CakeSectionProps) => {
   const path = usePathname();
-  console.log(path);
 
   return (
     <div className="flex items-center self-center text-center flex-row w-full">

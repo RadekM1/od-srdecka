@@ -13,7 +13,7 @@ const LineAddPhotosBtn = ({ showAll, setShowAll }: LineAddPhotosBtnProps) => {
   };
 
   return (
-    <div className="mt-20 mb-14 relative flex flex-col items-center w-full mx-4 max-w-[1000px]">
+    <div className="mt-20 mb-14 relative flex flex-col items-center w-full  max-w-[1000px]">
       <img
         className="absolute top-1/2 -translate-y-1/2 w-full"
         src="/others/line.svg"
