@@ -31,32 +31,6 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
                   {item.label}
                 </Link>
               );
-
-              {
-                /*
-                  if (item.menu) {
-                return (
-                  <AccordionItem key={i} value={`item-${i}`}>
-                    <AccordionTrigger>{item.label}</AccordionTrigger>
-                    <AccordionContent>
-                      {item.menu.map((innerItem, j) => (
-                        <Link
-                          key={j}
-                          className="self-start text-start text-base hover:font-semibold mx-4"
-                          href={innerItem.link}
-                          onClick={() => setIsSideNavOpen(false)}
-                        >
-                          <div className="flex flex-col px-4 text-start">
-                            {innerItem.label}
-                          </div>
-                        </Link>
-                      ))}
-                    </AccordionContent>
-                  </AccordionItem>
-                );
-              }
-                  */
-              }
             })}
           </nav>
         </aside>
