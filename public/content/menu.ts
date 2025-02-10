@@ -1,22 +1,20 @@
 export const menuItems = [
-  { label: "Úvod", link: "/", menu: null },
-  { label: "O nás", link: "/o-nas", menu: null },
+  { label: "Úvod", link: "/" },
+  { label: "O nás", link: "/o-nas" },
   {
     label: "Nabídka",
     link: "/nabidka",
-    menu: null,
   },
-  { label: "Galerie", link: "/galerie", menu: null },
+  { label: "Galerie", link: "/galerie"},
   {
     label: "Blog",
     link: "/blog",
-    menu: null
+
   },
-  { label: "Aktuality", link: "/aktuality", menu: null },
-  { label: "Dotazy", link: "/dotazy", menu: null },
+  { label: "Aktuality", link: "/aktuality" },
+  { label: "Dotazy", link: "/dotazy"},
   {
     label: "Kontakt",
     link: "/kontakt",
-    menu: null
   }
 ];
