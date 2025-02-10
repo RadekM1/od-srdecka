@@ -1,6 +1,6 @@
 import SectionTitle from "./sectionTitle";
 import CarouselGallery from "./UI/carouselGallery";
-import { shuffleArray } from "@/lib/functions/arrayShuffle";
+import { shuffleArray } from "../lib/functions/arrayShuffle";
 
 const gallery = [
   {

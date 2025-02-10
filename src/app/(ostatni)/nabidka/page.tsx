@@ -1,4 +1,4 @@
-import PageTitle from "@/components/pageTitle";
+import PageTitle from "../../../components/pageTitle";
 import OfferSiteContext from "./offerSiteContext";
 
 const Page = () => {

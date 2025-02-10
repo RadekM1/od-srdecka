@@ -3,12 +3,12 @@ import {
   Abhaya_Libre,
   Old_Standard_TT,
   Oooh_Baby,
-  Satisfy,
+  Dancing_Script,
 } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/UI/navbar";
+import Navbar from "../components/UI/navbar";
 import React from "react";
-import Footer from "@/components/footer";
+import Footer from "../components/footer";
 
 const OoohBaby = Oooh_Baby({
   weight: "400",
@@ -16,10 +16,10 @@ const OoohBaby = Oooh_Baby({
   subsets: ["latin", "latin-ext"],
 });
 
-const satisfy = Satisfy({
+const dancing = Dancing_Script({
   weight: "400",
-  variable: "--font-satisfy",
-  subsets: ["latin"],
+  variable: "--font-dancing",
+  subsets: ["latin", "latin-ext"],
 });
 
 const abhaya = Abhaya_Libre({
@@ -48,7 +48,7 @@ export default async function RootLayout({
   return (
     <html lang="cs">
       <body
-        className={`flex w-full text-[#061E4C]  flex-col justify-center text-center ${satisfy.variable} ${OoohBaby.variable} ${abhaya.variable} ${oldStandard.variable} antialiased`}
+        className={`flex w-full text-[#061E4C]  flex-col justify-center text-center ${dancing.variable} ${OoohBaby.variable} ${abhaya.variable} ${oldStandard.variable} antialiased`}
       >
         <header>
           <Navbar />

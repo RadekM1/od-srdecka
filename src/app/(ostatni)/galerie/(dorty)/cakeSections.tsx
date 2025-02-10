@@ -19,7 +19,7 @@ const CakeSections = ({ cakeSections }: CakeSectionProps) => {
         return (
           <Fragment key={i}>
             <div
-              className={` w-[80px]  md:w-[120px] h-[20px] items-center text-base md:text-xl lg:text-2xl absolute -top-8  md:-top-10  font-satisfy ${section.position} text-nowrap self-center text-center  flex flex-col`}
+              className={` w-[80px]  md:w-[120px] h-[20px] items-center text-base md:text-xl lg:text-2xl absolute -top-8  md:-top-10  font-dancing ${section.position} text-nowrap self-center text-center  flex flex-col`}
             >
               <Link
                 className={` z-10 ${path === section.url ? "text-[#061E4C] " : "text-gray-400 hover:text-gray-500 duration-300 ease-in-out"}`}
@@ -32,12 +32,14 @@ const CakeSections = ({ cakeSections }: CakeSectionProps) => {
                   {section.label}
                 </span>
               )}
-              <Image
-                width={82}
-                height={20}
-                src="/others/srdicka-horizontalne.svg"
-                alt="srdíčka"
-              />
+              {path === section.url && (
+                <Image
+                  width={82}
+                  height={20}
+                  src="/others/srdicka-horizontalne.svg"
+                  alt="srdíčka"
+                />
+              )}
             </div>
           </Fragment>
         );

@@ -32,7 +32,7 @@ const Footer = () => {
 
         <div className="flex w-1/2 md:w-1/3 flex-col  items-center  h-full ">
           <div className="max-w-32 flex flex-col gap-4 md:gap-8 justify-between  self-center items-center sm:max-w-44 md:max-w-60">
-            <Link href={"/kontakt/objednavkovy-formular"}>
+            <Link href={"/objednavka"}>
               <button className="md:text-xl px-8 py-2 lg:text-2xl hover:-translate-y-1 ease-in-out duration-500 bg-white/40 rounded-full hover:bg-white/20">
                 Objednat
               </button>

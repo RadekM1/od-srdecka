@@ -25,7 +25,11 @@ const Navbar = () => {
         <ul className="flex self-center align-middle items-center h-full">
           {path !== "/" && (
             <li className="self-center h-full justify-center items-center flex text-center">
-              <Link className="mx-2" href={"/"}>
+              <Link
+                onClick={() => setIsSideNavOpen(false)}
+                className="mx-2"
+                href={"/"}
+              >
                 <img
                   className="h-14  mr-3 sm:mr-0 lg:p-1 w-14"
                   src={"/logoMain.svg"}
@@ -71,7 +75,7 @@ const Navbar = () => {
           </ul>
           <Link
             className="text-base relative py-1 lg:text-xl hover:-translate-y-1 ease-in-out duration-500 bg-white/40 rounded-full hover:bg-white/20 px-3 ml-2 lg:px-5"
-            href="/kontakt/objednavkovy-formular"
+            href="/objednavka"
           >
             Objednat
           </Link>

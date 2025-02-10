@@ -63,10 +63,10 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
           >
             <header id="header-2a" className="flex p-3 items-center gap-4">
               <div className="flex flex-col h-full pt-5 w-full">
-                <h3 className="flex-1 absolute right-1/2 z-30 text-2xl translate-x-1/2 lg:text-3xl font-satisfy">
+                <h3 className="flex-1 absolute right-1/2 z-30 text-2xl translate-x-1/2 lg:text-3xl font-dancing">
                   {data.title}
                 </h3>
-                <h3 className="flex-1 absolute text-gray-100 select-none top-5 translate-x-[45%] z-20 text-2xl right-1/2 lg:text-3xl font-satisfy">
+                <h3 className="flex-1 absolute text-gray-100 select-none top-5 translate-x-[45%] z-20 text-2xl right-1/2 lg:text-3xl font-dancing">
                   {data.title}
                 </h3>
               </div>
@@ -93,7 +93,7 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
                 ))}
               </ul>
               <div className="bg-[#061E4C] flex flex-col h-full">
-                <span className="text-base w-full text-center text-white font-thin py-4 tracking-widest font-satisfy">
+                <span className="text-base w-full text-center text-white font-thin py-4 tracking-widest font-dancing">
                   alergeny {data.allergens}
                 </span>
               </div>

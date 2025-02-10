@@ -46,6 +46,8 @@ const ProductGallery = ({ gallery, productType }: ProductGallery) => {
                   alt={img.alt}
                   width={500}
                   height={500}
+                  loading="eager"
+                  priority={true}
                 />
               </div>
             </div>

@@ -1,6 +1,6 @@
-import AboutUs from "@/components/aboutUs";
-import Gallery from "@/components/gallery";
+import Gallery from "../../../components/gallery";
 import AboutUsComponentTextAsideImg from "./aboutUsPageText";
+import AboutUs from "../../../components/aboutUs";
 
 const Page = () => {
   return (

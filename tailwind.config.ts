@@ -52,7 +52,7 @@ export default {
         },
       },
       fontFamily: {
-        satisfy: ["var(--font-satisfy)", "cursive"],
+        dancing: ["var(--font-dancing)", "normal"],
         abhaya: ["var(--font-abhaya)", "serif"],
         oldStandard: ["var(--font-oldStandard)", "serif"],
         OoohBaby: ["var(--font-OoohBaby)", "serif"],

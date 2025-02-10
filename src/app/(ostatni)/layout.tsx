@@ -1,4 +1,4 @@
-import HearthSnake from "@/components/index/hearthSnake";
+import HearthSnake from "../../components/index/hearthSnake";
 import React from "react";
 
 const OthersLayout = ({

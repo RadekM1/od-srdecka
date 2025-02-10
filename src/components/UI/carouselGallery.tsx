@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { ImgGallery } from "@/schema/uiObjects";
+import { ImgGallery } from "../../schema/uiObjects";
 import LightBox from "./lightbox";
 import { RxVideo } from "react-icons/rx";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components/UI/carousel";
+} from "../../components/UI/carousel";
 
 interface CarouselProps {
   props: ImgGallery[];

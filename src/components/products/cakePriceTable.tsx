@@ -6,7 +6,7 @@ interface CakePriceListProps {
 
 const CakePriceTable = ({ priceList }: CakePriceListProps) => {
   return (
-    <div className="max-w-[1000px] text-sm lg:text-base p-4 mb-10 text-white bg-[#061E4C] font-satisfy flex flex-col md:flex-row w-[90%] rounded-xl ">
+    <div className="max-w-[1000px] text-sm lg:text-base p-4 mb-10 text-white bg-[#061E4C] font-dancing flex flex-col md:flex-row w-[90%] rounded-xl ">
       {priceList.map((cake, i) => {
         return (
           <div

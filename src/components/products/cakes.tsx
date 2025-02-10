@@ -42,7 +42,7 @@ const Cakes = ({ cakes }: cakesProps) => {
                 Čti více
               </span>
             </div>
-            <div className="font-satisfy pt-2 self-center items-center flex">
+            <div className="font-dancing pt-2 self-center items-center flex">
               {cake.title}
             </div>
           </div>

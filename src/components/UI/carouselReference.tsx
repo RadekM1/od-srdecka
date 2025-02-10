@@ -1,13 +1,13 @@
 "use client";
 
-import { RefGallery } from "@/schema/uiObjects";
+import { RefGallery } from "../../schema/uiObjects";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/UI/carousel";
+} from "../../components/UI/carousel";
 
 interface CarouselProps {
   props: RefGallery[];

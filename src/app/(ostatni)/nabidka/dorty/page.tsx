@@ -1,10 +1,10 @@
 import PageTitle from "@/components/pageTitle";
 import TextUnderTitle from "./textUnderTitle";
-import IndexSectionLine from "@/components/indexSectionLine";
+import IndexSectionLine from "../../../../components/indexSectionLine";
 import { cakes, cakesPriceList } from "../../../../../public/content/cakes";
-import Cakes from "@/components/products/cakes";
-import CakePriceTable from "@/components/products/cakePriceTable";
-import Gallery from "@/components/gallery";
+import Cakes from "../../../../components/products/cakes";
+import CakePriceTable from "../../../../components/products/cakePriceTable";
+import Gallery from "../../../../components/gallery";
 import NotesUnderTable from "./notesUnderTable";
 
 const Page = () => {

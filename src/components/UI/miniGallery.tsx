@@ -33,7 +33,7 @@ const MiniGallery = ({ item, index }: MiniGalleryProps) => {
   return (
     <div className="max-w-[350px]  w-full  mx-6 flex  justify-between flex-col">
       <div className="my-12 mt-8  mb-6">
-        <span className="text-3xl md:text-4xl  lg:text-5xl font-satisfy  w-full text-center">
+        <span className="text-3xl md:text-4xl  lg:text-5xl font-dancing  w-full text-center">
           {/*// eslint-disable-next-line*/}
           {item.sectionTitle}
         </span>

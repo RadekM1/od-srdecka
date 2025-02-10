@@ -5,7 +5,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/UI/accordion";
+} from "./accordion";
 import Link from "next/link";
 
 interface MobileMenuProps {
@@ -25,7 +25,7 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
         >
           <nav
             aria-label="side navigation"
-            className="flex-1 divide-y text-white flex flex-col font-oldStandard text-base divide-slate-100 overflow-auto"
+            className="flex-1 divide-y text-white flex flex-col font-oldStandard text-lg divide-slate-100 overflow-auto"
           >
             <Accordion type="single" collapsible>
               {menuItems.map((item, i) => {
@@ -48,7 +48,7 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
                       {item.menu.map((innerItem, j) => (
                         <Link
                           key={j}
-                          className="self-start text-start text-sm hover:font-semibold mx-4"
+                          className="self-start text-start text-base hover:font-semibold mx-4"
                           href={innerItem.link}
                           onClick={() => setIsSideNavOpen(false)}
                         >

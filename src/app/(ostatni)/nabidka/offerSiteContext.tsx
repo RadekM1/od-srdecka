@@ -29,7 +29,7 @@ const OfferSiteContext = () => {
               className="max-w-[350px] mx-5 w-full  flex  justify-between flex-col"
             >
               <div className="my-12 mt-8 mb-6">
-                <span className="text-3xl md:text-4xl lg:text-5xl font-satisfy  w-full text-center">
+                <span className="text-3xl md:text-4xl lg:text-5xl font-dancing  w-full text-center">
                   {item.sectionTitle}
                 </span>
               </div>
