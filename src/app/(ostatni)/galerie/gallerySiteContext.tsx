@@ -5,7 +5,7 @@ const offerProps = [
     src: "/gallery-site/dort-galerie.png",
     title: "Dorty",
     alt: "obrázek dortu",
-    link: "/galerie/dorty",
+    link: "/galerie/dorty-svatebni",
     sectionTitle: "Dorty",
     miniGallery: [
       {

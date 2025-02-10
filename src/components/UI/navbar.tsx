@@ -14,6 +14,8 @@ const Navbar = () => {
   const [isSideNavOpen, setIsSideNavOpen] = useState<boolean>(false);
   const [targetedPopover, setTargetedPopover] = useState<number>(-1);
 
+  const isIndex: boolean = path === "/";
+
   return (
     <header className="w-full h-14 z-40 items-center fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard">
       <nav
@@ -54,6 +56,7 @@ const Navbar = () => {
                     >
                       {item.label}
                       <MenuPopover
+                        index={isIndex}
                         id={i}
                         popoverOpen={popoverOpen}
                         setPopoverOpen={setPopoverOpen}

@@ -3,18 +3,12 @@ import Link from "next/link";
 
 interface MenuPopoverProps {
   popoverOpen: boolean;
-
+  index: boolean;
   setPopoverOpen: (popoverOpen: boolean) => void;
   id: number;
   targetedPopover: number;
   menuItems: { label: string; link: string }[] | null;
 }
-
-const index = true;
-const menuStyle = index
-  ? "bg-white text-[#061E4C] "
-  : "bg-[#061E4C]  text-white";
-const itemStyle = index ? "hover:text-[#374b6f]" : "hover:text-white/60";
 
 const MenuPopover = ({
   popoverOpen,
@@ -22,8 +16,14 @@ const MenuPopover = ({
   id,
   targetedPopover,
   menuItems,
+  index,
 }: MenuPopoverProps) => {
   const popOverRef = useRef<HTMLDivElement>(null);
+
+  const menuStyle = index
+    ? "bg-white text-[#061E4C] "
+    : "bg-[#061E4C]  text-white";
+  const itemStyle = index ? "hover:text-[#374b6f]" : "";
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -49,7 +49,7 @@ const MenuPopover = ({
       {popoverOpen && id === targetedPopover && menuItems && (
         <div
           ref={popOverRef}
-          className={`py-3 px-5 top-12 absolute flex flex-col shadow-xl  text-base right-1/2 min-w-[280px] translate-x-1/2 ${menuStyle} z-50  rounded-2xl`}
+          className={`py-3 px-5 ${index ? "top-12 rounded-2xl" : "top-9 rounded-b-2xl"} absolute flex flex-col shadow-xl text-sm lg:text-base right-1/2 min-w-[280px] translate-x-1/2 ${menuStyle} z-50  `}
         >
           {Array.isArray(menuItems) &&
             menuItems.map((item, i) => {

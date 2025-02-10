@@ -38,7 +38,7 @@ const Desserts = ({ desserts }: dessertProps) => {
                 width={500}
                 height={500}
               />
-              <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base bg-white/30 rounded-full px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden  group-hover:block ease-in-out text-white -translate-x-1/2">
+              <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base bg-white/30 rounded-full px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden  group-hover:block duration-300 ease-in-out text-white -translate-x-1/2">
                 Čti více
               </span>
             </div>

@@ -2,12 +2,17 @@ import SectionTitle from "../sectionTitle";
 import Link from "next/link";
 
 const OfferImg = [
-  { src: "/index/dort.png", title: "Dorty", alt: "obrázek dortu", link: "#" },
+  {
+    src: "/index/dort.png",
+    title: "Dorty",
+    alt: "obrázek dortu",
+    link: "/nabidka/dorty",
+  },
   {
     src: "/index/sladky-bar.png",
-    title: "Sladký bar",
+    title: "Dezerty",
     alt: "obrázek sladkého baru",
-    link: "/nabidka/sladky-bar",
+    link: "/nabidka/dezerty",
   },
 ];
 
@@ -22,7 +27,7 @@ const BlogImg = [
     src: "index/nejcastejsi-dotazy.png",
     title: "Nejčastější dotazy",
     alt: "obrázek nejčastější dotaz",
-    link: "/dotazy/platba-a-doprava",
+    link: "/dotazy",
   },
 ];
 

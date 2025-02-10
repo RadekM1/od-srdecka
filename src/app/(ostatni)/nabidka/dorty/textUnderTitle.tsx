@@ -19,7 +19,7 @@ const TextUnderTitle = () => {
         </a>
         <Link
           className="bg-[#061E4C] text-base hover:bg-[#061E4C]/80 duration-300 ease-in-out text-white w-32 py-2 rounded-xl"
-          href="/galerie/dorty"
+          href="/galerie/dorty-svatebni"
         >
           Fotogalerie
         </Link>
