@@ -1,7 +1,10 @@
+import { cakesGallery } from "../../../../../../public/content/temporary-galleries";
+import ProductGallery from "@/components/UI/productGallery";
+
 const Page = () => {
   return (
     <>
-      <div className="w-full flex">svatební dorte</div>
+      <ProductGallery productType="cake" gallery={cakesGallery} />
     </>
   );
 };

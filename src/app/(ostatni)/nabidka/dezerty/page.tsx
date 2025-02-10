@@ -8,11 +8,11 @@ const Page = () => {
   return (
     <>
       <PageTitle title="Dezerty" />
-      <span className="text-center px-2 font-semibold ">
+      <span className="text-center font-oldStandard px-2 font-semibold ">
         Pečeme sladké bary pro různé příležitosti - na svatby, narozeniny,
         Vánoce nebo jen tak ke kávě.
       </span>
-      <span className="text-center pb-20 px-2 ">Rády vám osladíme den!</span>
+      <span className="text-center font-oldStandard pb-20 px-2 ">Rády vám osladíme den!</span>
       <PageTitle title="Menu" />
       <Desserts desserts={desserts} />
       <IndexSectionLine sectionAnchor={false} />

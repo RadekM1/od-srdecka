@@ -53,7 +53,7 @@ const MiniGallery = ({ item, index }: MiniGalleryProps) => {
                   height={500}
                 />
 
-                <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base bg-white/30 rounded-full px-3 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden  group-hover:block ease-in-out text-white -translate-x-1/2">
+                <span className="absolute top-1/2 -translate-y-1/2 text-xs sm:text-base bg-white/30 rounded-full px-1 sm:px-3 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden  group-hover:block ease-in-out text-white -translate-x-1/2">
                   Otevřít celou galerii{" "}
                 </span>
               </Link>
