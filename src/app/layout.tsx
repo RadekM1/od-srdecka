@@ -50,9 +50,7 @@ export default async function RootLayout({
       <body
         className={`flex w-full text-[#061E4C]  flex-col justify-center text-center ${dancing.variable} ${OoohBaby.variable} ${abhaya.variable} ${oldStandard.variable} antialiased`}
       >
-        <header>
-          <Navbar />
-        </header>
+        <Navbar />
         <div className="h-[56px] bg-[#061E4C]"></div>
         {children}
         <Footer />
