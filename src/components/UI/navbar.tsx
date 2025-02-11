@@ -13,12 +13,11 @@ const Navbar = () => {
   const [isSideNavOpen, setIsSideNavOpen] = useState<boolean>(false);
 
   return (
-    <nav 
-    role="navigaton"
-    className="w-full h-14 z-40 items-center fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard">
-      <div
-        className="flex sticky items-center justify-center top-0 flex-row md:text-sm lg:text-base xl:text-xl mx-2 w-full text-white"
-      >
+    <nav
+      role="navigaton"
+      className="w-full h-14 z-40 items-center fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard"
+    >
+      <div className="flex sticky items-center justify-center top-0 flex-row md:text-sm lg:text-base xl:text-xl mx-2 w-full text-white">
         <ul className="flex self-center align-middle items-center h-full">
           {path !== "/" && (
             <li className="self-center h-full justify-center items-center flex text-center">
