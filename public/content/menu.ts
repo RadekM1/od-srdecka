@@ -11,7 +11,7 @@ export const menuItems : {
   { label: "Galerie", link: "/galerie"},
   {
     label: "Blog",
-    link: "/blog",
+    link: "/blog-bezlepove-recepty-sladke",
 
   },
   { label: "Aktuality", link: "/aktuality" },

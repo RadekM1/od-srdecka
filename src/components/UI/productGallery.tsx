@@ -53,7 +53,11 @@ const ProductGallery = ({ gallery, productType }: ProductGallery) => {
             </div>
           );
         })}
-        <LineAddPhotosBtn showAll={showAll} setShowAll={setShowAll} />
+        <LineAddPhotosBtn
+          label="Chci vidět další fotky"
+          showAll={showAll}
+          setShowAll={setShowAll}
+        />
       </div>
       <LightBox
         input={gallery}

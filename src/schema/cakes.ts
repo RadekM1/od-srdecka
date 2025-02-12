@@ -20,8 +20,15 @@ export const cakeGallerySectionSchema = z.object({
   position: z.string(),
 });
 
+export const blogSectionSchema = z.object({
+  url: z.string(),
+  label: z.string(),
+  position: z.string(),
+});
+
 export type GalleryCakeSectionsSchema = z.infer<
   typeof cakeGallerySectionSchema
 >;
+export type BlogSectionsSchema = z.infer<typeof blogSectionSchema>;
 export type CakePriceList = z.infer<typeof cakePriceList>;
 export type CakeProductSchema = z.infer<typeof cakeProductSchema>;
