@@ -24,7 +24,7 @@ const Home = () => {
         <AboutUsComponentIndexAsideImg />
       </AboutUs>
       <Flowers />
-      <SectionTitleBlue title="Kde nás najdete?" />
+      <SectionTitleBlue isIndex={true} title="Kde nás najdete?" />
       <WhereToFindUs />
       <Reference />
       <IndexSectionLine sectionAnchor={false} />

@@ -19,6 +19,8 @@ const CarouselGallery = ({ props }: CarouselProps) => {
   const [activeId, setActiveId] = useState<number>(0);
   const [toggler, setToggler] = useState(false);
 
+  console.log(activeId);
+
   const preparedGallery = useMemo(() => {
     const gallery = [];
 
@@ -62,7 +64,7 @@ const CarouselGallery = ({ props }: CarouselProps) => {
               <CarouselItem key={i} className="sm:basis-1/2 px-1 lg:basis-1/3">
                 <div className="flex h-full flex-col">
                   <div
-                    onClick={() => handleImgClick(i)}
+                    onClick={() => handleImgClick(i * 3)}
                     className="flex group w-full hover:brightness-50 relative ease-in-out duration-300 cursor-pointer"
                   >
                     {img.typeOne === "video" && (
@@ -76,7 +78,7 @@ const CarouselGallery = ({ props }: CarouselProps) => {
                       src={img.srcOne}
                       alt={img.altOne}
                       className="rounded-xl border-white object-cover carousel-img"
-                      data-index={i * 3}
+                      //data-index={(i * 3) + 1}
                       style={{ width: "500px", height: "320px" }}
                     />
                   </div>
@@ -84,7 +86,7 @@ const CarouselGallery = ({ props }: CarouselProps) => {
                 <div style={{ width: "16px" }}>&nbsp;</div>
                 <div className="flex h-[320px] flex-col">
                   <div
-                    onClick={() => handleImgClick(i * 2)}
+                    onClick={() => handleImgClick(i * 3 + 1)}
                     className="flex hover:brightness-50 w-full relative ease-in-out duration-300 cursor-pointer"
                   >
                     {img.typeTwo === "video" && (
@@ -98,13 +100,13 @@ const CarouselGallery = ({ props }: CarouselProps) => {
                       src={img.srcTwo}
                       alt={img.altTwo}
                       className="rounded-xl object-cover carousel-img"
-                      data-index={i * 3 + 1}
+                      //data-index={(i * 3) + 1}
                       style={{ width: "500px", height: "156px" }}
                     />
                   </div>
                   <div className="h-[8px] text-white">&nbsp;</div>
                   <div
-                    onClick={() => handleImgClick(i * 3)}
+                    onClick={() => handleImgClick(i * 3 + 2)}
                     className="flex w-full relative hover:brightness-50 ease-in-out duration-300 flex-grow cursor-pointer"
                   >
                     {img.typeThree === "video" && (
@@ -118,7 +120,7 @@ const CarouselGallery = ({ props }: CarouselProps) => {
                       src={img.srcThree}
                       alt={img.altThree}
                       className="rounded-xl h-full object-cover carousel-img"
-                      data-index={i * 3 + 2}
+                      //data-index={(i * 3) + 2}
                       style={{ width: "500px", height: "156px" }}
                     />
                   </div>

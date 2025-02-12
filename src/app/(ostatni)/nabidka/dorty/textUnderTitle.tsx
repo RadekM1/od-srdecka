@@ -12,13 +12,13 @@ const TextUnderTitle = () => {
       </span>
       <div className="flex flex-row pb-14 gap-12 font-oldStandard">
         <a
-          className="bg-[#061E4C] text-base hover:bg-[#061E4C]/80 duration-300 ease-in-out  text-white w-32 py-2 rounded-xl"
+          className="bg-[#061E4C] text-base hover:bg-white hover:text-[#061E4C] border-[1px] border-[#061E4C]  duration-300 ease-in-out  text-white w-32 py-2 rounded-xl"
           href="#cenik-kotva"
         >
           Ceník
         </a>
         <Link
-          className="bg-[#061E4C] text-base hover:bg-[#061E4C]/80 duration-300 ease-in-out text-white w-32 py-2 rounded-xl"
+          className="bg-[#061E4C] text-base hover:bg-white hover:text-[#061E4C] border-[1px] border-[#061E4C] duration-300 ease-in-out text-white w-32 py-2 rounded-xl"
           href="/galerie/dorty-svatebni"
         >
           Fotogalerie

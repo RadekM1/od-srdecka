@@ -1,6 +1,5 @@
 import SectionTitle from "./sectionTitle";
 import CarouselGallery from "./UI/carouselGallery";
-import { shuffleArray } from "../lib/functions/arrayShuffle";
 
 const gallery = [
   {
@@ -72,13 +71,11 @@ const gallery = [
   },
 ];
 
-const shuffledArray = shuffleArray(gallery);
-
 const Gallery = () => {
   return (
     <div className="w-full  mb-6 flex flex-col self-center items-center">
       <SectionTitle indexPage={false} title="Prozkoumejte naši galerii" />
-      <CarouselGallery props={shuffledArray} />
+      <CarouselGallery props={gallery} />
     </div>
   );
 };
