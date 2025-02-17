@@ -2,7 +2,7 @@ import { wpFetchBlogArticleSweet } from "@/lib/query/articles-sweets-fetch";
 import Article from "@/components/article";
 import Image from "next/image";
 
-export const relative = 10;
+export const revalidate = 10;
 
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const id = (await params).slug.split("--")[1] ?? null;
