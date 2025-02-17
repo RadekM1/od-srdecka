@@ -13,7 +13,7 @@ const blogSections = [
   },
 ];
 
-const Page = () => {
+const Page = async () => {
   return (
     <>
       <section className="flex mx-3 max-w-[1000px] px-2 justify-center items-center text-center mb-10 flex-col w-full">
