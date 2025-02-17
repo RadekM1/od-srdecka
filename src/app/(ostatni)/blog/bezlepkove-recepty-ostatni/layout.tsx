@@ -1,5 +1,3 @@
-import BlogArticleList from "@/components/UI/blogArticleList";
-import { blogGallery } from "../../../../../public/content/temporary-galleries";
 import React from "react";
 import Gallery from "@/components/gallery";
 

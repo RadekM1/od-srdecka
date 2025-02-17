@@ -1,4 +1,4 @@
-import { mobileMenuItems } from "../../../public/content/menu";
+import { mobileMenuItems } from "../../../public/content/mobile-menu";
 import {
   Accordion,
   AccordionContent,

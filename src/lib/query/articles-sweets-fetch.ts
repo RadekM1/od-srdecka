@@ -31,8 +31,14 @@ export const wpFetchBlogArticlesSweets = async () => {
       return {
         id: article.id,
         title: article.acf.titulek ?? "žádný titulek",
-        thumbnailSrc: article.acf.uvodni_obrazek && article.acf.uvodni_obrazek.url ? article.acf.uvodni_obrazek.url : '',
-        thumbnailAlt: article.acf.uvodni_obrazek && article.acf.uvodni_obrazek.alt ? article.acf.uvodni_obrazek.alt : "neuvedeno",
+        thumbnailSrc:
+          article.acf.uvodni_obrazek && article.acf.uvodni_obrazek.url
+            ? article.acf.uvodni_obrazek.url
+            : "",
+        thumbnailAlt:
+          article.acf.uvodni_obrazek && article.acf.uvodni_obrazek.alt
+            ? article.acf.uvodni_obrazek.alt
+            : "neuvedeno",
         slug: `${slug}--${article.id}`,
       };
     });

@@ -1,6 +1,5 @@
 import BlogSections from "../blogSections";
 
-
 const blogSections = [
   {
     url: "/blog/bezlepkove-recepty-sladke",

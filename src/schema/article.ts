@@ -81,4 +81,4 @@ export type WpAcfFetchOnlyArticle = z.infer<typeof wpAcfFetchOnlyArticle>;
 export type WpAcfArticlesFetch = z.infer<typeof wpAcfArticlesFetch>;
 export type ArticlesListSchema = z.infer<typeof articlesListSchema>;
 export type ArticleComponentData = z.infer<typeof wpArticleSchema>;
-export type WpImageSchema = z.infer<typeof wpImageSchema>
+export type WpImageSchema = z.infer<typeof wpImageSchema>;

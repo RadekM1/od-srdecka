@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <>
       <section className="flex max-w-[1000px] px-1 items-center justify-center text-center mb-10 flex-col w-full">
-        <PageTitle title="Galerie dezertů" />
+        <PageTitle title="Galerie sladkého bartu" />
         <span className="text-center font-oldStandard ">Text k doplnění</span>
         <SectionLine />
         <ProductGallery productType="dessert" gallery={dessertsGallery} />

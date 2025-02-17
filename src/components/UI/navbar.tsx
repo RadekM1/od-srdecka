@@ -5,9 +5,8 @@ import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import SwapBtn from "./swapBtn";
 import MenuPopover from "./menuPopover";
-import { menuItems } from "../../../public/content/mobile-menu";
+import { menuItems } from "../../../public/content/menu";
 import { usePathname } from "next/navigation";
-import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const path = usePathname();
@@ -15,8 +14,8 @@ const Navbar = () => {
   const [isSideNavOpen, setIsSideNavOpen] = useState<boolean>(false);
   const [targetedPopover, setTargetedPopover] = useState<number>(-1);
 
-  const isIndex = "/" === path;
-  const router = useRouter();
+  const mainPath: string =
+    path.split("/")[1].length > 2 ? path.split("/")[1] : "index";
 
   return (
     <header className="w-full h-14 z-40 items-center fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard">
@@ -42,13 +41,14 @@ const Navbar = () => {
         <menu className="flex self-center text-nowrap items-center w-full h-full justify-end flex-row">
           <ul className="h-full flex flex-row">
             {menuItems.map((item, i) => {
-              const Component = item.menu ? "div" : Link;
+              console.log(item.link === path || path.startsWith(item.link));
+              console.log("odkaz:", item.link);
+              console.log("cesta:", path);
               return (
                 <li key={i} className="w-full h-full flex flex-row">
-                  <Component
-                    onClick={() => router.push(item.link)}
-                    className="hover:text-gray-400 self-center h-full cursor-pointer items-center ease-in-out duration-500"
-                    href={item.menu ? "#" : item.link || "#"}
+                  <div
+                    className={`hover:text-gray-400 self-center h-full cursor-pointer items-center ease-in-out duration-500`}
+                    onClick={() => setPopoverOpen(false)}
                   >
                     <ul
                       onMouseOver={() => {
@@ -57,24 +57,35 @@ const Navbar = () => {
                       }}
                       className="mx-2 lg:mx-3 hidden relative md:block self-center h-full"
                     >
-                      {item.label}
+                      <Link
+                        className={`${
+                          (path.startsWith(item.link) &&
+                            item.link.length > 2) ||
+                          (item.link === "/" && path === "/")
+                            ? "text-gray-400"
+                            : ""
+                        }`}
+                        href={item.link}
+                      >
+                        {item.label}
+                      </Link>
                       <MenuPopover
                         id={i}
                         popoverOpen={popoverOpen}
                         setPopoverOpen={setPopoverOpen}
                         targetedPopover={targetedPopover}
                         menuItems={item.menu}
-                        index={isIndex}
+                        index={mainPath === "index"}
                       />
                     </ul>
-                  </Component>
+                  </div>
                 </li>
               );
             })}
           </ul>
           <Link
             className="text-base relative py-1 lg:text-xl hover:-translate-y-1 ease-in-out duration-500 bg-white/40 rounded-full hover:bg-white/20 px-3 ml-2 lg:px-5"
-            href="/kontakt/objednavkovy-formular"
+            href="/objednavka"
           >
             Objednat
           </Link>

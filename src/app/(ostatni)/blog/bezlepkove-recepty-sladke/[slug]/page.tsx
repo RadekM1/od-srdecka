@@ -4,7 +4,6 @@ import Image from "next/image";
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const id = (await params).slug.split("--")[1] ?? null;
 
-
   const article = await wpFetchBlogArticleSweet(id);
 
   return (
@@ -29,12 +28,12 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
         </section>
       </article>
       <Image
-            src={"/heartsLine.svg"}
-            alt="oddělovač sekce"
-            width={1000}
-            height={20}
-            className="w-full  self-center py-10 "
-          />
+        src={"/heartsLine.svg"}
+        alt="oddělovač sekce"
+        width={1000}
+        height={20}
+        className="w-full  self-center py-10 "
+      />
     </>
   );
 };

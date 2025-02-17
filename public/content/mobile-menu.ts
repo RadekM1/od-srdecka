@@ -1,4 +1,4 @@
-export const menuItems : {
+export const mobileMenuItems : {
   label: string, 
   link: string,
   menu: 
