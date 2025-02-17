@@ -4,7 +4,7 @@ import { ImgGallery } from "@/schema/uiObjects";
 import LightBox from "./lightbox";
 import { useState } from "react";
 import Image from "next/image";
-import LineAddPhotosBtn from "@/app/(ostatni)/galerie/lineAddPhotosBtn";
+import LineAddBtn from "@/app/(ostatni)/galerie/lineAddBtn";
 
 interface ProductGallery {
   gallery: ImgGallery[];
@@ -53,7 +53,7 @@ const ProductGallery = ({ gallery, productType }: ProductGallery) => {
             </div>
           );
         })}
-        <LineAddPhotosBtn
+        <LineAddBtn
           label="Chci vidět další fotky"
           showAll={showAll}
           setShowAll={setShowAll}

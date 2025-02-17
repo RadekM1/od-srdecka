@@ -9,6 +9,7 @@ export default {
   ],
   theme: {
     extend: {
+      
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -51,6 +52,7 @@ export default {
           "5": "hsl(var(--chart-5))",
         },
       },
+      
       fontFamily: {
         dancing: ["var(--font-dancing)", "normal"],
         abhaya: ["var(--font-abhaya)", "serif"],
@@ -94,6 +96,20 @@ export default {
       "accordion-up": "accordion-up 0.2s ease-out",
     },
   },
-  // eslint-disable-next-line
-  plugins: [require("tailwindcss-animate")],
+  typography: {
+    DEFAULT: {
+      css: {
+        li: {
+          color: "#061E4C", 
+          "&::marker": {
+            color: "#061E4C", 
+          },
+        },
+      },
+    },
+  },
+  plugins: [
+    require("tailwindcss-animate"),
+    require('@tailwindcss/typography')
+  ],
 } satisfies Config;

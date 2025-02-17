@@ -23,7 +23,7 @@ const MenuPopover = ({
   const menuStyle = index
     ? "bg-white text-[#061E4C] "
     : "bg-[#061E4C]  text-white";
-  const itemStyle = index ? "hover:text-[#374b6f]" : "";
+  const itemStyle = index ? " hover:text-[#374b6f]" : "";
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -49,7 +49,7 @@ const MenuPopover = ({
       {popoverOpen && id === targetedPopover && menuItems && (
         <div
           ref={popOverRef}
-          className={`py-3 px-5 ${index ? "top-12 rounded-2xl" : "top-9 rounded-b-2xl"} absolute flex flex-col shadow-xl text-sm lg:text-base right-1/2 min-w-[280px] translate-x-1/2 ${menuStyle} z-50  `}
+          className={`py-3 px-5 ${index ? "top-12 rounded-2xl" : "top-9 rounded-b-2xl"} absolute flex flex-col shadow-md text-sm lg:text-base right-1/2 w-[200px] translate-x-1/2 ${menuStyle} z-50  `}
         >
           {Array.isArray(menuItems) &&
             menuItems.map((item, i) => {

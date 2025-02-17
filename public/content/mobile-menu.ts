@@ -1,10 +1,10 @@
-export const mobileMenuItems : {
+export const menuItems : {
   label: string, 
-  link: string
+  link: string,
   menu: 
     {
       label: string, 
-      link: string
+      link: string 
     }[] | null
   
 }[] = [
@@ -18,7 +18,7 @@ export const mobileMenuItems : {
   },
   {
     label: "Nabídka",
-    link: "/nabidka",
+    link: '/nabidka',
     menu: [
       {
         label: 'Dorty',
@@ -32,7 +32,7 @@ export const mobileMenuItems : {
   },
   { 
     label: "Galerie", 
-    link: "/galerie",
+    link: '/galerie',
     menu: [
       {
         label: 'Dorty',

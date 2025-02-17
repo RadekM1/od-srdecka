@@ -2,7 +2,7 @@ const AboutUsComponentIndexAsideImg = () => {
   return (
     <>
       <div className="flex z-10 mb-5 md:mb-0 font-abhaya justify-center items-center w-full flex-row ">
-        <div className="text-center text-xl lg:text-2xl flex-col self-center flex-grow  h-full">
+        <div className="text-center font-oldStandard text-xl lg:text-2xl flex-col self-center flex-grow  h-full">
           <div>Jsme tři cérky z malé dědiny na</div>
           <div>Valašsku. Každá jiná, ale vše děláme od</div>
           <div>

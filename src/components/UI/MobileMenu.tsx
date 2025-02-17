@@ -1,10 +1,16 @@
-"use client";
-import { menuItems } from "../../../public/content/menu";
+import { mobileMenuItems } from "../../../public/content/menu";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/UI/accordion";
 import Link from "next/link";
 
 interface MobileMenuProps {
   isSideNavOpen: boolean;
-  setIsSideNavOpen: (isSideNavOpen: boolean) => void;
+  // eslint-disable-next-line
+setIsSideNavOpen: (isSideNavOpen: boolean) => void;
 }
 
 const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
@@ -14,24 +20,47 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
         <aside
           id="nav-menu-4"
           aria-label="Side navigation"
-          className="fixed top-0 mt-14 md:hidden left-0 w-64 h-full bg-[#061E4C] text-white z-[99] shadow-lg transition-transform transform"
+          className="fixed top-0 mt-14 left-0 w-64 h-full bg-[#061E4C] text-white z-[99] shadow-lg transition-transform transform"
         >
           <nav
             aria-label="side navigation"
-            className="flex-1  text-white flex flex-col font-oldStandard text-lg  overflow-auto"
+            className="flex-1 divide-y text-white flex flex-col font-oldStandard text-base divide-slate-100 overflow-auto"
           >
-            {menuItems.map((item, i) => {
-              return (
-                <Link
-                  key={i}
-                  className="flex flex-1 mx-4  items-center justify-between py-2 font-medium transition-all hover:text-gray-400 [&[data-state=open]>img]:rotate-180"
-                  href={item.link}
-                  onClick={() => setIsSideNavOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
+            <Accordion type="single" collapsible>
+              {mobileMenuItems.map((item, i) => {
+                if (!item.menu) {
+                  return (
+                    <Link
+                      key={i}
+                      className="flex flex-1 mx-4 border-b-0 my-2 items-center justify-between py-1 font-medium transition-all hover:text-gray-400 [&[data-state=open]>img]:rotate-180"
+                      href={item.link}
+                      onClick={() => setIsSideNavOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                }
+                return (
+                  <AccordionItem key={i} value={`item-${i}`}>
+                    <AccordionTrigger>{item.label}</AccordionTrigger>
+                    <AccordionContent>
+                      {item.menu.map((innerItem, j) => (
+                        <Link
+                          key={j}
+                          className="self-start text-start text-sm hover:font-semibold mx-4"
+                          href={innerItem.link}
+                          onClick={() => setIsSideNavOpen(false)}
+                        >
+                          <div className="flex flex-col px-4 text-start">
+                            {innerItem.label}
+                          </div>
+                        </Link>
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
+            </Accordion>
           </nav>
         </aside>
       )}

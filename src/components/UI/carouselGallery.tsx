@@ -19,8 +19,6 @@ const CarouselGallery = ({ props }: CarouselProps) => {
   const [activeId, setActiveId] = useState<number>(0);
   const [toggler, setToggler] = useState(false);
 
-  console.log(activeId);
-
   const preparedGallery = useMemo(() => {
     const gallery = [];
 

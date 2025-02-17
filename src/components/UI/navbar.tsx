@@ -4,28 +4,30 @@ import { IoLogoInstagram } from "react-icons/io5";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import SwapBtn from "./swapBtn";
-import { menuItems } from "../../../public/content/menu";
+import MenuPopover from "./menuPopover";
+import { menuItems } from "../../../public/content/mobile-menu";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const path = usePathname();
-
+  const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
   const [isSideNavOpen, setIsSideNavOpen] = useState<boolean>(false);
+  const [targetedPopover, setTargetedPopover] = useState<number>(-1);
+
+  const isIndex = "/" === path;
+  const router = useRouter();
 
   return (
-    <nav
-      role="navigaton"
-      className="w-full h-14 z-40 items-center fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard"
-    >
-      <div className="flex sticky items-center justify-center top-0 flex-row md:text-sm lg:text-base xl:text-xl mx-2 w-full text-white">
+    <header className="w-full h-14 z-40 items-center fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard">
+      <nav
+        role="navigaton"
+        className="flex sticky items-center justify-center top-0 flex-row md:text-sm lg:text-base xl:text-xl mx-2 w-full text-white"
+      >
         <ul className="flex self-center align-middle items-center h-full">
           {path !== "/" && (
             <li className="self-center h-full justify-center items-center flex text-center">
-              <Link
-                onClick={() => setIsSideNavOpen(false)}
-                className="mx-2"
-                href={"/"}
-              >
+              <Link className="mx-2" href={"/"}>
                 <img
                   className="h-14  mr-3 sm:mr-0 lg:p-1 w-14"
                   src={"/logoMain.svg"}
@@ -40,23 +42,39 @@ const Navbar = () => {
         <menu className="flex self-center text-nowrap items-center w-full h-full justify-end flex-row">
           <ul className="h-full flex flex-row">
             {menuItems.map((item, i) => {
+              const Component = item.menu ? "div" : Link;
               return (
-                <ul key={i} className="w-full h-full flex flex-row">
-                  <Link
-                    className="hover:text-gray-400 self-center h-full items-center ease-in-out duration-500"
-                    href={item.link}
+                <li key={i} className="w-full h-full flex flex-row">
+                  <Component
+                    onClick={() => router.push(item.link)}
+                    className="hover:text-gray-400 self-center h-full cursor-pointer items-center ease-in-out duration-500"
+                    href={item.menu ? "#" : item.link || "#"}
                   >
-                    <li className="mx-2 lg:mx-3 hidden relative md:block self-center h-full">
+                    <ul
+                      onMouseOver={() => {
+                        setTargetedPopover(i);
+                        setPopoverOpen(true);
+                      }}
+                      className="mx-2 lg:mx-3 hidden relative md:block self-center h-full"
+                    >
                       {item.label}
-                    </li>
-                  </Link>
-                </ul>
+                      <MenuPopover
+                        id={i}
+                        popoverOpen={popoverOpen}
+                        setPopoverOpen={setPopoverOpen}
+                        targetedPopover={targetedPopover}
+                        menuItems={item.menu}
+                        index={isIndex}
+                      />
+                    </ul>
+                  </Component>
+                </li>
               );
             })}
           </ul>
           <Link
             className="text-base relative py-1 lg:text-xl hover:-translate-y-1 ease-in-out duration-500 bg-white/40 rounded-full hover:bg-white/20 px-3 ml-2 lg:px-5"
-            href="/objednavka"
+            href="/kontakt/objednavkovy-formular"
           >
             Objednat
           </Link>
@@ -69,8 +87,8 @@ const Navbar = () => {
           isSideNavOpen={isSideNavOpen}
           setIsSideNavOpen={setIsSideNavOpen}
         />
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 export default Navbar;

@@ -1,18 +1,14 @@
 "use client";
 import Image from "next/image";
 
-interface LineAddPhotosBtnProps {
+interface LineAddBtnProps {
   showAll: boolean;
   // eslint-disable-next-line
   setShowAll: (showAll: boolean) => void
   label: string;
 }
 
-const LineAddPhotosBtn = ({
-  showAll,
-  setShowAll,
-  label,
-}: LineAddPhotosBtnProps) => {
+const LineAddBtn = ({ showAll, setShowAll, label }: LineAddBtnProps) => {
   const handleClick = () => {
     setShowAll(true);
   };
@@ -41,4 +37,4 @@ const LineAddPhotosBtn = ({
     </div>
   );
 };
-export default LineAddPhotosBtn;
+export default LineAddBtn;
