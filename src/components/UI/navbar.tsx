@@ -41,9 +41,6 @@ const Navbar = () => {
         <menu className="flex self-center text-nowrap items-center w-full h-full justify-end flex-row">
           <ul className="h-full flex flex-row">
             {menuItems.map((item, i) => {
-              console.log(item.link === path || path.startsWith(item.link));
-              console.log("odkaz:", item.link);
-              console.log("cesta:", path);
               return (
                 <li key={i} className="w-full h-full flex flex-row">
                   <div

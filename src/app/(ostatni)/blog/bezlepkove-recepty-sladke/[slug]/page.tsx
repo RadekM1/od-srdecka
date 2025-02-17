@@ -1,8 +1,21 @@
-import { wpFetchBlogArticleSweet } from "@/lib/query/articles-sweets-fetch";
 import Article from "@/components/article";
 import Image from "next/image";
+import {
+  wpFetchBlogArticlesSweets,
+  wpFetchBlogArticleSweet,
+} from "@/lib/query/articles-sweets-fetch";
 
-export const revalidate = 10;
+export const revalidate = 60;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const posts = await wpFetchBlogArticlesSweets();
+  return posts.map((post) => {
+    return {
+      slug: post.slug,
+    };
+  });
+}
 
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const id = (await params).slug.split("--")[1] ?? null;
