@@ -4,7 +4,7 @@ import { ImgGallery } from "@/schema/uiObjects";
 import LightBox from "./lightbox";
 import { useState } from "react";
 import Image from "next/image";
-import LineAddBtn from "@/app/(ostatni)/galerie/lineAddBtn";
+import LineAddBtn from "./lineAddBtn";
 
 interface ProductGallery {
   gallery: ImgGallery[];
@@ -12,18 +12,18 @@ interface ProductGallery {
 }
 
 const ProductGallery = ({ gallery, productType }: ProductGallery) => {
+  const i = productType === "dessert" ? 20 : 12;
+
   const [activeId, setActiveId] = useState<number>(0);
   const [toggler, setToggler] = useState<boolean>(false);
-  const [showAll, setShowAll] = useState<boolean>(false);
+  const [index, setIndex] = useState<number>(i);
 
   const handleImgClick = (id: number) => {
     setActiveId(id);
     setToggler(true);
   };
 
-  const filteredGallery = showAll
-    ? gallery
-    : gallery.slice(0, Math.floor(gallery.length / 2));
+  const filteredGallery = gallery.slice(0, index);
 
   return (
     <>
@@ -55,8 +55,11 @@ const ProductGallery = ({ gallery, productType }: ProductGallery) => {
         })}
         <LineAddBtn
           label="Chci vidět další fotky"
-          showAll={showAll}
-          setShowAll={setShowAll}
+          index={index}
+          setIndex={setIndex}
+          array={gallery}
+          filteredArray={filteredGallery}
+          addNumber={999}
         />
       </div>
       <LightBox

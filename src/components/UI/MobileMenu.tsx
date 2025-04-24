@@ -20,7 +20,7 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
         <aside
           id="nav-menu-4"
           aria-label="Side navigation"
-          className="fixed top-0 mt-14 left-0 w-64 h-full bg-[#061E4C] text-white z-[99] shadow-lg transition-transform transform"
+          className="fixed top-0 mt-14 left-0 w-64 h-full bg-[#061E4C] text-white md:hidden block z-[99] shadow-lg transition-transform transform"
         >
           <nav
             aria-label="side navigation"

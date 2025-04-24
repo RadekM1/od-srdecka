@@ -68,7 +68,7 @@ export const cakesPriceList: CakePriceList[] = [
     textRows: ["30 porcí a více od 2800 Kč"],
   },
   {
-    title: "Dvoupatrový dort",
+    title: "Třípatrový dort",
     textRows: ["60 porcí a více od 4800 Kč"],
   },
 ];

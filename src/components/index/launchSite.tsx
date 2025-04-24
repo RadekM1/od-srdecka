@@ -1,9 +1,9 @@
 const LaunchSite = () => {
   return (
-    <section className="text-center flex pb-10 flex-col md:flex-row h-full min-h-screen bg-[#061E4C] text-white font-OoohBaby">
+    <section className="text-center lg:px-20 gap-4 xl:px-44 w-full self-center flex pb-10 flex-col md:flex-row h-full min-h-screen bg-[#061E4C] text-white font-OoohBaby">
       <div className="flex justify-center order-2 w-full md:order-1 items-center">
         <img
-          className=" h-full w-1/2 md:w-5/6 lg:w-1/2 object-contain flex"
+          className=" h-full w-1/2 md:w-5/6  max-w-[500px] object-contain flex"
           src="/logoMain.svg"
           alt="logo"
         />

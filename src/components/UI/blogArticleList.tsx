@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import LineAddBtn from "@/app/(ostatni)/galerie/lineAddBtn";
+import LineAddBtn from "./lineAddBtn";
 import Link from "next/link";
 import { ArticlesListSchema } from "@/schema/article";
+import { usePathname } from "next/navigation";
 
 interface ProductGallery {
   blogList: ArticlesListSchema[];
@@ -12,26 +13,28 @@ interface ProductGallery {
 }
 
 const BlogArticleList = ({ blogList, section }: ProductGallery) => {
-  const [showAll, setShowAll] = useState<boolean>(false);
-  const filteredArticles = showAll
-    ? blogList
-    : blogList.slice(0, Math.floor(blogList.length / 2));
+  const path = usePathname();
+  const [index, setIndex] = useState<number>(6);
+  const currentId: number = parseInt(path.split("--")[1]) ?? -1;
+  const filteredArticles = blogList
+    .filter((article) => article.id !== currentId)
+    .slice(0, index);
 
   return (
     <>
-      <div className="flex  flex-wrap gap-3 justify-center md:justify-between w-full">
+      <div className="flex self-center items-center w-full justify-center flex-wrap gap-3">
         {filteredArticles.map((article, i) => {
           return (
             <div
               key={i}
-              className="w-[44%] md:w-[32%] h-full group font-dancing border-[1px] border-[#061E4C] rounded-2xl hover:bg-[#061E4C] hover:ease-in-out hover:duration-300  hover:text-white flex flex-col  text-center"
+              className="w-[47%] md:w-[32%] h-full group font-dancing border-[1px] border-[#061E4C] rounded-2xl hover:bg-[#061E4C] hover:ease-in-out hover:duration-300  hover:text-white flex flex-col  text-center"
             >
               <Link
                 href={`/blog/${section}/${article.slug}`}
                 className="cursor-pointer relative min-h-full p-3 w-full h-full object-cover"
               >
                 <Image
-                  className=" rounded-2xl h-60 object-cover duration-300 ease-in-out group-hover:brightness-50 self-center flex"
+                  className=" rounded-2xl h-32 lg:h-60 object-cover duration-300 ease-in-out group-hover:brightness-50 self-center flex"
                   src={article.thumbnailSrc ?? "/"}
                   alt={article.thumbnailAlt ?? ""}
                   width={500}
@@ -51,8 +54,11 @@ const BlogArticleList = ({ blogList, section }: ProductGallery) => {
         })}
         <LineAddBtn
           label="Chci další recepty"
-          showAll={showAll}
-          setShowAll={setShowAll}
+          index={index}
+          setIndex={setIndex}
+          array={blogList}
+          filteredArray={filteredArticles}
+          addNumber={6}
         />
       </div>
     </>

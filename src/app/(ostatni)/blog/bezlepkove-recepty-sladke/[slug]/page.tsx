@@ -3,7 +3,7 @@ import Image from "next/image";
 import {
   wpFetchBlogArticlesSweets,
   wpFetchBlogArticleSweet,
-} from "@/lib/query/articles-sweets-fetch";
+} from "@/lib/fetch/articles-sweets-fetch";
 
 export const revalidate = 60;
 export const dynamicParams = true;
@@ -25,7 +25,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   return (
     <>
       <article className="flex mx-3 max-w-[1000px] px-2 justify-center items-center text-center flex-col w-full">
-        <header className="mb-9">
+        <header className="mb-2 md:mb-9">
           <h1 className="text-3xl md:text-4xl font-semibold lg:text-5xl font-oldStandard w-full text-center">
             {article === null ? "Článek nenalezen" : `${article.titulek}`}
           </h1>

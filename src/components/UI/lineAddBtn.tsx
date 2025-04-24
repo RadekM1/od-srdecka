@@ -1,16 +1,33 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
 
 interface LineAddBtnProps {
-  showAll: boolean;
+  index: number;
   // eslint-disable-next-line
-  setShowAll: (showAll: boolean) => void
+  setIndex: (showAll: number) => void
   label: string;
+  array: {}[];
+  filteredArray: {}[];
+  addNumber: number;
 }
 
-const LineAddBtn = ({ showAll, setShowAll, label }: LineAddBtnProps) => {
+const LineAddBtn = ({
+  setIndex,
+  label,
+  array,
+  filteredArray,
+  addNumber,
+}: LineAddBtnProps) => {
+  const [disabled, setDisabled] = useState<boolean>(false);
+
   const handleClick = () => {
-    setShowAll(true);
+    if (array.length > filteredArray.length + addNumber) {
+      setIndex(filteredArray.length + addNumber);
+      return;
+    }
+    setDisabled(true);
+    setIndex(array.length);
   };
 
   return (
@@ -21,7 +38,7 @@ const LineAddBtn = ({ showAll, setShowAll, label }: LineAddBtnProps) => {
         alt="oddělovací linka"
       />
       <button
-        disabled={showAll}
+        disabled={disabled}
         onClick={handleClick}
         className="bg-[#061E4C] hover:text-[#061E4C] disabled:bg-white duration-300 ease-in-out absolute -translate-y-1/2 -top-1/2 shadow-md disabled:hover:bg-none disabled:text-gray-300 disabled:hover:text-gray-300 disabled:cursor-not-allowed hover:bg-white border-[#061E4C] border-[1px] shadow-gray-600 rounded-full text-white text-base md:text-xl px-3 py-1 font-dancing z-10"
       >

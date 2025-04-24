@@ -9,7 +9,7 @@ interface articleProps {
 
 const Article = ({ article }: articleProps) => {
   const removePTags = (html: string) => {
-    return html.replace(/^<p>|<\/p>$/g, ""); // Odstraní <p> pouze pokud obaluje celý text
+    return html.replace(/^<p>|<\/p>$/g, "");
   };
 
   return (

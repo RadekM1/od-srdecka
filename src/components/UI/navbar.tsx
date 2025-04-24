@@ -26,16 +26,24 @@ const Navbar = () => {
         <ul className="flex self-center align-middle items-center h-full">
           {path !== "/" && (
             <li className="self-center h-full justify-center items-center flex text-center">
-              <Link className="mx-2" href={"/"}>
+              <Link
+                className="mx-2"
+                href={"/"}
+                aria-label="Přejít na domovskou stránku"
+              >
                 <img
                   className="h-14  mr-3 sm:mr-0 lg:p-1 w-14"
                   src={"/logoMain.svg"}
+                  alt="logo"
                 ></img>
               </Link>
             </li>
           )}
           <a href="https://www.instagram.com/odsrdecka/" target="_blank">
-            <IoLogoInstagram className="h-8 w-8 mx-2 hover:text-white/40 hover:-translate-y-1 ease-in-out duration-500 text-white/60" />
+            <IoLogoInstagram
+              aria-label="Přejít na instagram webu"
+              className="h-8 w-8 mx-2 hover:text-white/40 hover:-translate-y-1 ease-in-out duration-500 text-white/60"
+            />
           </a>
         </ul>
         <menu className="flex self-center text-nowrap items-center w-full h-full justify-end flex-row">
@@ -81,7 +89,7 @@ const Navbar = () => {
             })}
           </ul>
           <Link
-            className="text-base relative py-1 lg:text-xl hover:-translate-y-1 ease-in-out duration-500 bg-white/40 rounded-full hover:bg-white/20 px-3 ml-2 lg:px-5"
+            className="text-base relative py-1 lg:text-xl hover:-translate-y-1 ease-in-out duration-500 bg-white/20 rounded-full hover:bg-white/20 px-3 ml-2 lg:px-5"
             href="/objednavka"
           >
             Objednat

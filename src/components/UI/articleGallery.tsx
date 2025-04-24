@@ -39,18 +39,18 @@ const ArticleGallery = ({
 
   return (
     <>
-      <div className="w-full gap-1 md:gap-3  flex-row md:flex-col flex md:max-w-[250px]">
+      <div className="w-full gap-1 md:gap-3  flex-row md:flex-col flex flex-shrink md:max-w-[250px]">
         {preparedGallery.map((image, i) => {
           return (
             <div
               key={i}
               onClick={() => handleImgClick(i)}
-              className="flex-col cursor-pointer h-full w-full hover:brightness-50 duration-300 ease-in-out object-cover"
+              className="flex-col cursor-pointer  w-full items-start justify-start hover:brightness-50 duration-300 ease-in-out object-cover"
             >
               <Image
                 height={368}
                 width={350}
-                className="object-cover h-[350px] rounded-xl w-full"
+                className="object-cover self-start h-[150px] md:h-[250px] lg:h-[350px] rounded-xl w-full"
                 src={image.thumbnail}
                 alt={image.alt}
               />

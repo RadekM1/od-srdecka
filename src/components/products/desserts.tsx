@@ -24,12 +24,10 @@ const Desserts = ({ desserts }: dessertProps) => {
         return (
           <div
             key={i}
-            className="border-[1px] border-[#061E4C] rounded-xl hover:bg-[#061E4C] hover:ease-in-out hover:duration-300  hover:text-white flex flex-col w-[30%] sm:w-[21%] md:w-[16%] p-2 text-center"
+            onClick={() => handleModal(i)}
+            className="border-[1px] border-[#061E4C] cursor-pointer rounded-xl hover:bg-[#061E4C] hover:ease-in-out hover:duration-300  hover:text-white flex flex-col w-[30%] sm:w-[21%] md:w-[16%] p-2 text-center"
           >
-            <div
-              onClick={() => handleModal(i)}
-              className="cursor-pointer group relative font-oldStandard w-full h-full object-cover"
-            >
+            <div className=" group relative font-oldStandard w-full h-full object-cover">
               <Image
                 className=" object-scale-down rounded-xl h-max duration-300 ease-in-out group-hover:brightness-50 self-center flex"
                 src={dessert.src}
@@ -42,8 +40,11 @@ const Desserts = ({ desserts }: dessertProps) => {
                 Čti více
               </span>
             </div>
-            <div className="font-dancing pt-2 self-center items-center flex">
+            <div className="font-dancing font-semibold tracking-wide pt-2 self-center items-center flex">
               {dessert.title}
+            </div>
+            <div className="font-dancing font-semibold tracking-wide pt-2 self-center items-center flex">
+              {`${dessert.price} Kč`}
             </div>
           </div>
         );
