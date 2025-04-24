@@ -19,6 +19,7 @@ const ContactForm = () => {
     const { success } = await emailClient(data);
     if (success) {
       reset();
+      // eslint-disable-next-line
       isSubmitted;
       return;
     }

@@ -7,7 +7,9 @@ interface LineAddBtnProps {
   // eslint-disable-next-line
   setIndex: (showAll: number) => void
   label: string;
+  // eslint-disable-next-line
   array: {}[];
+  // eslint-disable-next-line
   filteredArray: {}[];
   addNumber: number;
 }

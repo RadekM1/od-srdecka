@@ -10,8 +10,6 @@ const createEmail = (
   message: string,
 ) => {
   const encodedSubject = `=?UTF-8?B?${Buffer.from(subject).toString("base64")}?=`;
-
-  // Nahrazení nových řádků za <br>
   const formattedMessage = message.replace(/\n/g, "<br>");
 
   const emailBody = [
