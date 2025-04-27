@@ -12,8 +12,8 @@ const Page = () => {
           Máte otázky? Možná už máme odpověď právě tady.
         </span>
         <Faq />
-        <SectionLine />
       </section>
+      <SectionLine />
       <Gallery />
     </>
   );

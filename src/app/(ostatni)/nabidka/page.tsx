@@ -6,10 +6,10 @@ const Page = () => {
     <>
       <section className="flex max-w-6xl px-1 justify-center text-center mb-10 flex-col w-full">
         <PageTitle title="Naše nabídka" />
-        <span className="text-center font-oldStandard">
+        <span className="text-center pt-10 font-oldStandard">
           Pečeme dorty a sladké bary k různým příležitostem.
         </span>
-        <span className="text-center font-oldStandard">
+        <span className="text-center pb-10 font-oldStandard">
           Můžete si vybrat..... Více informací najdete...
         </span>
         <OfferSiteContext />

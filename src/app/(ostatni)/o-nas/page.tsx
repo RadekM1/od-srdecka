@@ -18,7 +18,7 @@ const Page = () => {
           ochutnat i v <span className="font-semibold">kavárnách,</span> se
           kterými spolupracujeme.
         </span>
-        <span className="text-start">
+        <span className="text-start pb-10">
           <span className="text-1xl">&gt;&gt;</span> Všechny{" "}
           <span className="font-semibold">novinky a aktuality</span> můžete
           sledovat na našem <span className="font-semibold">instagramu.</span>{" "}

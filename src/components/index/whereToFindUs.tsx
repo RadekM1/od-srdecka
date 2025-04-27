@@ -19,11 +19,16 @@ const WhereToFindUs = () => {
           <div className="flex justify-center flex-row w-full">
             <div className="flex h-full flex-col justify-center  w-full  items-center">
               <div className="flex h-full flex-col justify-center  w-full  items-center">
-                <img
-                  className=" object-scale-down w-2/3 md:w-full p-2 duration-300 ease-in-out self-center flex"
-                  src="/index/mapa.png"
-                  alt="fotka teamu"
-                />
+                <a
+                  href="https://maps.app.goo.gl/84gMRihAcDk9pKpu5"
+                  target="_blank"
+                >
+                  <img
+                    className=" object-scale-down w-2/3 md:w-full p-2 duration-300 ease-in-out self-center flex"
+                    src="/index/mapa.png"
+                    alt="fotka teamu"
+                  />
+                </a>
                 <span className="text-white font-abhaya text-xl lg:text-2xl text-center pl-0 md:text-start w-full md:pl-3">
                   Kašava 33 , 736 19 Kašava
                 </span>

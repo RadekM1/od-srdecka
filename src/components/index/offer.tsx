@@ -52,13 +52,16 @@ const Offer = () => {
             return (
               <Link href={img.link} key={i}>
                 <div className="flex h-full group flex-col justify-center  w-full  items-center">
-                  <div className="flex h-full justify-center  w-full  items-center">
+                  <div className="flex h-full justify-center relative  w-full  items-center">
                     <img
                       className=" object-scale-down p-2 duration-300 ease-in-out group-hover:brightness-50 self-center flex"
                       src={img.src}
                       alt={img.alt}
                       title={img.title}
                     />
+                    <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base bg-white/30 rounded-full px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden  group-hover:block duration-300 ease-in-out text-white -translate-x-1/2">
+                      Čti více
+                    </span>
                   </div>
                   <div className="text-center lg:text-2xl font-OoohBaby tracking-wide group-hover:font-semibold mt-3">
                     {img.title}
@@ -76,13 +79,16 @@ const Offer = () => {
             return (
               <Link href={img.link} key={i}>
                 <div className="flex h-full  group flex-col justify-center  w-full  items-center">
-                  <div className="flex   h-full justify-center  w-full  items-center">
+                  <div className="flex relative   h-full justify-center  w-full  items-center">
                     <img
                       className=" object-scale-down p-2 duration-300 ease-in-out group-hover:brightness-50 self-center flex"
                       src={img.src}
                       alt={img.alt}
                       title={img.title}
                     />
+                    <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base bg-white/30 rounded-full px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden  group-hover:block duration-500 ease-in-out text-white -translate-x-1/2">
+                      Čti více
+                    </span>
                   </div>
                   <div className="text-center lg:text-2xl font-OoohBaby tracking-wide group-hover:font-semibold mt-3">
                     {img.title}

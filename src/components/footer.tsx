@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex-row text-xs mt-10 md:text-sm font-abhaya hover:text-gray-200 ease-in-out duration-500 md:pr-8 flex w-full justify-center md:justify-end">
+      <div className="flex-row text-sm mt-10 md:text-sm font-abhaya hover:text-gray-200 ease-in-out duration-500 md:pr-8 flex w-full justify-center md:justify-end">
         <a
           href="https://www.radekmorong.cz"
           target="_blank"
@@ -70,8 +70,8 @@ const Footer = () => {
           <span>
             <FaRegHeart />
           </span>
-          <span>vytvořil</span>
-          <span>Radek Morong</span>
+          <span>vytvořili</span>
+          <span>Radek Morong a Kateřina Pavelková</span>
         </a>
       </div>
     </footer>
