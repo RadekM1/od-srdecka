@@ -1,5 +1,4 @@
-import { IoChevronDownSharp } from "react-icons/io5";
-
+import { ChevronDown } from "./chevronDown";
 const LaunchSite = () => {
   return (
     <section className="min-h-screen bg-[#061E4C] h-full flex-col">
@@ -20,9 +19,7 @@ const LaunchSite = () => {
           </span>
         </div>
       </div>
-      <div className="w-full mt-10 mb-3 items-center  flex-col flex justify-center text-white bg-[#061E4C]">
-        <IoChevronDownSharp className="h-10 w-10 animate-bounce-custom inline-block text-white " />
-      </div>
+      <ChevronDown />
     </section>
   );
 };

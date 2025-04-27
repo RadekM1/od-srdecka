@@ -1,11 +1,13 @@
 import { wpFetchBlogArticlesSweets } from "@/lib/fetch/articles-sweets-fetch";
+import { wpFetchBlogArticlesOther } from "@/lib/fetch/articles-others-fetch";
 const ROOT = "https://www.odsrdecka.cz/";
 
 export const dynamic = "force-dynamic";
 
 import type { MetadataRoute } from "next";
 
-const articlesSlug = await wpFetchBlogArticlesSweets();
+const articlesSlugSweet = await wpFetchBlogArticlesSweets();
+const articlesSlugOther = await wpFetchBlogArticlesOther();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -57,13 +59,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
-    ...articlesSlug.map((item) => ({
+    ...articlesSlugSweet.map((item) => ({
       url: `${ROOT}blog/bezlepkove-recepty-sladke/${item.slug}`,
       lastModified: "2025-04-01",
       changeFrequency: "yearly" as const,
       priority: 0.7,
     })),
-    // DOPLNIT JEŠTĚ OSTATNÍ RECEPTY FETCH až bude
+    ...articlesSlugOther.map((item) => ({
+      url: `${ROOT}blog/bezlepkove-recepty-ostatni/${item.slug}`,
+      lastModified: "2025-04-01",
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    })),
+
     {
       url: `${ROOT}aktuality`,
       lastModified: "2025-04-01",

@@ -1,4 +1,6 @@
 import BlogSections from "../blogSections";
+import OthersLayout from "./others-layout";
+import { wpFetchBlogArticlesOther } from "@/lib/fetch/articles-others-fetch";
 
 const blogSections = [
   {
@@ -13,9 +15,13 @@ const blogSections = [
   },
 ];
 
-const Page = () => {
+export const dynamic = "force-dynamic";
+
+export default async function Page() {
+  const articleList = await wpFetchBlogArticlesOther();
+
   return (
-    <>
+    <OthersLayout articleList={articleList}>
       <section className="flex mx-3 max-w-[1000px] px-2 justify-center items-center text-center mb-10 flex-col w-full">
         <div className="mb-6">
           <span className="text-3xl md:text-4xl font-semibold lg:text-5xl font-oldStandard w-full text-center">
@@ -31,7 +37,6 @@ const Page = () => {
           <BlogSections blogSections={blogSections} />
         </div>
       </section>
-    </>
+    </OthersLayout>
   );
-};
-export default Page;
+}

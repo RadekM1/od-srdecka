@@ -1,26 +1,26 @@
 import BlogArticleList from "@/components/UI/blogArticleList";
-import { wpFetchBlogArticlesOther } from "@/lib/fetch/articles-others-fetch";
 import React from "react";
 import Gallery from "@/components/gallery";
+import { ReactNode } from "react";
 
-export const revalidate = 10;
-export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  return [];
+interface Props {
+  children: ReactNode;
+  articleList: {
+    id: number;
+    slug: string;
+    title: string;
+    thumbnailSrc: string;
+    thumbnailAlt: string;
+  }[];
 }
 
-const OthersLayout = async ({
-  children,
-}: Readonly<{ children: React.ReactNode }>) => {
-  const articleList = await wpFetchBlogArticlesOther();
-
+const OthersLayout = ({ children, articleList }: Props) => {
   return (
     <>
       <section className="flex mx-3 max-w-[1000px] px-1 justify-center items-center text-center mb-10 flex-col w-full">
         {children}
         <BlogArticleList
-          section="bezlepkove-recepty-sladke"
+          section="bezlepkove-recepty-ostatni"
           blogList={articleList}
         />
       </section>

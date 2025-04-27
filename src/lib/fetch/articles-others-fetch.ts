@@ -9,7 +9,7 @@ export const wpFetchBlogArticlesOther = async () => {
   try {
     const response = await fetch(
       `https://www.odsrdecka.cz/cms/wp-json/acf/v3/clanky-ostatni`,
-      { next: { revalidate: 60 } },
+      { next: { revalidate: 10 } },
     );
 
     if (!response.ok) {
@@ -54,7 +54,7 @@ export const wpFetchBlogArticleOther = async (id: string) => {
   try {
     const response = await fetch(
       `https://www.odsrdecka.cz/cms/wp-json/acf/v3/clanky-ostatni/${id}`,
-      { next: { revalidate: 60 } },
+      { next: { revalidate: 10 } },
     );
     if (!response.ok) {
       console.log("chyba při fetch", response);
