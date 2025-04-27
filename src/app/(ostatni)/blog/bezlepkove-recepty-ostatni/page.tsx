@@ -19,7 +19,7 @@ const Page = () => {
       <section className="flex mx-3 max-w-[1000px] px-2 justify-center items-center text-center mb-10 flex-col w-full">
         <div className="mb-6">
           <span className="text-3xl md:text-4xl font-semibold lg:text-5xl font-oldStandard w-full text-center">
-            Bezlepkové recepty - sladké
+            Bezlepkové recepty - ostatní
           </span>
         </div>
         <div className="mt-20 mb-14 relative flex w-full  justify-center items-center mx-4 max-w-[1000px]">

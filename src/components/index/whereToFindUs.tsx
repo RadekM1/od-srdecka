@@ -20,6 +20,7 @@ const WhereToFindUs = () => {
             <div className="flex h-full flex-col justify-center  w-full  items-center">
               <div className="flex h-full flex-col justify-center  w-full  items-center">
                 <a
+                  className="flex items-center justify-center"
                   href="https://maps.app.goo.gl/84gMRihAcDk9pKpu5"
                   target="_blank"
                 >

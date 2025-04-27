@@ -4,7 +4,7 @@ import OfferSiteContext from "./offerSiteContext";
 const Page = () => {
   return (
     <>
-      <section className="flex max-w-6xl px-1 justify-center text-center mb-10 flex-col w-full">
+      <section className="flex max-w-6xl px-1 text-xl lg:text-2xl justify-center text-center mb-10 flex-col w-full">
         <PageTitle title="Naše nabídka" />
         <span className="text-center pt-10 font-oldStandard">
           Pečeme dorty a sladké bary k různým příležitostem.

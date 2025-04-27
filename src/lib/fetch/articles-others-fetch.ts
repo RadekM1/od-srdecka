@@ -5,10 +5,10 @@ import { wpArticleSchema } from "@/schema/article";
 import { ArticlesListSchema } from "@/schema/article";
 import slugify from "slugify";
 
-export const wpFetchBlogArticlesSweets = async () => {
+export const wpFetchBlogArticlesOther = async () => {
   try {
     const response = await fetch(
-      `https://www.odsrdecka.cz/cms/wp-json/acf/v3/clanky-sladke`,
+      `https://www.odsrdecka.cz/cms/wp-json/acf/v3/clanky-ostatni`,
       { next: { revalidate: 60 } },
     );
 
@@ -50,10 +50,10 @@ export const wpFetchBlogArticlesSweets = async () => {
   }
 };
 
-export const wpFetchBlogArticleSweet = async (id: string) => {
+export const wpFetchBlogArticleOther = async (id: string) => {
   try {
     const response = await fetch(
-      `https://www.odsrdecka.cz/cms/wp-json/acf/v3/clanky-sladke/${id}`,
+      `https://www.odsrdecka.cz/cms/wp-json/acf/v3/clanky-ostatni/${id}`,
       { next: { revalidate: 60 } },
     );
     if (!response.ok) {
@@ -68,7 +68,6 @@ export const wpFetchBlogArticleSweet = async (id: string) => {
       );
       return null;
     }
-
     return data.acf;
   } catch (error) {
     console.log("chyba zpracování požadavku", error);

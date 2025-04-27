@@ -3,7 +3,7 @@ import { wpFetchBlogArticlesSweets } from "@/lib/fetch/articles-sweets-fetch";
 import React from "react";
 import Gallery from "@/components/gallery";
 
-export const revalidate = 60;
+export const revalidate = 10;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {

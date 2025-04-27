@@ -6,6 +6,23 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-bounce-custom {
+  animation: bounce 1.5s;
+  animation-iteration-count: 4;
+  animation-fill-mode: forwards ;
+}
+
 .prose ul {
   list-style-type: disc !important;
   color: #061E4C !important; 

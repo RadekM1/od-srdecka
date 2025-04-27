@@ -3,10 +3,10 @@ import Link from "next/link";
 const TextUnderTitle = () => {
   return (
     <>
-      <span className="text-center px-2 font-semibold ">
+      <span className="text-center px-2 text-xl lg:text-2xl font-oldStandard font-semibold ">
         Pečeme dorty k různým příležitostem - svatby, narozeniny a další.
       </span>
-      <span className="text-center pb-14 px-2 ">
+      <span className="text-center text-xl font-oldStandard lg:text-2xl pb-14 px-2 ">
         Neváhejte nás kontaktovat a my vám rády pomůžeme osladit váš speciální
         den.
       </span>

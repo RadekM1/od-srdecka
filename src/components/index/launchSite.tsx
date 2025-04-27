@@ -1,4 +1,3 @@
-import { BsMouse } from "react-icons/bs";
 import { IoChevronDownSharp } from "react-icons/io5";
 
 const LaunchSite = () => {
@@ -21,9 +20,8 @@ const LaunchSite = () => {
           </span>
         </div>
       </div>
-      <div className="w-full mt-10 items-center flex-col flex justify-center text-white bg-[#061E4C]">
-        <BsMouse className="h-12 w-16 text-white" />
-        <IoChevronDownSharp className="h-10 animate-b w-10 text-white" />
+      <div className="w-full mt-10 mb-3 items-center  flex-col flex justify-center text-white bg-[#061E4C]">
+        <IoChevronDownSharp className="h-10 w-10 animate-bounce-custom inline-block text-white " />
       </div>
     </section>
   );

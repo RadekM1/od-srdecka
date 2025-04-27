@@ -64,6 +64,8 @@ export const wpArticleSchema = z.object({
   prvni_obrazek: z.union([wpImageSchema, z.literal(false)]).optional(),
   druhy_obrazek: z.union([wpImageSchema, z.literal(false)]).optional(),
   treti_obrazek: z.union([wpImageSchema, z.literal(false)]).optional(),
+  seo_nazev: z.string(),
+  meta_popis: z.string(),
 });
 
 export const wpAcfFetchArticleObject = z.object({

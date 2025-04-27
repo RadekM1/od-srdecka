@@ -4,8 +4,9 @@ import {
   wpFetchBlogArticlesSweets,
   wpFetchBlogArticleSweet,
 } from "@/lib/fetch/articles-sweets-fetch";
+import { Metadata } from "next";
 
-export const revalidate = 60;
+export const revalidate = 10;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
@@ -15,6 +16,40 @@ export async function generateStaticParams() {
       slug: post.slug,
     };
   });
+}
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const id = slug.split("--")[1] ?? null;
+  const article = await wpFetchBlogArticleSweet(id);
+  const url = `https://www.odsrdecka.cz/blog/bezlepkove-recepty-sladke/${slug}`;
+  const imageUrl = article?.uvodni_obrazek;
+  return {
+    title: article?.seo_nazev || "Od srdéčka - bezlepkové recepty (sladké)",
+    description:
+      article?.meta_popis || `${article?.uvodni_text.slice(0, 150)}...`,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: article?.titulek,
+      description: `${article?.uvodni_text.slice(0, 150)}...`,
+      url,
+      images: imageUrl ? [imageUrl] : [],
+      siteName: "Od srdéčka",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article?.titulek,
+      description: `${article?.uvodni_text.slice(0, 150)}...`,
+      images: imageUrl ? [imageUrl] : [],
+    },
+  };
 }
 
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
