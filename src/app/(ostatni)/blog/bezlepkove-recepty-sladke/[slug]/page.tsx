@@ -5,6 +5,7 @@ import {
   wpFetchBlogArticleSweet,
 } from "@/lib/fetch/articles-sweets-fetch";
 import { Metadata } from "next";
+import SweetLayout from "../sweet-layout";
 
 export const revalidate = 10;
 export const dynamicParams = true;
@@ -56,9 +57,10 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const id = (await params).slug.split("--")[1] ?? null;
 
   const article = await wpFetchBlogArticleSweet(id);
+  const articleList = await wpFetchBlogArticlesSweets();
 
   return (
-    <>
+    <SweetLayout articleList={articleList}>
       <article className="flex mx-3 max-w-[1000px] px-2 justify-center items-center text-center flex-col w-full">
         <header className="mb-2 md:mb-9">
           <h1 className="text-3xl md:text-4xl font-semibold lg:text-5xl font-oldStandard w-full text-center">
@@ -85,7 +87,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
         height={20}
         className="w-full  self-center py-10 "
       />
-    </>
+    </SweetLayout>
   );
 };
 export default Page;
