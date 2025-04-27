@@ -1,16 +1,16 @@
 import Article from "@/components/article";
 import Image from "next/image";
 import {
-  wpFetchBlogArticlesSweets,
-  wpFetchBlogArticleSweet,
-} from "@/lib/fetch/articles-sweets-fetch";
+  wpFetchBlogArticlesOther,
+  wpFetchBlogArticleOther,
+} from "@/lib/fetch/articles-others-fetch";
 import { Metadata } from "next";
 
 export const revalidate = 10;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const posts = await wpFetchBlogArticlesSweets();
+  const posts = await wpFetchBlogArticlesOther();
   return posts.map((post) => {
     return {
       slug: post.slug,
@@ -25,7 +25,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const id = slug.split("--")[1] ?? null;
-  const article = await wpFetchBlogArticleSweet(id);
+  const article = await wpFetchBlogArticleOther(id);
   const url = `https://www.odsrdecka.cz/blog/bezlepkove-recepty-ostatni/${slug}`;
   const imageUrl = article?.uvodni_obrazek;
   return {
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const id = (await params).slug.split("--")[1] ?? null;
 
-  const article = await wpFetchBlogArticleSweet(id);
+  const article = await wpFetchBlogArticleOther(id);
 
   return (
     <>
