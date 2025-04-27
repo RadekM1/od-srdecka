@@ -2,24 +2,24 @@ import BlogSections from "../blogSections";
 import SweetLayout from "./sweet-layout";
 import { wpFetchBlogArticlesSweets } from "@/lib/fetch/articles-sweets-fetch";
 
+export const dynamic = "force-dynamic";
+
 const blogSections = [
   {
     url: "/blog/bezlepkove-recepty-sladke",
     label: "Sladké recepty",
-    position: "left-[15%]  md:left-[20%] ",
+    position: "left-[15%]  md:left-[20%]",
   },
   {
     url: "/blog/bezlepkove-recepty-ostatni",
     label: "Ostatní recepty",
-    position: "right-[15%]  md:right-[20%] ",
+    position: "right-[15%]  md:right-[20%]",
   },
 ];
 
-export const dynamic = "force-dynamic";
-
-const articleList = await wpFetchBlogArticlesSweets();
-
 export default async function Page() {
+  const articleList = await wpFetchBlogArticlesSweets();
+
   return (
     <SweetLayout articleList={articleList}>
       <section className="flex mx-3 max-w-[1000px] px-2 justify-center items-center text-center mb-10 flex-col w-full">
@@ -28,9 +28,9 @@ export default async function Page() {
             Bezlepkové recepty - ostatní
           </span>
         </div>
-        <div className="mt-20 mb-14 relative flex w-full  justify-center items-center mx-4 max-w-[1000px]">
+        <div className="mt-20 mb-14 relative flex w-full justify-center items-center mx-4 max-w-[1000px]">
           <img
-            className="absolute top-1/2  -translate-y-1/2 w-full"
+            className="absolute top-1/2 -translate-y-1/2 w-full"
             src="/others/line.svg"
             alt="oddělovací linka"
           />

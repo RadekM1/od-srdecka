@@ -9,6 +9,20 @@ import IndexSectionLine from "../../components/indexSectionLine";
 import SectionTitleBlue from "../../components/sectionTitleBlue";
 import Flowers from "../../components/index/flowers";
 import AboutUsComponentIndexAsideImg from "../../components/index/aboutUsIndexText";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dorty a sladké bary z Kašavy",
+  description: "https://www.odsrdecka.cz",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  keywords: ["dorty", "sladké bary", "dorty zlínský kraj"],
+  authors: [{ name: "Radek Morong", url: "https://www.radekmorong.cz" }],
+  alternates: {
+    canonical: "https://www.odsrdecka.cz",
+  },
+};
 
 const Home = () => {
   return (
