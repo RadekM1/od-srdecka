@@ -66,7 +66,9 @@ const Navbar = () => {
                         className={`${
                           (path.startsWith(item.link) &&
                             item.link.length > 2) ||
-                          (item.link === "/" && path === "/")
+                          (item.link === "/" && path === "/") ||
+                          (path === "/blog/bezlepkove-recepty-ostatni" &&
+                            item.link === "/blog/bezlepkove-recepty-sladke")
                             ? "text-gray-400"
                             : ""
                         }`}
