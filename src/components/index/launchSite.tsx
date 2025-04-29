@@ -2,7 +2,7 @@ import { ChevronDown } from "./chevronDown";
 const LaunchSite = () => {
   return (
     <section className="min-h-screen bg-[#061E4C] h-full flex-col">
-      <div className="text-center lg:px-20 md:mt-12 items-center justify-center gap-16 xl:px-44 w-full self-center flex pb-10 flex-col md:flex-row min-h-[70vh] h-full bg-[#061E4C] text-white font-OoohBaby">
+      <div className="text-center lg:px-20 md:mt-12 items-center justify-center gap-8 lg:gap-24 xl:px-44 w-full self-center flex pb-10 flex-col md:flex-row min-h-[70vh] h-full bg-[#061E4C] text-white font-OoohBaby">
         <div className="flex justify-center max-w-[500px] order-2 w-full md:order-1 items-center">
           <img
             className=" h-full w-1/2 md:w-5/6  max-w-[500px] object-contain flex"
