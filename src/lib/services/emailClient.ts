@@ -1,112 +1,74 @@
 "use server";
-import { google } from "googleapis";
-import { FormSchema, formSchema } from "@/schema/formSchema";
+import nodemailer from "nodemailer";
+import validator from "validator";
+import { FormSchema } from "@/schema/formSchema";
 import process from "process";
 
-const createEmail = (
-  to: string,
-  from: string,
-  subject: string,
-  message: string,
-) => {
-  const encodedSubject = `=?UTF-8?B?${Buffer.from(subject).toString("base64")}?=`;
-  const formattedMessage = message.replace(/\n/g, "<br>");
-
-  const emailBody = [
-    `Content-Type: text/html; charset="UTF-8"`,
-    `MIME-Version: 1.0`,
-    `Content-Transfer-Encoding: base64`,
-    `To: ${to}`,
-    `From: ${from}`,
-    `Subject: ${encodedSubject}`,
-    ``,
-    Buffer.from(
-      `
-            <html>
-                <head>
-                    <style>
-                        body {
-                            font-family: Arial, sans-serif;
-                            background-color: #f9f9f9;
-                            color: #333;
-                            padding: 20px;
-                        }
-                        .message {
-                            background-color: #ffffff;
-                            border-radius: 5px;
-                            padding: 20px;
-                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                        }
-                        h1 {
-                            color: #4CAF50;
-                        }
-                        p {
-                            font-size: 16px;
-                            line-height: 1.5;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="message">
-                        <h1>${subject}</h1>
-                        <p>${formattedMessage}</p> 
-                    </div>
-                </body>
-            </html>
-        `,
-      "utf-8",
-    ).toString("base64"),
-  ].join("\n");
-
-  return Buffer.from(emailBody)
-    .toString("base64")
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_")
-    .replace(/=+$/, "");
-};
-
 export const emailClient = async (data: FormSchema) => {
-  console.log("server fire test", data);
-
   try {
-    // Validace dat
-    const validatedData = formSchema.parse(data);
-    console.log("validovaná data:", validatedData);
+    if (!data.name || validator.isEmpty(data.name.trim())) {
+      throw new Error("Jméno je povinné.");
+    }
+    if (!data.lastName || validator.isEmpty(data.lastName.trim())) {
+      throw new Error("Příjmení je povinné.");
+    }
+    if (!data.email || !validator.isEmail(data.email)) {
+      throw new Error("Neplatná e-mailová adresa.");
+    }
+    if (data.tel && !validator.isMobilePhone(data.tel, "cs-CZ")) {
+      throw new Error("Neplatné telefonní číslo.");
+    }
 
-    // OAuth2 klient pro autentifikaci
-    const oauth2Client = new google.auth.OAuth2(
-      process.env.client_id,
-      process.env.client_secret,
-      "http://localhost:3000/api/oauth2callback",
-    );
+    const name = validator.escape(data.name.trim());
+    const lastName = validator.escape(data.lastName.trim());
+    const email = validator.normalizeEmail(data.email)!;
+    const tel = data.tel ? validator.escape(data.tel.trim()) : "";
 
-    // Nastavení access tokenu
-    oauth2Client.setCredentials({
-      access_token: process.env.access_token, // Použití access tokenu
+    const noteRaw = data.note || "";
+    const noteSafe = validator.escape(noteRaw).replace(/\n/g, "<br>");
+
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST,
+      port: 465,
+      secure: true,
+      auth: {
+        user: "info@odsrdecka.cz",
+        pass: process.env.SMTP_PASSWORD,
+      },
     });
 
-    // Inicializace Gmail API
-    const gmail = google.gmail({ version: "v1", auth: oauth2Client });
+    const subject = `Nová zpráva od ${name} ${lastName}`;
+    const htmlBody = `
+      <h2>Nová zpráva z formuláře “Od srdečka”</h2>
+      <ul>
+        <li><strong>Jméno:</strong> ${name}</li>
+        <li><strong>Příjmení:</strong> ${lastName}</li>
+        <li><strong>E-mail:</strong> ${email}</li>
+        <li><strong>Telefon:</strong> ${tel}</li>
+      </ul>
+      <h3>Text zprávy:</h3>
+      <p>${noteSafe}</p>
+    `;
 
-    // Vytvoření e-mailu
-    const raw = createEmail(
-      "radekmorong@gmail.com", // Příjemce
-      validatedData.email, // Odesílatel
-      "Testovací e-mail", // Předmět
-      validatedData.note, // Tělo e-mailu
-    );
+    await transporter.sendMail({
+      from: '"Od srdečka" <info@odsrdecka.cz>',
+      to: process.env.EMAIL_DESTINATION,
+      replyTo: process.env.EMAIL_DESTINATION,
+      subject,
+      text: `
+      Nová zpráva od ${name} ${lastName}
 
-    // Odeslání e-mailu
-    const res = await gmail.users.messages.send({
-      userId: "me",
-      requestBody: { raw },
+      E-mail: ${email}
+      Telefon: ${tel}
+
+      Poznámka:
+      ${noteRaw}
+      `,
+      html: htmlBody,
     });
-
-    console.log("Message sent:", res.data);
 
     return { success: true, message: "E-mail úspěšně odeslán!" };
   } catch (error) {
     console.log("Chyba ve funkci emailClient:", error);
-    return { success: false, message: "Došlo k chybě při odesílání e-mailu." };
   }
 };

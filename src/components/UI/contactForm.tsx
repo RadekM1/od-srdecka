@@ -1,15 +1,28 @@
 "use client";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FormSchema, formSchema } from "@/schema/formSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import FormInput from "./formInput";
 import { emailClient } from "@/lib/services/emailClient";
+import FormModal from "./form-modal";
+
+const successText = `
+        Děkujeme za zprávu.
+
+        Kdybyste potřebovali něco doplnit nebo upřesnit, stačí se ozvat. Rády pomůžeme.
+      `;
+
+const errorText = `zprávu se nepodařilo odeslat`;
 
 const ContactForm = () => {
+  const [formKey, setFormKey] = useState(Date.now());
+  const [isShowing, setIsShowing] = useState<boolean>(false);
+  const [modalText, setModalText] = useState<string>("");
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitted },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
@@ -17,17 +30,26 @@ const ContactForm = () => {
 
   const onSubmit = async (data: FormSchema) => {
     const { success } = await emailClient(data);
-    if (success) {
-      reset();
-      // eslint-disable-next-line
-      isSubmitted;
+    if (!success) {
+      setModalText(errorText);
+      setIsShowing(true);
       return;
     }
+    setModalText(successText);
+    setIsShowing(true);
+    reset();
+    reset(undefined, {
+      keepErrors: false,
+      keepDirty: false,
+      keepTouched: false,
+    });
+    setFormKey(Date.now());
   };
 
   return (
     <div className="items-center flex border-[3px] border-[#061E4C] rounded-2xl self-center text-center w-full max-w-3xl">
       <form
+        key={formKey}
         onSubmit={handleSubmit(onSubmit)}
         className="w-full text-base p-5 flex flex-col"
       >
@@ -89,10 +111,12 @@ const ContactForm = () => {
         >
           {isSubmitting ? "Odesílám..." : "Odeslat"}
         </button>
-        {isSubmitted && (
-          <p className="text-green-600 text-sm">zpráva byla úspěšně odeslána</p>
-        )}
       </form>
+      <FormModal
+        data={modalText}
+        setIsShowing={setIsShowing}
+        isShowing={isShowing}
+      />
     </div>
   );
 };

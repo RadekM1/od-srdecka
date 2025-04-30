@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 import {
   Abhaya_Libre,
   Old_Standard_TT,
@@ -55,6 +56,7 @@ export default async function RootLayout({
         </header>
         <div className="h-[56px] bg-[#061E4C]"></div>
         {children}
+        <Toaster richColors expand={true} />
         <Footer />
       </body>
     </html>
