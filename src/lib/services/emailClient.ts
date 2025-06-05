@@ -70,5 +70,6 @@ export const emailClient = async (data: FormSchema) => {
     return { success: true, message: "E-mail úspěšně odeslán!" };
   } catch (error) {
     console.log("Chyba ve funkci emailClient:", error);
+    return { success: false, message: "E-mail se nepodařilo odeslat" };
   }
 };
