@@ -8,7 +8,7 @@ import slugify from "slugify";
 export const wpFetchBlogArticlesSweets = async () => {
   try {
     const response = await fetch(
-      `https://www.odsrdecka.cz/cms/wp-json/acf/v3/clanky-sladke`,
+      `https://wordpress.odsrdecka.cz/wp-json/acf/v3/clanky-sladke`,
       { next: { revalidate: 10 } },
     );
 
@@ -52,7 +52,7 @@ export const wpFetchBlogArticlesSweets = async () => {
 export const wpFetchBlogArticleSweet = async (id: string) => {
   try {
     const response = await fetch(
-      `https://www.odsrdecka.cz/cms/wp-json/acf/v3/clanky-sladke/${id}`,
+      `https://wordpress.odsrdecka.cz/wp-json/acf/v3/clanky-sladke/${id}`,
       { next: { revalidate: 10 } },
     );
     if (!response.ok) {
