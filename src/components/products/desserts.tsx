@@ -4,6 +4,7 @@ import Image from "next/image";
 import { DessertProductSchema } from "@/schema/desserts";
 import Modal from "./modal";
 import { useState } from "react";
+import { MdArrowForwardIos } from "react-icons/md";
 
 interface dessertProps {
   desserts: DessertProductSchema[];
@@ -36,8 +37,8 @@ const Desserts = ({ desserts }: dessertProps) => {
                 width={500}
                 height={500}
               />
-              <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base bg-white/30 rounded-full px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden  group-hover:block duration-300 ease-in-out text-white -translate-x-1/2">
-                Čti více
+              <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base  px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden duration-300 group-hover:block ease-in-out text-white -translate-x-1/2">
+                <MdArrowForwardIos className="h-14 w-14 rotate-90 text-white" />
               </span>
             </div>
             <div className="font-dancing font-semibold tracking-wide pt-2 self-center items-center flex">

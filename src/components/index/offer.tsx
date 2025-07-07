@@ -1,5 +1,6 @@
 import SectionTitle from "../sectionTitle";
 import Link from "next/link";
+import { MdArrowForwardIos } from "react-icons/md";
 
 const OfferImg = [
   {
@@ -33,7 +34,7 @@ const BlogImg = [
 
 const Offer = () => {
   return (
-    <div className="flex flex-col  px-2 text-xl max-w-6xl w-full text-center justify-center self-center items-center md:flex-row">
+    <div className="flex flex-col mb-12 px-2 text-xl max-w-6xl w-full text-center justify-center self-center items-center md:flex-row">
       <div className="w-full relative  justify-center">
         <SectionTitle indexPage={true} title="Naše nabídka" />
         <img
@@ -59,8 +60,8 @@ const Offer = () => {
                       alt={img.alt}
                       title={img.title}
                     />
-                    <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base bg-white/30 rounded-full px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden  group-hover:block duration-300 ease-in-out text-white -translate-x-1/2">
-                      Čti více
+                    <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base  px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden duration-300 group-hover:block ease-in-out text-white -translate-x-1/2">
+                      <MdArrowForwardIos className="h-14 w-14 text-white" />
                     </span>
                   </div>
                   <div className="text-center lg:text-2xl font-OoohBaby tracking-wide group-hover:font-semibold mt-3">
@@ -86,8 +87,8 @@ const Offer = () => {
                       alt={img.alt}
                       title={img.title}
                     />
-                    <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base bg-white/30 rounded-full px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden  group-hover:block duration-500 ease-in-out text-white -translate-x-1/2">
-                      Čti více
+                    <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base  px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden duration-300 group-hover:block ease-in-out text-white -translate-x-1/2">
+                      <MdArrowForwardIos className="h-14 w-14 text-white" />
                     </span>
                   </div>
                   <div className="text-center lg:text-2xl font-OoohBaby tracking-wide group-hover:font-semibold mt-3">

@@ -49,11 +49,6 @@ export const mobileMenuItems : {
     link: "/blog/bezlepkove-recepty-sladke",
     menu: null,
   },
-  { 
-    label: "Aktuality", 
-    link: "/aktuality",
-    menu: null
-  },
   { label: "Dotazy", 
     link: "/dotazy",
     menu: null

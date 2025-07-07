@@ -8,7 +8,11 @@ import { faqContext } from "../../../../public/content/faqContext";
 
 const Faq = () => {
   return (
-    <AccordionFaq type="single" collapsible className="w-full text-start ">
+    <AccordionFaq
+      type="single"
+      collapsible
+      className="w-full mt-16 text-start "
+    >
       {faqContext.map((item, i) => {
         return (
           <AccordionItem

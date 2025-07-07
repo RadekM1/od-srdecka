@@ -10,7 +10,7 @@ export const imgGallerySchema = z.object({
   alt: z.string(),
   media_type: z.string(),
   type: z.string().optional(),
-  thumbnail: z.string().optional(),
+  thumbnail: z.string(),
 });
 
 export type RefGallery = z.infer<typeof refGallerySchema>;

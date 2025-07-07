@@ -4,7 +4,6 @@ import ContactRowTwoColumns from "@/components/contactRowTwoColumns";
 import TextInRowComponentOrder from "./textInRowComponentOrder";
 import ContactForm from "@/components/UI/contactForm";
 import SectionTitle from "@/components/sectionTitle";
-import SectionLine from "@/components/sectionLine";
 import Gallery from "@/components/gallery";
 
 const Page = () => {
@@ -40,7 +39,6 @@ const Page = () => {
         </div>
         <ContactForm />
       </div>
-      <SectionLine />
       <Gallery />
     </>
   );

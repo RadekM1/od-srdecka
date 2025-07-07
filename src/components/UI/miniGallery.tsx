@@ -1,9 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import LightBox from "./lightbox";
-import { useState } from "react";
+import { MdArrowForwardIos } from "react-icons/md";
 
 interface MiniGalleryProps {
   item: {
@@ -22,14 +19,6 @@ interface MiniGalleryProps {
 }
 
 const MiniGallery = ({ item, index }: MiniGalleryProps) => {
-  const [activeId, setActiveId] = useState<number>(0);
-  const [toggler, setToggler] = useState<boolean>(false);
-
-  const handleImgClick = (i: number) => {
-    setActiveId(i);
-    setToggler(true);
-  };
-
   return (
     <div className="max-w-[350px]  w-full  mx-6 flex  justify-between flex-col">
       <div className="my-12 mt-8  mb-6">
@@ -39,7 +28,7 @@ const MiniGallery = ({ item, index }: MiniGalleryProps) => {
         </span>
       </div>
 
-      <div className="inline-flex   h-full flex-col justify-center  w-full  items-center">
+      <div className="inline-flex mb-24  h-full flex-col justify-center  w-full  items-center">
         <div className="flex relative justify-center items-center">
           <div className=" flex-col">
             <div className="h-full mb-2 relative group w-full">
@@ -52,44 +41,10 @@ const MiniGallery = ({ item, index }: MiniGalleryProps) => {
                   width={500}
                   height={500}
                 />
-
-                <span className="absolute top-1/2 -translate-y-1/2 text-xs sm:text-base bg-white/30 rounded-full px-1 sm:px-3 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden  group-hover:block ease-in-out text-white -translate-x-1/2">
-                  Otevřít celou galerii{" "}
+                <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base  px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden duration-300 group-hover:block ease-in-out text-white -translate-x-1/2">
+                  <MdArrowForwardIos className="h-14 w-14 text-white" />
                 </span>
               </Link>
-            </div>
-            <div className="h-full gap-2 flex-row flex w-full">
-              <div className="object-cover">
-                <Image
-                  className=" h-full hover:cursor-pointer duration-300 ease-in-out rounded-xl  hover:brightness-50 self-center"
-                  src={item.miniGallery[0].src}
-                  alt={item.alt}
-                  title={item.title}
-                  width={500}
-                  height={500}
-                  onClick={() => handleImgClick(0)}
-                />
-              </div>
-              <div className="flex gap-2 object-cover h-full flex-col">
-                <Image
-                  className="  rounded-xl h-max hover:cursor-pointer duration-300 ease-in-out   hover:brightness-50 self-center flex"
-                  src={item.miniGallery[1].src}
-                  alt={item.alt}
-                  title={item.title}
-                  width={500}
-                  height={500}
-                  onClick={() => handleImgClick(1)}
-                />
-                <Image
-                  className="  rounded-xl hover:cursor-pointer  h-max duration-300 ease-in-out  hover:brightness-50 self-center flex"
-                  src={item.miniGallery[2].src}
-                  alt={item.alt}
-                  title={item.title}
-                  width={500}
-                  height={500}
-                  onClick={() => handleImgClick(2)}
-                />
-              </div>
             </div>
             <img
               src="/bocni-srdecka.svg"
@@ -99,12 +54,6 @@ const MiniGallery = ({ item, index }: MiniGalleryProps) => {
           </div>
         </div>
       </div>
-      <LightBox
-        input={item.miniGallery}
-        active={activeId}
-        toggler={toggler}
-        setToggler={setToggler}
-      />
     </div>
   );
 };

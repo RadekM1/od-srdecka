@@ -11,7 +11,7 @@ const reference = [
 
 const Reference = () => {
   return (
-    <div className="w-full lg:w-[1000px]  flex flex-col self-center items-center">
+    <div className="w-full lg:w-[1000px] my-16  flex flex-col self-center items-center">
       <SectionTitle indexPage={true} title="Jak chutná našim zákazníkům?" />
       <CarouselReference props={reference} />
     </div>

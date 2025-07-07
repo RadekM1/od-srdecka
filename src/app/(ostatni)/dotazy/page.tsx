@@ -1,19 +1,17 @@
 import PageTitle from "@/components/pageTitle";
 import Faq from "./faq";
 import Gallery from "@/components/gallery";
-import SectionLine from "@/components/sectionLine";
 
 const Page = () => {
   return (
     <>
       <section className="flex max-w-6xl  px-10 mb-10 flex-col w-full">
         <PageTitle title="Nejčastější dotazy" />
-        <span className="mb-5 text-xl lg:text-2xl font-oldStandard">
+        <p className="mb-5 text-xl mt-16 lg:text-2xl font-oldStandard">
           Máte otázky? Možná už máme odpověď právě tady.
-        </span>
+        </p>
         <Faq />
       </section>
-      <SectionLine />
       <Gallery />
     </>
   );

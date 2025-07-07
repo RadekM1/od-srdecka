@@ -4,7 +4,7 @@ interface SectionTitleProps {
 
 const PageTitle = ({ title }: SectionTitleProps) => {
   return (
-    <div className="mb-10">
+    <div className="mb-10 mt-16">
       <span className="text-3xl md:text-4xl font-semibold lg:text-5xl font-oldStandard w-full text-center">
         {title}
       </span>

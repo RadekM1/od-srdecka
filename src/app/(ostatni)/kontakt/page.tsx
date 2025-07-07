@@ -6,8 +6,8 @@ import WhereToFindUs from "@/components/index/whereToFindUs";
 import SectionTitleBlue from "@/components/sectionTitleBlue";
 import SectionTitle from "@/components/sectionTitle";
 import ContactForm from "@/components/UI/contactForm";
-import SectionLine from "@/components/sectionLine";
 import Gallery from "@/components/gallery";
+import Flowers from "@/components/index/flowers";
 
 const Page = () => {
   return (
@@ -17,19 +17,19 @@ const Page = () => {
       <ContactRowTwoColumns>
         <TextInRowComponent />
       </ContactRowTwoColumns>
-      <div className="w-full max-w-6xl p-5  px-5 sm:px-5 flex flex-col text-start justify-start">
-        <span className="font-oldStandard text-2xl font-semibold">
+      <div className="w-full max-w-6xl p-5 mb-12 md:mb-32 lg:mb-48  px-5 sm:px-5 flex flex-col text-start justify-start">
+        <p className="font-oldStandard text-2xl font-semibold">
           Spolupráce s kavárnami
-        </span>
-        <span className="text-base lg:text-lg text-start font-oldStandard">
+        </p>
+        <p className="text-base lg:text-lg text-start font-oldStandard">
           Máte <span className="font-semibold">kavárnu</span> a chtěli byste
           nabízet naše produkty? Rády navážeme spolupráci. Neváhejte nás
           kontaktovat.
-        </span>
-        <span className="font-oldStandard mt-10 text-2xl font-semibold">
+        </p>
+        <p className="font-oldStandard mt-10 text-2xl font-semibold">
           Aktuality
-        </span>
-        <span className="text-base mb-10 lg:text-lg text-start font-oldStandard">
+        </p>
+        <p className="text-base mb-10 lg:text-lg text-start font-oldStandard">
           Všechny <span className="font-semibold">novinky a aktuality</span>{" "}
           můžete sledovat na našem{" "}
           <a
@@ -40,17 +40,19 @@ const Page = () => {
             instagramu
           </a>
           .
-        </span>
-        <div className="w-full flex rounded-2xl justify-center items-center text-center py-4 flex-col bg-[#061E4C]">
-          <SectionTitleBlue isIndex={false} title="Kde nás najdete?" />
-          <WhereToFindUs />
-        </div>
+        </p>
+      </div>
+      <div className="w-full flex justify-center items-center text-center py-4 flex-col bg-[#061E4C]">
+        <Flowers />
+        <SectionTitleBlue isIndex={true} title="Kde nás najdete?" />
+        <WhereToFindUs />
+      </div>
+      <div className="w-full max-w-6xl p-5  px-5 sm:px-5 flex flex-col text-start justify-start">
         <div className="text-center pt-14 w-full my-10">
           <SectionTitle indexPage={false} title="Kontaktní formulář" />
         </div>
         <ContactForm />
       </div>
-      <SectionLine />
       <Gallery />
     </>
   );

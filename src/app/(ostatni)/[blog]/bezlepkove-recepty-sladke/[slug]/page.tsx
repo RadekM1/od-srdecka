@@ -67,15 +67,6 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
             {article === null ? "Článek nenalezen" : `${article.titulek}`}
           </h1>
         </header>
-        <div className="flex w-full max-w-[1000px] select-none items-center justify-center">
-          <Image
-            src={"/heartsLine.svg"}
-            alt="oddělovač sekce"
-            width={1000}
-            height={20}
-            className="w-full self-center mt-14 "
-          />
-        </div>
         <section className="relative flex w-full  justify-center items-center mx-4 max-w-[1000px]">
           {article !== null && <Article article={article} />}
         </section>

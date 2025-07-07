@@ -1,5 +1,4 @@
 import PageTitle from "@/components/pageTitle";
-import IndexSectionLine from "@/components/indexSectionLine";
 import Gallery from "@/components/gallery";
 import Desserts from "@/components/products/desserts";
 import { desserts } from "../../../../../public/content/desserts";
@@ -17,7 +16,6 @@ const Page = () => {
       </span>
       <PageTitle title="Menu" />
       <Desserts desserts={desserts} />
-      <IndexSectionLine sectionAnchor={false} />
       <Gallery />
     </>
   );

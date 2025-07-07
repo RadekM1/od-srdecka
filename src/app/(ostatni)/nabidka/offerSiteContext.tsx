@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MdArrowForwardIos } from "react-icons/md";
 
 const offerProps = [
   {
@@ -45,6 +46,9 @@ const OfferSiteContext = () => {
                         width={500}
                         height={500}
                       />
+                      <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base  px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden duration-300 group-hover:block ease-in-out text-white -translate-x-1/2">
+                        <MdArrowForwardIos className="h-14 w-14 text-white" />
+                      </span>
                       <img
                         src="/bocni-srdecka.svg"
                         className={`w-10 hidden md:block absolute h-[70px] z-50 ${i === 0 ? "bottom-2 -left-[30px]" : "top-2 rotate-180 -right-[30px]"}`}

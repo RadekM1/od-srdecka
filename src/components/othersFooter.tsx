@@ -38,11 +38,11 @@ const OthersFooter = () => {
               </button>
             </Link>
             <img
-              src="/tel.svg"
+              src="/tel-num.svg"
               alt="telefonní číslo"
               className="w-max-[100px]"
             />
-            <img src="/email.svg" alt="email" className="w-max-[100px]" />
+            <img src="/email-adr.svg" alt="email" className="w-max-[100px]" />
           </div>
         </div>
       </div>

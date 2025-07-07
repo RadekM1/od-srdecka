@@ -54,6 +54,16 @@ export const wpImageSchema = z.object({
   }),
 });
 
+export const wpFetchedGallerySchema = z.array(
+  z.object({
+    id: z.number(),
+    acf: z.record(
+      z.string().regex(/^obr-(?:[1-9]|[12]\d|3[0-2])$/),
+      z.union([wpImageSchema, z.boolean()]).optional(),
+    ),
+  }),
+);
+
 export const wpArticleSchema = z.object({
   titulek: z.string(),
   uvodni_text: z.string(),
@@ -84,3 +94,4 @@ export type WpAcfArticlesFetch = z.infer<typeof wpAcfArticlesFetch>;
 export type ArticlesListSchema = z.infer<typeof articlesListSchema>;
 export type ArticleComponentData = z.infer<typeof wpArticleSchema>;
 export type WpImageSchema = z.infer<typeof wpImageSchema>;
+export type WPFetchedGallery = z.infer<typeof wpFetchedGallerySchema>;

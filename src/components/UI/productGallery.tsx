@@ -17,10 +17,21 @@ const ProductGallery = ({ gallery, productType }: ProductGallery) => {
   const [activeId, setActiveId] = useState<number>(0);
   const [toggler, setToggler] = useState<boolean>(false);
   const [index, setIndex] = useState<number>(i);
+  const [loaded, setLoaded] = useState<boolean[]>(
+    new Array(gallery.length).fill(false),
+  );
 
   const handleImgClick = (id: number) => {
     setActiveId(id);
     setToggler(true);
+  };
+
+  const handleLoad = (i: number) => {
+    setLoaded((prev) => {
+      const tempLoaded = [...prev];
+      tempLoaded[i] = true;
+      return tempLoaded;
+    });
   };
 
   const filteredGallery = gallery.slice(0, index);
@@ -40,14 +51,21 @@ const ProductGallery = ({ gallery, productType }: ProductGallery) => {
                 onClick={() => handleImgClick(i)}
                 className="cursor-pointer group relative font-oldStandard w-full h-full object-cover"
               >
+                {!loaded[i] && (
+                  <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md flex items-center justify-center">
+                    <div className="w-8 h-8 bg-gray-300 rounded-full animate-bounce"></div>
+                  </div>
+                )}
                 <Image
-                  className=" object-scale-down rounded-md h-max duration-300 ease-in-out group-hover:brightness-50 self-center flex"
-                  src={img.thumbnail ?? "/"}
+                  src={img.thumbnail}
                   alt={img.alt}
                   width={500}
                   height={500}
-                  loading="eager"
-                  priority={true}
+                  sizes="(max-width: 640px) 47vw, (max-width: 1024px) 33vw, 200px"
+                  loading="lazy"
+                  onLoad={() => handleLoad(i)}
+                  className={`object-cover rounded-md h-full w-full transition-all duration-300 ease-in-out group-hover:brightness-50 
+                  ${loaded[i] ? "opacity-100" : "opacity-0"}`}
                 />
               </div>
             </div>

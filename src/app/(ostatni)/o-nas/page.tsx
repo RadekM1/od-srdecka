@@ -5,7 +5,7 @@ import AboutUs from "../../../components/aboutUs";
 const Page = () => {
   return (
     <>
-      <section className="flex max-w-6xl font-oldStandard px-3 mb-10 flex-col w-full">
+      <section className="flex mt-6 max-w-6xl font-oldStandard px-3 mb-10 flex-col w-full">
         <AboutUs
           title="Tři cérky z Valašska"
           textImg="/pozadi-text/nas-pribeh.svg"
@@ -14,14 +14,21 @@ const Page = () => {
           <AboutUsComponentTextAsideImg />
         </AboutUs>
         <span className="text-start">
-          <span className="text-1xl">&gt;&gt;</span> Naše dorty a zákusky můžete
+          <span className="text-1xl">&bull;</span> Naše dorty a zákusky můžete
           ochutnat i v <span className="font-semibold">kavárnách,</span> se
           kterými spolupracujeme.
         </span>
-        <span className="text-start pb-10">
-          <span className="text-1xl">&gt;&gt;</span> Všechny{" "}
+        <span className="text-start mt-2 pb-10">
+          <span className="text-1xl">&bull;</span> Všechny{" "}
           <span className="font-semibold">novinky a aktuality</span> můžete
-          sledovat na našem <span className="font-semibold">instagramu.</span>{" "}
+          sledovat na našem{" "}
+          <a
+            href="https://www.instagram.com/odsrdecka_bezlepku/"
+            className="font-semibold hover:no-underline underline"
+            target="_blank"
+          >
+            instagramu
+          </a>{" "}
         </span>
       </section>
       <Gallery />

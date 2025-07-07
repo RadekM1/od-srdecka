@@ -5,7 +5,6 @@ import AboutUs from "../../components/aboutUs";
 import WhereToFindUs from "../../components/index/whereToFindUs";
 import Reference from "../../components/index/reference";
 import Gallery from "../../components/gallery";
-import IndexSectionLine from "../../components/indexSectionLine";
 import SectionTitleBlue from "../../components/sectionTitleBlue";
 import Flowers from "../../components/index/flowers";
 import AboutUsComponentIndexAsideImg from "../../components/index/aboutUsIndexText";
@@ -41,7 +40,6 @@ const Home = () => {
       <SectionTitleBlue isIndex={true} title="Kde nás najdete?" />
       <WhereToFindUs />
       <Reference />
-      <IndexSectionLine sectionAnchor={false} />
       <Gallery />
       <HearthSnake />
     </>

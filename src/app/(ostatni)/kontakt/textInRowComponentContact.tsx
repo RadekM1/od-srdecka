@@ -13,7 +13,7 @@ const TextInRowComponentOrder = () => {
             odsrdecka@gmail.com
           </span>
           <span className="text-base mt-10 font-oldStandard lg:text-lg text-nowrap">
-            +420 111 222 333g
+            +420 601 123 456
           </span>
           <span className="text-base font-oldStandard lg:text-lg text-nowrap">
             Adresa provozovny a výdejny
