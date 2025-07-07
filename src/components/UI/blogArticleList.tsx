@@ -21,6 +21,18 @@ const BlogArticleList = ({ blogList, section }: ProductGallery) => {
     .filter((article) => article.id !== currentId)
     .slice(0, index);
 
+  const [loaded, setLoaded] = useState<boolean[]>(
+    new Array(blogList.length).fill(false),
+  );
+
+  const handleLoad = (i: number) => {
+    setLoaded((prev) => {
+      const tempLoaded = [...prev];
+      tempLoaded[i] = true;
+      return tempLoaded;
+    });
+  };
+
   return (
     <>
       <div className="flex self-center items-center w-full justify-center flex-wrap gap-3">
@@ -32,20 +44,27 @@ const BlogArticleList = ({ blogList, section }: ProductGallery) => {
             >
               <Link
                 href={`/blog/${section}/${article.slug}`}
-                className="cursor-pointer relative min-h-full p-3 w-full h-full object-cover"
+                className="cursor-pointer  min-h-full p-3 w-full h-full object-cover"
               >
-                <Image
-                  className=" rounded-2xl h-32 mb-1 lg:h-60 object-cover duration-300 ease-in-out group-hover:brightness-50 self-center flex"
-                  src={article.thumbnailSrc ?? "/"}
-                  alt={article.thumbnailAlt ?? ""}
-                  width={500}
-                  height={500}
-                  loading="eager"
-                  priority={true}
-                />
-                <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base  px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden duration-300 group-hover:block ease-in-out text-white -translate-x-1/2">
-                  <MdArrowForwardIos className="h-14 rotate-90 w-14 text-white" />
-                </span>
+                <div className="w-full relative h-full">
+                  {!loaded[i] && (
+                    <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md flex items-center h-full w-full justify-center"></div>
+                  )}
+                  <Image
+                    className={`rounded-2xl relative h-32 mb-1 lg:h-60 object-cover duration-300 ease-in-out group-hover:brightness-50 self-center flex ${loaded[i] ? "opacity-100" : "opacity-0"}`}
+                    src={article.thumbnailSrc ?? "/"}
+                    alt={article.thumbnailAlt ?? ""}
+                    width={500}
+                    height={500}
+                    loading="eager"
+                    onLoad={() => handleLoad(i)}
+                    priority={true}
+                  />
+                  <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base  px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden duration-300 group-hover:block ease-in-out text-white -translate-x-1/2">
+                    <MdArrowForwardIos className="h-14 rotate-90 w-14 text-white" />
+                  </span>
+                </div>
+
                 <div className="text-[#061E4C] min-h-[56px] group-hover:text-white ">
                   {article.title}
                 </div>
