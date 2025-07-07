@@ -72,7 +72,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
         </section>
       </article>
       <Image
-        src={"/heartsLine.svg"}
+        src={"/line.svg"}
         alt="oddělovač sekce"
         width={1000}
         height={20}

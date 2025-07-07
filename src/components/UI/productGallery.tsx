@@ -52,9 +52,7 @@ const ProductGallery = ({ gallery, productType }: ProductGallery) => {
                 className="cursor-pointer group relative font-oldStandard w-full h-full object-cover"
               >
                 {!loaded[i] && (
-                  <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md flex items-center justify-center">
-                    <div className="w-8 h-8 bg-gray-300 rounded-full animate-bounce"></div>
-                  </div>
+                  <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md flex items-center justify-center"></div>
                 )}
                 <Image
                   src={img.thumbnail}

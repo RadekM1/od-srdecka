@@ -55,6 +55,13 @@ const Desserts = ({ desserts }: dessertProps) => {
         setIsShowing={setIsShowing}
         isShowing={isShowing}
       />
+      <div className="w-full lg:mt-16 relative h-full self-center justify-center">
+        <img
+          src="/dezerty.svg"
+          className={`absolute hidden lg:block -top-[150px] -z-10`}
+          alt="pozadí text pečeme od srdéčka"
+        />
+      </div>
     </div>
   );
 };

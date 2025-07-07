@@ -13,12 +13,12 @@ const Page = () => {
         >
           <AboutUsComponentTextAsideImg />
         </AboutUs>
-        <span className="text-start">
+        <p className="text-start mt-10">
           <span className="text-1xl">&bull;</span> Naše dorty a zákusky můžete
           ochutnat i v <span className="font-semibold">kavárnách,</span> se
           kterými spolupracujeme.
-        </span>
-        <span className="text-start mt-2 pb-10">
+        </p>
+        <p className="text-start mt-2 pb-10">
           <span className="text-1xl">&bull;</span> Všechny{" "}
           <span className="font-semibold">novinky a aktuality</span> můžete
           sledovat na našem{" "}
@@ -29,7 +29,7 @@ const Page = () => {
           >
             instagramu
           </a>{" "}
-        </span>
+        </p>
       </section>
       <Gallery />
     </>

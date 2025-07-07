@@ -1,6 +1,6 @@
 const NotesUnderTable = () => {
   return (
-    <span className="text-sm gap-2 xl:text-base font-oldStandard flex flex-col self-center w-[90%] max-w-[1000px] text-start ">
+    <p className="text-sm gap-2 xl:text-base font-oldStandard flex flex-col self-center w-[90%] max-w-[1000px] text-start ">
       <span className="text-start">
         Uvedené ceny jsou bez zdobení, to pak počítáme individuálně.
       </span>
@@ -16,11 +16,11 @@ const NotesUnderTable = () => {
       <span className="text-start">
         Veškeré alergeny jsou vyznačeny u jednotlivých příchutí dortů.
       </span>
-      <span className="text-start font-semibold">
+      <span className="text-start mt-6 font-semibold">
         Upozorňujeme, že dorty je nutné spotřebovat nejpozději do 3 dnů od dne
         vyzvednutí a uchovávat při teplotě do 8 stupnů Celsia.
       </span>
-    </span>
+    </p>
   );
 };
 export default NotesUnderTable;

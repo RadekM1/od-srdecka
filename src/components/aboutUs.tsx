@@ -12,7 +12,7 @@ const AboutUs = ({ title, textImg, children, indexPage }: aboutUsProps) => {
   return (
     <>
       <SectionTitle title={title} indexPage={indexPage} />
-      <div className="flex flex-col mb-10 px-1 text-xl lg:text-2xl max-w-6xl w-full text-center justify-center self-center items-start md:flex-row">
+      <div className="flex flex-col mt-16 mb-10 px-1 text-xl lg:text-2xl max-w-6xl w-full text-center justify-center self-center items-start md:flex-row">
         <div className="w-full relative h-full self-center justify-center">
           <img
             src={textImg}
