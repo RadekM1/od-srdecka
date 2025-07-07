@@ -1,6 +1,6 @@
 const TextUnderTitle = () => {
   return (
-    <div className="w-full p-5 md:m-10 flex flex-col md:w-[1000px]">
+    <div className="w-full p-5 md:mt-10 flex flex-col mb-10 lg:w-[1000px]">
       <span className="text-start md:text-center text-xl lg:text-2xl font-oldStandard px-2 ">
         Objednávky nejraději přijímáme{" "}
         <span className="font-semibold underline">telefonicky</span>, ale pokud

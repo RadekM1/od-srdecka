@@ -27,12 +27,12 @@ export default async function Page() {
 
   return (
     <SweetLayout articleList={articleList}>
-      <section className="flex mx-3 max-w-[1000px] px-2 justify-center items-center text-center mb-10 flex-col w-full">
+      <section className="flex max-w-[1000px]  justify-center items-center text-center mb-10 flex-col w-full">
         <div className="mb-6 mt-16">
-          <span className="text-3xl md:text-4xl font-semibold lg:text-5xl font-oldStandard w-full text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold lg:text-5xl font-oldStandard w-full text-center">
             Bezlepkové recepty
-          </span>
-          <div className="w-full p-5 md:m-10 flex flex-col md:w-[1000px]">
+          </h2>
+          <div className="w-full p-5 md:mt-10 flex flex-col lg:w-[1000px]">
             <span className="text-start md:text-center text-xl lg:text-2xl font-oldStandard px-2 ">
               Tento bezlepkový blog vznikl původně jako{" "}
               <a

@@ -51,7 +51,7 @@ const OfferSiteContext = () => {
                       </span>
                       <img
                         src="/bocni-srdecka.svg"
-                        className={`w-10 hidden md:block absolute h-[70px] z-50 ${i === 0 ? "bottom-2 -left-[30px]" : "top-2 rotate-180 -right-[30px]"}`}
+                        className={`w-10 hidden md:block absolute h-[70px] z-50 ${i === 0 ? "bottom-2 -left-[25px]" : "top-2 rotate-180 -right-[25px]"}`}
                         alt="boční ikony srdíček"
                       />
                     </span>

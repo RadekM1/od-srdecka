@@ -34,7 +34,7 @@ const BlogImg = [
 
 const Offer = () => {
   return (
-    <div className="flex flex-col mb-12 px-2 text-xl max-w-6xl w-full text-center justify-center self-center items-center md:flex-row">
+    <div className="flex flex-col mb-24 px-2 text-xl max-w-6xl w-full text-center justify-center self-center items-center md:flex-row">
       <div className="w-full relative  justify-center">
         <SectionTitle indexPage={true} title="Naše nabídka" />
         <img

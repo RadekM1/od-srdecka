@@ -28,13 +28,13 @@ const MiniGallery = ({ item, index }: MiniGalleryProps) => {
         </span>
       </div>
 
-      <div className="inline-flex mb-24  h-full flex-col justify-center  w-full  items-center">
+      <div className="inline-flex mb-24 md:px-5 h-full flex-col justify-center  w-full  items-center">
         <div className="flex relative justify-center items-center">
           <div className=" flex-col">
             <div className="h-full mb-2 relative group w-full">
               <Link href={item.link}>
                 <Image
-                  className=" object-scale-down rounded-xl md:max-w-[350px] h-max duration-300 ease-in-out group-hover:brightness-50 self-center flex"
+                  className=" object-scale-down rounded-xl max-w-[150px] md:max-w-[320px] h-max duration-300 ease-in-out group-hover:brightness-50 self-center flex"
                   src={item.src}
                   alt={item.alt}
                   title={item.title}
