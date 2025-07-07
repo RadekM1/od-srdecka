@@ -54,7 +54,9 @@ export default async function RootLayout({
       >
         <Script
           strategy="afterInteractive"
-          defer src="https://cloud.umami.is/script.js" data-website-id="a55db6e1-83d2-453d-a129-d7fb68e84311"
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="a55db6e1-83d2-453d-a129-d7fb68e84311"
         />
         <header>
           <Navbar />
