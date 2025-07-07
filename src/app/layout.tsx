@@ -10,6 +10,7 @@ import "./globals.css";
 import Navbar from "../components/UI/navbar";
 import React from "react";
 import Footer from "../components/footer";
+import Script from "next/script";
 
 const OoohBaby = Oooh_Baby({
   weight: "400",
@@ -51,6 +52,10 @@ export default async function RootLayout({
       <body
         className={`flex w-full text-[#061E4C]  flex-col justify-center text-center ${dancing.variable} ${OoohBaby.variable} ${abhaya.variable} ${oldStandard.variable} antialiased`}
       >
+        <Script
+          strategy="afterInteractive"
+          defer src="https://cloud.umami.is/script.js" data-website-id="a55db6e1-83d2-453d-a129-d7fb68e84311"
+        />
         <header>
           <Navbar />
         </header>
