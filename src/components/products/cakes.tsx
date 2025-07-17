@@ -13,6 +13,17 @@ interface cakesProps {
 const Cakes = ({ cakes }: cakesProps) => {
   const [isShowing, setIsShowing] = useState<boolean>(false);
   const [cakeInModal, setCakeInModal] = useState<number>(0);
+  const [loaded, setLoaded] = useState<boolean[]>(
+    new Array(cakes.length).fill(false),
+  );
+
+  const handleLoad = (i: number) => {
+    setLoaded((prev) => {
+      const tempLoaded = [...prev];
+      tempLoaded[i] = true;
+      return tempLoaded;
+    });
+  };
 
   const handleModal = (i: number) => {
     setCakeInModal(i);
@@ -31,11 +42,15 @@ const Cakes = ({ cakes }: cakesProps) => {
               onClick={() => handleModal(i)}
               className="cursor-pointer group relative font-oldStandard w-full h-full object-cover"
             >
+              {!loaded[i] && (
+                <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md flex items-center h-full w-full justify-center"></div>
+              )}
               <Image
                 className=" object-cover rounded-xl h-full w-full duration-300 ease-in-out group-hover:brightness-50 self-center flex"
                 src={cake.src}
                 alt={cake.alt}
                 title={cake.title}
+                onLoad={() => handleLoad(i)}
                 width={500}
                 height={500}
               />

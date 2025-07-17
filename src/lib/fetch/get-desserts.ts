@@ -17,8 +17,6 @@ export const getDesserts = async () => {
     }
     const data: FetchedDesserts = await response.json();
 
-    console.log(data);
-
     const parsedDesserts = fetchedDesserts.parse(data);
 
     const preparedDesserts: DessertProductSchema[] = parsedDesserts.map(

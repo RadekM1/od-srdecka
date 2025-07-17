@@ -13,10 +13,21 @@ interface dessertProps {
 const Desserts = ({ desserts }: dessertProps) => {
   const [isShowing, setIsShowing] = useState<boolean>(false);
   const [dessertInModal, setDessertInModal] = useState<number>(0);
+  const [loaded, setLoaded] = useState<boolean[]>(
+    new Array(desserts.length).fill(false),
+  );
 
   const handleModal = (i: number) => {
     setDessertInModal(i);
     setIsShowing(true);
+  };
+
+  const handleLoad = (i: number) => {
+    setLoaded((prev) => {
+      const tempLoaded = [...prev];
+      tempLoaded[i] = true;
+      return tempLoaded;
+    });
   };
 
   return (
@@ -29,12 +40,16 @@ const Desserts = ({ desserts }: dessertProps) => {
             className="border-[1px] border-[#061E4C] cursor-pointer rounded-xl hover:bg-[#061E4C] hover:ease-in-out hover:duration-300  hover:text-white flex flex-col w-[30%] sm:w-[21%] md:w-[16%] p-2 text-center"
           >
             <div className=" group relative font-oldStandard w-full h-full object-cover">
+              {!loaded[i] && (
+                <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md flex items-center h-full w-full justify-center"></div>
+              )}
               <Image
                 className="object-cover rounded-xl h-full max-h-[142px] w-full duration-300 ease-in-out group-hover:brightness-50 self-center flex"
                 src={dessert.src}
                 alt={dessert.alt}
                 title={dessert.title}
                 width={500}
+                onLoad={() => handleLoad(i)}
                 height={500}
               />
               <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base  px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden duration-300 group-hover:block ease-in-out text-white -translate-x-1/2">
