@@ -8,7 +8,7 @@ import slugify from "slugify";
 export const wpFetchBlogArticlesSweets = async () => {
   try {
     const response = await fetch(
-      `https://wordpress.odsrdecka.cz/wp-json/acf/v3/clanky-sladke`,
+      `https://wordpress.odsrdecka.cz/wp-json/acf/v3/clanky-sladke?per_page=100`,
       { next: { revalidate: 10 } },
     );
 

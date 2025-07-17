@@ -32,7 +32,7 @@ const Cakes = ({ cakes }: cakesProps) => {
               className="cursor-pointer group relative font-oldStandard w-full h-full object-cover"
             >
               <Image
-                className=" object-scale-down rounded-xl h-max duration-300 ease-in-out group-hover:brightness-50 self-center flex"
+                className=" object-cover rounded-xl h-full w-full duration-300 ease-in-out group-hover:brightness-50 self-center flex"
                 src={cake.src}
                 alt={cake.alt}
                 title={cake.title}

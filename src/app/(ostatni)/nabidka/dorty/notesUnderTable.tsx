@@ -1,13 +1,8 @@
-const NotesUnderTable = () => {
+const NotesUnderTable = ({ fetchedNotes }: { fetchedNotes: string[] }) => {
   return (
     <p className="text-sm gap-2 xl:text-base font-oldStandard flex flex-col self-center w-[90%] max-w-[1000px] text-start ">
-      <span className="text-start">
-        Uvedené ceny jsou bez zdobení, to pak počítáme individuálně.
-      </span>
-      <span className="text-start">
-        Pistáciový dort je za příplatek 200 až 300 Kč v závislosti na velikosti
-        dortu, pistáciový krém 150 až 200 Kč.{" "}
-      </span>
+      <span className="text-start">{fetchedNotes[0]}</span>
+      <span className="text-start">{fetchedNotes[1]}</span>
       <span className="text-start">
         Možnost upéct také{" "}
         <span className="font-semibold">bezlepkové a bezlaktózové verze</span>{" "}

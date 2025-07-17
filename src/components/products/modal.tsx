@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion"; // Importujeme framer-motion
 import { CakeProductSchema } from "@/schema/cakes";
+import { DessertProductSchema } from "@/schema/desserts";
 import { IoClose } from "react-icons/io5";
 
 interface ModalProps {
-  data: CakeProductSchema;
+  data: CakeProductSchema | DessertProductSchema;
   isShowing: boolean;
 
   setIsShowing: (isShowing: boolean) => void;
@@ -52,7 +53,7 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
           transition={{ duration: 0.2 }}
         >
           <motion.div
-            className="flex max-h-[90vh] relative rounded-xl max-w-2xl flex-col border-[#061E4C] border-[1px] gap-6 overflow-hidden bg-white shadow-xl"
+            className="flex max-h-[90vh] relative rounded-xl max-w-2xl w-11/12 flex-col border-[#061E4C] border-[1px] gap-6 overflow-hidden bg-white shadow-xl"
             ref={wrapperRef}
             id="modal"
             role="document"
@@ -63,10 +64,10 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
           >
             <header id="header-2a" className="flex p-3 items-center gap-4">
               <div className="flex flex-col h-full pt-5 w-full">
-                <h3 className="flex-1 absolute right-1/2 z-30 text-2xl translate-x-1/2 lg:text-3xl font-dancing">
+                <h3 className="flex-1 absolute text-nowrap right-1/2 z-30 text-2xl translate-x-1/2 lg:text-3xl font-dancing">
                   {data.title}
                 </h3>
-                <h3 className="flex-1 absolute text-gray-100 select-none top-5 translate-x-[45%] z-20 text-2xl right-1/2 lg:text-3xl font-dancing">
+                <h3 className="flex-1 absolute text-nowrap text-gray-100 select-none top-5 translate-x-[45%] z-20 text-2xl right-1/2 lg:text-3xl font-dancing">
                   {data.title}
                 </h3>
               </div>
@@ -92,6 +93,9 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
                   </li>
                 ))}
               </ul>
+              {"notes" in data && data.notes && (
+                <p className="ml-2 mb-1">{data.notes}</p>
+              )}
               <div className="bg-[#061E4C] flex flex-col h-full">
                 <span className="text-base w-full lg:text-xl text-center text-white font-thin py-4 tracking-widest font-dancing">
                   alergeny {data.allergens}

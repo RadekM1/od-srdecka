@@ -9,7 +9,7 @@ const Page = () => {
   return (
     <>
       <section className="flex max-w-[1000px] px-1 items-center  justify-center text-center mb-10 flex-col w-full">
-        <PageTitle title="Galerie sladkého bartu" />
+        <PageTitle title="Galerie sladkého baru" />
         <ProductGallery productType="dessert" gallery={dessertsGallery} />
         <Reference />
       </section>

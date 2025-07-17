@@ -5,7 +5,7 @@ import { WPFetchedGallery, WpImageSchema } from "@/schema/article";
 export const getGalleries = async (galleryName: string) => {
   try {
     const response = await fetch(
-      `https://wordpress.odsrdecka.cz/wp-json/acf/v3/${galleryName}`,
+      `https://wordpress.odsrdecka.cz/wp-json/acf/v3/${galleryName}?per_page=100`,
       { next: { revalidate: 60 } },
     );
 

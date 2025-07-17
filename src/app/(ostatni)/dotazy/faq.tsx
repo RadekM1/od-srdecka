@@ -4,7 +4,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../../../components/UI/accordionFaq";
-import { faqContext } from "../../../../public/content/faqContext";
+import { getFaq } from "@/lib/fetch/get-faq";
+
+const faqContext = await getFaq();
 
 const Faq = () => {
   return (
