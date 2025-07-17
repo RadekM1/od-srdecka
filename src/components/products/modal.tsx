@@ -52,7 +52,7 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
           transition={{ duration: 0.2 }}
         >
           <motion.div
-            className="flex max-h-[90vh] relative rounded-xl w-11/12 max-w-lg flex-col border-[#061E4C] border-[1px] gap-6 overflow-hidden bg-white shadow-xl"
+            className="flex max-h-[90vh] relative rounded-xl max-w-2xl flex-col border-[#061E4C] border-[1px] gap-6 overflow-hidden bg-white shadow-xl"
             ref={wrapperRef}
             id="modal"
             role="document"
@@ -87,13 +87,13 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
             >
               <ul className="list-disc px-8 py-4">
                 {data?.variants?.map((variants, i) => (
-                  <li className="text-sm md:text-base" key={i}>
+                  <li className="text-sm md:text-base lg:text-xl" key={i}>
                     {variants}
                   </li>
                 ))}
               </ul>
               <div className="bg-[#061E4C] flex flex-col h-full">
-                <span className="text-base w-full text-center text-white font-thin py-4 tracking-widest font-dancing">
+                <span className="text-base w-full lg:text-xl text-center text-white font-thin py-4 tracking-widest font-dancing">
                   alergeny {data.allergens}
                 </span>
               </div>

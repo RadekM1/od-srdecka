@@ -43,7 +43,7 @@ const Cakes = ({ cakes }: cakesProps) => {
                 <MdArrowForwardIos className="h-14 w-14 rotate-90 text-white" />
               </span>
             </div>
-            <div className="font-dancing pt-2 self-center items-center flex">
+            <div className="font-dancing lg:text-2xl pt-2 self-center items-center flex">
               {cake.title}
             </div>
           </div>

@@ -65,7 +65,7 @@ const BlogArticleList = ({ blogList, section }: ProductGallery) => {
                   </span>
                 </div>
 
-                <div className="text-[#061E4C] min-h-[56px] group-hover:text-white ">
+                <div className="text-[#061E4C] min-h-[56px] lg:text-2xl group-hover:text-white ">
                   {article.title}
                 </div>
               </Link>
