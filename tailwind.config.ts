@@ -9,7 +9,6 @@ export default {
   ],
   theme: {
     extend: {
-      
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -52,7 +51,6 @@ export default {
           "5": "hsl(var(--chart-5))",
         },
       },
-      
       fontFamily: {
         dancing: ["var(--font-dancing)", "normal"],
         abhaya: ["var(--font-abhaya)", "serif"],
@@ -81,19 +79,25 @@ export default {
             height: "0",
           },
         },
+        slidein: {
+          from: {
+            opacity: "0",
+            transform: "translateY(30px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        slidein500: "slidein 1s ease 500ms forwards",
+        slidein1000: "slidein 1s ease 1000ms forwards",
+        slidein1200: "slidein 1s ease 1200ms forwards",
+        slidein1400: "slidein 1s ease 1400ms forwards",
       },
-    },
-    animation: {
-      slidein500: "slidein 1s ease 500ms forwards ",
-      slidein1000: "slidein 1s ease 1000ms forwards ",
-      slidein1200: "slidein 1s ease 1000ms forwards ",
-      slidein1400: "ease 1000ms ",
-      "accordion-down": "accordion-down 0.2s ease-out",
-      "accordion-up": "accordion-up 0.2s ease-out",
     },
   },
   typography: {
