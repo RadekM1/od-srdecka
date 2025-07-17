@@ -18,10 +18,23 @@ const ArticleGallery = ({
 }: ArticleGalleryProps) => {
   const [activeId, setActiveId] = useState<number>(0);
   const [toggler, setToggler] = useState<boolean>(false);
+  const [loaded, setLoaded] = useState<boolean[]>(
+    new Array([firstImg, secondImg, thirdImg].filter(Boolean).length).fill(
+      false,
+    ),
+  );
 
   const handleImgClick = (i: number) => {
     setActiveId(i);
     setToggler(true);
+  };
+
+  const handleLoad = (i: number) => {
+    setLoaded((prev) => {
+      const tempLoaded = [...prev];
+      tempLoaded[i] = true;
+      return tempLoaded;
+    });
   };
 
   const filteredGallery: WpImageSchema[] = [
@@ -45,12 +58,16 @@ const ArticleGallery = ({
             <div
               key={i}
               onClick={() => handleImgClick(i)}
-              className="flex-col cursor-pointer  w-full items-start justify-start hover:brightness-50 duration-300 ease-in-out object-cover"
+              className="flex-col cursor-pointer relative w-full items-start justify-start hover:brightness-50 duration-300 ease-in-out object-cover"
             >
+              {!loaded[i] && (
+                <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md flex items-center h-full w-full justify-center"></div>
+              )}
               <Image
                 height={368}
+                onLoad={() => handleLoad(i)}
                 width={350}
-                className="object-cover self-start h-[150px] md:h-[250px] lg:h-[350px] rounded-xl w-full"
+                className={`object-cover self-start h-[150px] md:h-[250px] lg:h-[350px] rounded-xl w-full`}
                 src={image.thumbnail}
                 alt={image.alt}
               />
