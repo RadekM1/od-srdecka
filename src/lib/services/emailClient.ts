@@ -59,7 +59,7 @@ export const emailClient = async (data: FormSchema) => {
       Nová zpráva od ${name} ${lastName}
 
       E-mail: ${email}
-      Telefon: ${tel}
+      Tel: ${tel}
 
       Poznámka:
       ${noteRaw}
