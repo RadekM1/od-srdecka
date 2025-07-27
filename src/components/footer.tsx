@@ -37,12 +37,16 @@ const Footer = () => {
                 Objednat
               </button>
             </Link>
-            <img
-              src="/tel-num.svg"
-              alt="telefonní číslo"
-              className="w-max-[100px]"
-            />
-            <img src="/email-adr.svg" alt="email" className="w-max-[100px]" />
+            <Link href="tel:+420733506548">
+              <img
+                src="/phone.svg"
+                alt="telefonní číslo"
+                className="w-max-[100px]"
+              />
+            </Link>
+            <Link href="mailto:odsrdecka@gmail.com">
+              <img src="/email-adr.svg" alt="email" className="w-max-[100px]" />
+            </Link>
           </div>
         </div>
       </div>
