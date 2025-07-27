@@ -10,7 +10,7 @@ import FormModal from "./form-modal";
 const successText = `
         Děkujeme za zprávu.
 
-        Kdybyste potřebovali něco doplnit nebo upřesnit, stačí se ozvat. Rády pomůžeme.
+        Pokud potřebujete něco doplnit k objednávce nebo máte dotazy, klidně se ozvěte. Rády pomůžeme!
       `;
 
 const errorText = `zprávu se nepodařilo odeslat`;

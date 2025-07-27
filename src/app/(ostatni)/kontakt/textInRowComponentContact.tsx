@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const TextInRowComponentOrder = () => {
   return (
     <>
@@ -9,12 +11,18 @@ const TextInRowComponentOrder = () => {
           <span className="text-base font-oldStandard lg:text-lg text-nowrap">
             Magdalena Hanáková
           </span>
-          <span className="text-base font-oldStandard lg:text-lg text-nowrap">
+          <Link
+            href="mailto:odsrdecka@gmail.com"
+            className="text-base font-oldStandard lg:text-lg text-nowrap"
+          >
             odsrdecka@gmail.com
-          </span>
-          <span className="text-base mt-10 font-oldStandard lg:text-lg text-nowrap">
+          </Link>
+          <Link
+            href="tel:+420733506548"
+            className="text-base mt-10 font-oldStandard lg:text-lg text-nowrap"
+          >
             +420 733 506 548
-          </span>
+          </Link>
           <span className="text-base font-oldStandard lg:text-lg text-nowrap">
             Adresa provozovny a výdejny
           </span>
