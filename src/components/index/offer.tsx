@@ -22,7 +22,7 @@ const BlogImg = [
     src: "/index/recepty.png",
     title: "Recepty",
     alt: "obrázek receptu",
-    link: "/blog/recepty",
+    link: "/blog/bezlepkove-recepty-sladke",
   },
   {
     src: "index/nejcastejsi-dotazy.png",

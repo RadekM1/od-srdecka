@@ -61,7 +61,7 @@ const BlogArticleList = ({ blogList, section }: ProductGallery) => {
                     priority={true}
                   />
                   <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base  px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden duration-300 group-hover:block ease-in-out text-white -translate-x-1/2">
-                    <MdArrowForwardIos className="h-14 rotate-90 w-14 text-white" />
+                    <MdArrowForwardIos className="h-14 w-14 text-white" />
                   </span>
                 </div>
 
