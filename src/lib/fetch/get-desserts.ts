@@ -19,8 +19,8 @@ export const getDesserts = async () => {
 
     const parsedDesserts = fetchedDesserts.parse(data);
 
-    const preparedDesserts: DessertProductSchema[] = parsedDesserts.map(
-      (dessert) => {
+    const preparedDesserts: DessertProductSchema[] = parsedDesserts
+      .map((dessert) => {
         const variants: string[] = [
           dessert.acf.varianta ?? "",
           dessert.acf.dalsi_varianta ?? "",
@@ -67,10 +67,10 @@ export const getDesserts = async () => {
           allergens: dessert.acf.alergeny ?? "",
           variants: filteredVariants ?? "",
           notes: dessert.acf.poznamky ?? "",
-          order: parseInt(dessert.acf.poradi)
+          order: parseInt(dessert.acf.poradi),
         };
-      },
-    ).sort((a,b)=> a.order - b.order);
+      })
+      .sort((a, b) => a.order - b.order);
 
     return preparedDesserts;
   } catch (error) {

@@ -10,7 +10,8 @@ const Page = () => {
     <>
       <PageTitle title="Dezerty" />
       <p className="text-center px-2 text-xl lg:text-2xl font-oldStandard font-semibold">
-       Pečeme dezerty a sladké bary pro různé příležitosti - svatby, narozeniny, Vánoce nebo jen tak pro radost ke kávě.  
+        Pečeme dezerty a sladké bary pro různé příležitosti - svatby,
+        narozeniny, Vánoce nebo jen tak pro radost ke kávě.
       </p>
       <p className="text-center text-xl lg:text-2xl pt-10 font-oldStandard pb-20 px-2 ">
         Rády vám osladíme náladu!

@@ -13,16 +13,14 @@ export const getIndexImages = async () => {
     }
     const data: FetchedIndexImages = await response.json();
 
-
     const parsedImages = await fetchedIndexImages.parse(data);
 
     const preparedImages = Object.entries(parsedImages[0].acf).map((image) => ({
-        imgType: image[0],
-        img: image[1]    
-    }))
+      imgType: image[0],
+      img: image[1],
+    }));
 
     return preparedImages;
-   
   } catch (error) {
     console.log("chyba zpracování požadavku", error);
     return [];

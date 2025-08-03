@@ -1,6 +1,9 @@
 "use server";
 
-import { FetchedNotification, fetchedNotificationsSchema } from "@/schema/notification";
+import {
+  FetchedNotification,
+  fetchedNotificationsSchema,
+} from "@/schema/notification";
 
 export const getNotification = async () => {
   try {

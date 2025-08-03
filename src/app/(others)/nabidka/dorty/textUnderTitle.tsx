@@ -4,10 +4,13 @@ const TextUnderTitle = () => {
   return (
     <>
       <p className="text-center px-2 text-xl lg:text-2xl font-oldStandard font-semibold ">
-        Nepečeme pouze svatební a narozeninové dorty. Naše dorty si můžete objednat  k různým příležitostem (křtiny, promoce, jen tak pro radost k nedělnímu kafíčku...).
+        Nepečeme pouze svatební a narozeninové dorty. Naše dorty si můžete
+        objednat k různým příležitostem (křtiny, promoce, jen tak pro radost k
+        nedělnímu kafíčku...).
       </p>
       <p className="text-center text-xl font-oldStandard lg:text-2xl pt-10 pb-14 px-2 ">
-        Neváhejte nás kontaktovat a my vám rády pomůžeme osladit jakoukoliv vaši speciální událost!
+        Neváhejte nás kontaktovat a my vám rády pomůžeme osladit jakoukoliv vaši
+        speciální událost!
       </p>
       <div className="flex mb-10 flex-row pb-14 gap-12 font-oldStandard">
         <a

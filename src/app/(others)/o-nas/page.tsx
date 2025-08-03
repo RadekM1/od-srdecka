@@ -14,9 +14,9 @@ const Page = () => {
           <AboutUsComponentTextAsideImg isIndex={false} />
         </AboutUs>
         <p className="text-start mt-10">
-          <span>&bull;</span> Naše dorty a zákusky můžete
-          ochutnat i v <span className="font-semibold">kavárnách,</span> se
-          kterými spolupracujeme.
+          <span>&bull;</span> Naše dorty a zákusky můžete ochutnat i v{" "}
+          <span className="font-semibold">kavárnách,</span> se kterými
+          spolupracujeme.
         </p>
         <p className="text-start mt-2 pb-10">
           <span>&bull;</span> Všechny{" "}
