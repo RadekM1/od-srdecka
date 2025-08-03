@@ -5,21 +5,21 @@ import AboutUs from "../../../components/aboutUs";
 const Page = () => {
   return (
     <>
-      <section className="flex mt-6 max-w-6xl font-oldStandard px-3 mb-10 flex-col w-full">
+      <section className="flex mt-6 max-w-6xl font-oldStandard text-xl lg:text-2xl px-3 mb-10 flex-col w-full">
         <AboutUs
           title="Tři cérky z Valašska"
           textImg="/pozadi-text/nas-pribeh.svg"
           indexPage={false}
         >
-          <AboutUsComponentTextAsideImg />
+          <AboutUsComponentTextAsideImg isIndex={false} />
         </AboutUs>
         <p className="text-start mt-10">
-          <span className="text-1xl">&bull;</span> Naše dorty a zákusky můžete
+          <span>&bull;</span> Naše dorty a zákusky můžete
           ochutnat i v <span className="font-semibold">kavárnách,</span> se
           kterými spolupracujeme.
         </p>
         <p className="text-start mt-2 pb-10">
-          <span className="text-1xl">&bull;</span> Všechny{" "}
+          <span>&bull;</span> Všechny{" "}
           <span className="font-semibold">novinky a aktuality</span> můžete
           sledovat na našem{" "}
           <a

@@ -74,8 +74,7 @@ const Footer = () => {
           <span>
             <FaRegHeart />
           </span>
-          <span>vytvořili</span>
-          <span>Radek Morong a Kateřina Pavelková</span>
+          <span>vytvořili Radek Morong a Kateřina Pavelková</span>
         </a>
       </div>
     </footer>

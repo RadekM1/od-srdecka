@@ -23,7 +23,9 @@ const Faq = () => {
             value={`item-${i}`}
           >
             <AccordionTrigger>{item.question}</AccordionTrigger>
-            <AccordionContent className=" p-2 ">{item.answer}</AccordionContent>
+            <AccordionContent className=" p-2 ">
+              <p className="whitespace-pre-line">{item.answer}</p>
+            </AccordionContent>
           </AccordionItem>
         );
       })}

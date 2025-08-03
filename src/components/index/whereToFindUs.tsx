@@ -26,7 +26,7 @@ const WhereToFindUs = () => {
                 >
                   <img
                     className=" object-scale-down w-2/3 md:w-full p-2 duration-300 ease-in-out self-center flex"
-                    src="/index/mapa.png"
+                    src="/index/map.png"
                     alt="fotka teamu"
                   />
                 </a>

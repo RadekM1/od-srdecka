@@ -10,6 +10,7 @@ import { Video } from "yet-another-react-lightbox/plugins";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { ImgGallery } from "@/schema/uiObjects";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 interface lightBoxProps {
   input: ImgGallery[];
@@ -44,7 +45,7 @@ const LightBox = ({ input, active, toggler, setToggler }: lightBoxProps) => {
         close={() => setToggler(false)}
         slides={filteredInput}
         index={active}
-        plugins={[Fullscreen, Captions, Video]}
+        plugins={[Fullscreen, Captions, Video, Zoom]}
         controller={{ closeOnBackdropClick: true }}
         styles={{
           container: { backgroundColor: "rgba(0, 0, 0, 0.8)" },

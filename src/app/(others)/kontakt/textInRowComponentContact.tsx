@@ -9,7 +9,7 @@ const TextInRowComponentOrder = () => {
             Kontakt
           </span>
           <span className="text-base font-oldStandard lg:text-lg text-nowrap">
-            Magdalena Hanáková
+            Magdaléna Hanáková
           </span>
           <Link
             href="mailto:odsrdecka@gmail.com"

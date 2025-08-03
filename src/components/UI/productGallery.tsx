@@ -43,7 +43,7 @@ const ProductGallery = ({ gallery, productType }: ProductGallery) => {
           return (
             <div
               key={i}
-              className={` ${productType === "cake" ? "w-[44%] md:w-[24%]" : "w-[30%] sm:w-[21%] md:w-[19%]"} 
+              className={` ${productType === "cake" ? "w-[44%] md:w-[24%]" : "w-[30%] sm:w-[21%]"} 
             rounded-md hover:bg-gray-700/80 hover:ease-in-out hover:duration-300  hover:text-white flex flex-col  
             text-center`}
             >
@@ -57,8 +57,8 @@ const ProductGallery = ({ gallery, productType }: ProductGallery) => {
                 <Image
                   src={img.thumbnail}
                   alt={img.alt}
-                  width={500}
-                  height={500}
+                  width={800}
+                  height={800}
                   sizes="(max-width: 640px) 47vw, (max-width: 1024px) 33vw, 200px"
                   loading="lazy"
                   onLoad={() => handleLoad(i)}

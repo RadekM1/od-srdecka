@@ -67,9 +67,10 @@ export const getDesserts = async () => {
           allergens: dessert.acf.alergeny ?? "",
           variants: filteredVariants ?? "",
           notes: dessert.acf.poznamky ?? "",
+          order: parseInt(dessert.acf.poradi)
         };
       },
-    );
+    ).sort((a,b)=> a.order - b.order);
 
     return preparedDesserts;
   } catch (error) {

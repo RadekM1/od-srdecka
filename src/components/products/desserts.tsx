@@ -56,10 +56,10 @@ const Desserts = ({ desserts }: dessertProps) => {
                 <MdArrowForwardIos className="h-14 w-14 rotate-90 text-white" />
               </span>
             </div>
-            <div className="font-dancing lg:text-2xl font-semibold tracking-wide pt-2 self-center items-center flex">
+            <div className="font-dancing lg:text-2xl tracking-wide pt-2 self-center items-center flex">
               {dessert.title}
             </div>
-            <div className="font-dancing font-semibold tracking-wide pt-2 self-center items-center flex">
+            <div className="font-dancing tracking-wide pt-2 self-center items-center flex">
               {`${dessert.price} Kč`}
             </div>
           </div>
@@ -70,13 +70,6 @@ const Desserts = ({ desserts }: dessertProps) => {
         setIsShowing={setIsShowing}
         isShowing={isShowing}
       />
-      <div className="w-full lg:mt-16 relative h-full self-center justify-center">
-        <img
-          src="/dezerty.svg"
-          className={`absolute hidden lg:block -top-[150px] -z-10`}
-          alt="pozadí text pečeme od srdéčka"
-        />
-      </div>
     </div>
   );
 };

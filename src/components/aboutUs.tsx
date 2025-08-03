@@ -10,13 +10,13 @@ interface aboutUsProps {
 
 const AboutUs = ({ title, textImg, children, indexPage }: aboutUsProps) => {
   return (
-    <div className={`flex w-full flex-col ${indexPage ? "mb-16" : ""} `}>
+    <div className={`flex w-full flex-col ${indexPage ? "mb-16" : ""}`}>
       <SectionTitle title={title} indexPage={indexPage} />
-      <div className="flex flex-col lg:mt-16 mb-10 px-1 text-xl lg:text-2xl max-w-6xl w-full text-center justify-center self-center items-start md:flex-row">
-        <div className="w-full relative h-full self-center justify-center">
+      <div className="flex flex-col lg:mt-16 mb-10 px-1 max-w-6xl w-full text-center justify-center self-center items-start md:flex-row">
+        <div className={`w-full relative h-full ${indexPage ? 'self-center' : 'self-end'} justify-center`}>
           <img
             src={textImg}
-            className={`absolute hidden lg:block ${indexPage ? "-top-[180px]" : "-top-[150px]"} -z-10`}
+            className={`absolute hidden lg:block ${indexPage ? "-top-[180px]" : "-top-[200px]"} -z-10`}
             alt="pozadí text pečeme od srdéčka"
           />
           {children}
@@ -46,6 +46,11 @@ const AboutUs = ({ title, textImg, children, indexPage }: aboutUsProps) => {
           </div>
         </div>
       </div>
+        {!indexPage && (
+          <p className="text-start mt-5 w-full">
+          <span className="font-semibold">Láska k pečení</span> se u nás předává z generace na generaci. Už od dětství jsme pomáhaly maminkám a babičkám v kuchyni. Začaly jsme navzájem sdílet zkušenosti, recepty i nápady a vzájemně se inspirovat. Postupně vznikla myšlenka nabídnout své výtvory i širšímu okolí. Velmi nás baví propojovat tradiční recepty s dezerty inspirovanými moderními zahraničními trendy.
+          </p>
+        )}
     </div>
   );
 };

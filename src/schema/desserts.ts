@@ -14,6 +14,7 @@ export const dessertProductSchema = z.object({
 export const fetchedDessert = z.object({
   id: z.number(),
   acf: z.object({
+    poradi: z.string(),
     nazev_dezertu: z.string(),
     cena: z.string(),
     obrazek_dortu: wpImageSchema,
