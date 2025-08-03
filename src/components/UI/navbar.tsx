@@ -21,7 +21,7 @@ const Navbar = () => {
     <header className="w-full h-14 z-40 items-center fixed bg-[#061E4C] flex flex-row justify-center font-oldStandard">
       <nav
         role="navigaton"
-        className="flex sticky items-center justify-center top-0 flex-row md:text-sm lg:text-base xl:text-xl mx-2 w-full text-white"
+        className="flex sticky items-center justify-center top-0 flex-row text-xl mx-2 w-full text-white"
       >
         <ul className="flex self-center align-middle items-center h-full">
           {path !== "/" && (
@@ -91,7 +91,7 @@ const Navbar = () => {
             })}
           </ul>
           <Link
-            className="text-base relative py-1 lg:text-xl hover:-translate-y-1 ease-in-out duration-500 bg-white/20 rounded-full hover:bg-white/20 px-3 ml-2 lg:px-5"
+            className="text-base relative py-1 md:text-xl hover:-translate-y-1 ease-in-out duration-500 bg-white/20 rounded-full hover:bg-white/20 px-3 ml-2 lg:px-5"
             href="/objednavka"
           >
             Objednat

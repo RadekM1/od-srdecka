@@ -49,7 +49,7 @@ const MenuPopover = ({
       {popoverOpen && id === targetedPopover && menuItems && (
         <div
           ref={popOverRef}
-          className={`py-3 px-5 ${index ? "top-12 rounded-2xl" : "top-9 rounded-b-2xl"} absolute flex flex-col shadow-md text-sm lg:text-base right-1/2 w-[200px] translate-x-1/2 ${menuStyle} z-50  `}
+          className={`py-3 px-5 ${index ? "top-12 rounded-2xl" : "top-9 rounded-b-2xl"} absolute flex flex-col shadow-md text-xl right-1/2 w-[200px] translate-x-1/2 ${menuStyle} z-50  `}
         >
           {Array.isArray(menuItems) &&
             menuItems.map((item, i) => {
