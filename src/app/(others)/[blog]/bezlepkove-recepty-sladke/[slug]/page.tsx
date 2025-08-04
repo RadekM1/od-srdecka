@@ -28,7 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = slug.split("--")[1] ?? null;
   const article = await wpFetchBlogArticleSweet(id);
   const url = `https://www.odsrdecka.cz/blog/bezlepkove-recepty-sladke/${slug}`;
-  const imageUrl = article?.uvodni_obrazek;
+  const imageUrl =
+    (article?.prvni_obrazek && article.prvni_obrazek.url) || null;
   return {
     title: article?.seo_nazev || "Od srdéčka - bezlepkové recepty (sladké)",
     description:
@@ -40,7 +41,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: article?.titulek,
       description: `${article?.uvodni_text.slice(0, 150)}...`,
       url,
-      images: imageUrl ? [imageUrl] : [],
+      images: imageUrl
+        ? [
+            {
+              url: imageUrl,
+              width: 1200,
+              height: 630,
+              alt:
+                article?.seo_nazev ??
+                "Tým Od Srdéčka - Pečeme pro vás dorty a sladké bary",
+            },
+          ]
+        : [],
       siteName: "Od srdéčka",
       type: "article",
     },

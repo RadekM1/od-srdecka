@@ -39,7 +39,7 @@ export const emailClient = async (data: FormSchema) => {
 
     const subject = `Nová zpráva od ${name} ${lastName}`;
     const htmlBody = `
-      <h2>Nová zpráva z formuláře “Od srdečka”</h2>
+      <h2>Nová zpráva z formuláře “Od Srdéčka”</h2>
       <ul>
         <li><strong>Jméno:</strong> ${name}</li>
         <li><strong>Příjmení:</strong> ${lastName}</li>
@@ -51,7 +51,7 @@ export const emailClient = async (data: FormSchema) => {
     `;
 
     await transporter.sendMail({
-      from: '"Od srdečka" <info@odsrdecka.cz>',
+      from: '"Od Srdéčka" <info@odsrdecka.cz>',
       to: process.env.EMAIL_DESTINATION,
       replyTo: process.env.EMAIL_DESTINATION,
       subject,

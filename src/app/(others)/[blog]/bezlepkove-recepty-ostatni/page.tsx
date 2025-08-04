@@ -1,6 +1,21 @@
 import BlogSections from "../blogSections";
 import OthersLayout from "./others-layout";
 import { wpFetchBlogArticlesOther } from "@/lib/fetch/articles-others-fetch";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dorty a sladké bary z Kašavy - bezlepkové recepty ostatní",
+  description:
+    "Objevte osvědčené bezlepkové recepty. Pečeme s láskou v Kašavě ve Zlínském kraji. Inspirujte se a pečte s námi.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  keywords: ["dorty", "sladké bary", "dorty zlínský kraj"],
+  authors: [{ name: "Radek Morong", url: "https://www.radekmorong.cz" }],
+  alternates: {
+    canonical: "https://www.odsrdecka.cz/bezlepkove-recepty-ostatni",
+  },
+};
 
 const blogSections = [
   {

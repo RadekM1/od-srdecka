@@ -1,5 +1,13 @@
 import Link from "next/link";
 
+const itemsList = [
+  "Typy objednávek",
+  "Dorty - svatební, narozeninové, jiné příležitosti",
+  "Sladké bary",
+  "Krabička dezertů",
+  "Dárkové poukazy",
+];
+
 const TextInRowComponentOrder = () => {
   return (
     <>
@@ -8,16 +16,15 @@ const TextInRowComponentOrder = () => {
           <span className="font-oldStandard text-2xl font-semibold">
             Typy objednávek
           </span>
-          <ul className="font-oldStandard text-start pl-7 list-disc text-base">
-            <li className="text-base px-3 mb-1 lg:text-lg text-nowrap">
-              Dorty - svatební, narozeninové, na zakázku
-            </li>
-            <li className="text-base px-3 mb-1 lg:text-lg text-nowrap">
-              Sladké bary
-            </li>
-            <li className="text-base px-3 mb-1 lg:text-lg text-nowrap">
-              Krabička dezertů
-            </li>
+          <ul className="font-oldStandard text-start pl-3 sm:pl-7 list-disc text-base">
+            {itemsList.map((item, i) => (
+              <li
+                key={i}
+                className="text-base md:px-3 mb-1 lg:text-lg text-nowrap"
+              >
+                {item}
+              </li>
+            ))}
           </ul>
           <div className="w-full text-start font-oldStandard text-base mb-1 lg:text-lg">
             Typy dortů a zákusků naleznete v naší{" "}
@@ -29,6 +36,10 @@ const TextInRowComponentOrder = () => {
                 nabídce
               </Link>
             </span>
+            <p className="font-oldStandard text-2xl font-semibold pt-10 pr-2 sm:pr-10 text-red-400 texxt-start w-full">
+              Objednávejte prosím s dostatečným předstihem a zajistěte si svůj
+              termín.
+            </p>
           </div>
         </div>
       </div>

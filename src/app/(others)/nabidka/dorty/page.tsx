@@ -10,6 +10,57 @@ import { getCakes } from "@/lib/fetch/get-cakes";
 const { cakePrices, cakePriceNotes } = await getCakePrices();
 
 const cakes = await getCakes();
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nabídka dortů a sladkých barů | Od Srdéčka",
+  description:
+    "Prohlédněte si naši kompletní nabídku poctivých dortů, sladkých barů, koláčů a dalších dobrot. Vše pečeme s láskou z kvalitních surovin v Kašavě.",
+  alternates: {
+    canonical: "https://www.odsrdecka.cz/nabidka/dorty",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  keywords: [
+    "nabídka",
+    "sortiment",
+    "ceník",
+    "dorty",
+    "sladký bar",
+    "cheesecake",
+    "makronky",
+    "koláče",
+    "svatební dorty",
+    "Od Srdéčka",
+  ],
+  authors: [{ name: "Radek Morong", url: "https://www.radekmorong.cz" }],
+
+  openGraph: {
+    title: "Naše nabídka dobrot | Od Srdéčka",
+    description:
+      "Objevte naši širokou nabídku dortů, sladkých barů a dalších poctivých sladkostí.",
+    url: "https://www.odsrdecka.cz/nabidka/dorty",
+    siteName: "Od Srdéčka",
+    images: [
+      {
+        url: "https://odsrdecka.cz/index/team.png",
+        width: 1200,
+        height: 630,
+        alt: "Nabídka dortů a sladkých barů Od Srdéčka",
+      },
+    ],
+    locale: "cs_CZ",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Naše nabídka dobrot | Od Srdéčka",
+    description:
+      "Objevte naši širokou nabídku dortů, sladkých barů a dalších poctivých sladkostí.",
+    images: ["https://odsrdecka.cz/index/team.png"],
+  },
+};
 
 const Page = () => {
   return (

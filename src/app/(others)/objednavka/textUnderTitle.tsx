@@ -15,8 +15,11 @@ const TextUnderTitle = () => {
         >
           e-mail
         </Link>{" "}
-        nebo využít kontaktní formulář níže. Rádi se vám ozveme zpět co
-        nejdříve.
+        nebo využít kontaktní formulář níže. Rády se vám ozveme co nejdříve
+        zpět.
+        <p className="text-xl lg:text-2xl my-10 font-semibold">
+          Dort či sladký bar vám pomůžeme vybrat dle vašich představ.
+        </p>
       </div>
     </div>
   );

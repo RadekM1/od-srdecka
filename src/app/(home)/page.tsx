@@ -11,15 +11,48 @@ import AboutUsComponentIndexAsideImg from "../../components/index/aboutUsIndexTe
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dorty a sladké bary z Kašavy",
-  description: "https://www.odsrdecka.cz",
+  title: "Od Srdéčka | Dorty a sladké bary z Kašavy",
+  description:
+    "S láskou pro vás pečeme dorty a sladké bary z kvalitních surovin pro všechny příležitosti. Najdete nás v Kašavě u Zlína.",
+  alternates: {
+    canonical: "https://www.odsrdecka.cz",
+  },
   icons: {
     icon: "/favicon.ico",
   },
-  keywords: ["dorty", "sladké bary", "dorty zlínský kraj"],
+  keywords: [
+    "dorty",
+    "sladké bary",
+    "dorty zlínský kraj",
+    "svatební dorty",
+    "narozeninové dorty",
+    "Kašava",
+  ],
   authors: [{ name: "Radek Morong", url: "https://www.radekmorong.cz" }],
-  alternates: {
-    canonical: "https://www.odsrdecka.cz",
+
+  openGraph: {
+    title: "Od Srdéčka | Dorty a sladké bary z Kašavy",
+    description:
+      "S láskou pro vás pečeme dorty a sladké bary pro všechny příležitosti.",
+    url: "https://www.odsrdecka.cz",
+    siteName: "Od Srdéčka",
+    images: [
+      {
+        url: "https://odsrdecka.cz/index/team.png",
+        width: 1200,
+        height: 630,
+        alt: "Tým Od Srdéčka - Pečeme pro vás dorty a sladké bary",
+      },
+    ],
+    locale: "cs_CZ",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Od Srdéčka | Dorty a sladké bary z Kašavy",
+    description:
+      "S láskou pro vás pečeme dorty a sladké bary pro všechny příležitosti.",
+    images: ["https://odsrdecka.cz/index/team.png"],
   },
 };
 

@@ -1,6 +1,21 @@
 import BlogSections from "../blogSections";
 import SweetLayout from "./sweet-layout";
 import { wpFetchBlogArticlesSweets } from "@/lib/fetch/articles-sweets-fetch";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bezlepkové recepty na dorty a sladké bary | Od Srdéčka Kašava",
+  description:
+    "Objevte osvědčené bezlepkové recepty na lahodné dorty a sladké bary. Pečeme s láskou v Kašavě ve Zlínském kraji. Inspirujte se a pečte s námi.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  keywords: ["dorty", "sladké bary", "dorty zlínský kraj"],
+  authors: [{ name: "Radek Morong", url: "https://www.radekmorong.cz" }],
+  alternates: {
+    canonical: "https://www.odsrdecka.cz/bezlepkove-recepty-sladke",
+  },
+};
 
 const blogSections = [
   {
