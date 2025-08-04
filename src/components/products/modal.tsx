@@ -88,7 +88,7 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
             >
               <ul className="list-disc px-8 py-4">
                 {data?.variants?.map((variants, i) => (
-                  <li className="text-sm md:text-base lg:text-xl" key={i}>
+                  <li className="text-sm md:text-base" key={i}>
                     {variants}
                   </li>
                 ))}
@@ -97,7 +97,7 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
                 <p className="ml-2 mb-1">{data.notes}</p>
               )}
               <div className="bg-[#061E4C] flex flex-col h-full">
-                <span className="text-base w-full lg:text-xl text-center text-white font-thin py-4 tracking-widest font-dancing">
+                <span className="text-base w-full text-center text-white font-thin py-4 tracking-widest font-dancing">
                   alergeny {data.allergens}
                 </span>
               </div>
