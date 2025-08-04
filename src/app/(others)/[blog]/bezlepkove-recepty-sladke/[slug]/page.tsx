@@ -33,7 +33,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: article?.seo_nazev || "Od srdéčka - bezlepkové recepty (sladké)",
     description:
-      article?.meta_popis || `${article?.uvodni_text.slice(0, 150)}...`,
+      article?.meta_popis ||
+      `${article?.uvodni_text.slice(0, 150).replace(/<[^>]*>/g, "")}...`,
     alternates: {
       canonical: url,
     },

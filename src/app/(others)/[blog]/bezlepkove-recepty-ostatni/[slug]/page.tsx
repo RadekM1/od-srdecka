@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       title: article?.titulek,
-      description: `${article?.uvodni_text.slice(0, 150)}...`,
+      description: `${article?.uvodni_text.slice(0, 150).replace(/<[^>]*>/g, "")}...`,
       url,
       images: imageUrl
         ? [
