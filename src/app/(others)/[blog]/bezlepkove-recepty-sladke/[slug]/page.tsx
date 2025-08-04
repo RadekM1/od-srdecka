@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       title: article?.titulek,
-      description: `${article?.uvodni_text.slice(0, 150)}...`,
+      description: `${article?.uvodni_text.slice(0, 150).replace(/<[^>]*>/g, "")}...`,
       url,
       images: [
         {
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: article?.titulek,
-      description: `${article?.uvodni_text.slice(0, 150)}...`,
+      description: `${article?.uvodni_text.slice(0, 150).replace(/<[^>]*>/g, "")}...`,
       images: imageUrl ? [imageUrl] : ["https://odsrdecka.cz/index/team.png"],
     },
   };
