@@ -42,7 +42,7 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
     <AnimatePresence>
       {isShowing && (
         <motion.div
-          className="fixed top-0 left-0 z-100 flex items-center justify-center w-screen h-screen bg-[#272727]/65"
+          className="fixed top-0 left-0 z-50 flex items-center justify-center w-screen h-screen bg-[#272727]/65"
           aria-labelledby="header-2a content-2a"
           aria-modal="true"
           tabIndex={-1}
@@ -53,7 +53,7 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
           transition={{ duration: 0.2 }}
         >
           <motion.div
-            className="flex max-h-[90vh] relative rounded-xl max-w-2xl w-11/12 flex-col border-[#061E4C] border-[1px] gap-6 overflow-hidden bg-white shadow-xl"
+            className="flex max-h-[90vh] relative rounded-xl z-100 max-w-2xl w-11/12 flex-col border-[#061E4C] border-[1px] gap-6 overflow-hidden bg-white shadow-xl"
             ref={wrapperRef}
             id="modal"
             role="document"
