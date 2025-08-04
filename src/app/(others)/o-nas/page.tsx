@@ -8,7 +8,7 @@ const Page = () => {
       <section className="flex mt-6 max-w-6xl font-oldStandard text-xl lg:text-2xl px-3 mb-10 flex-col w-full">
         <AboutUs
           title="Tři cérky z Valašska"
-          textImg="/pozadi-text/our-story.svg"
+          textImg="/pozadi-text/our-story-new.svg"
           indexPage={false}
         >
           <AboutUsComponentTextAsideImg isIndex={false} />
