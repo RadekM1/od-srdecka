@@ -94,7 +94,7 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
                 ))}
               </ul>
               {"notes" in data && data.notes && (
-                <p className="ml-2 mb-1">{data.notes}</p>
+                <p className="ml-2 text-base mb-1">{data.notes}</p>
               )}
               <div className="bg-[#061E4C] flex flex-col h-full">
                 <span className="text-base w-full text-center text-white font-thin py-4 tracking-widest font-dancing">
