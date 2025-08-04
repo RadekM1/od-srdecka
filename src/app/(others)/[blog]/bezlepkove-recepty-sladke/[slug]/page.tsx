@@ -41,18 +41,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: article?.titulek,
       description: `${article?.uvodni_text.slice(0, 150)}...`,
       url,
-      images: imageUrl
-        ? [
-            {
-              url: imageUrl,
-              width: 1200,
-              height: 630,
-              alt:
-                article?.seo_nazev ??
-                "Tým Od Srdéčka - Pečeme pro vás dorty a sladké bary",
-            },
-          ]
-        : [],
+      images: [
+        {
+          url: imageUrl ?? "https://odsrdecka.cz/index/team.png",
+          width: 1200,
+          height: 630,
+          alt:
+            article?.seo_nazev ??
+            "Tým Od Srdéčka - Pečeme pro vás dorty a sladké bary",
+        },
+      ],
       siteName: "Od srdéčka",
       type: "article",
     },
@@ -60,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: article?.titulek,
       description: `${article?.uvodni_text.slice(0, 150)}...`,
-      images: imageUrl ? [imageUrl] : [],
+      images: imageUrl ? [imageUrl] : ["https://odsrdecka.cz/index/team.png"],
     },
   };
 }
