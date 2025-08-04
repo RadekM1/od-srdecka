@@ -43,8 +43,8 @@ export default async function Page() {
                 instagramový profil
               </a>
               , na kterém sdílíme bezlepkové tipy a recepty, protože jedné z nás
-              byla diagnostikovaná celiakie. “Bezlepkářů” máme v okolí spostu, a
-              tak jsme se rozhodly vytvořit si tady srdéčkovou bezlepkovou
+              byla diagnostikovaná celiakie. “Bezlepkářů” máme v okolí spoustu,
+              a tak jsme se rozhodly vytvořit si tady srdéčkovou bezlepkovou
               komunitu a sdílet nejenom sladké dobroty pro lepší den.
               Vyzkoušejte a dejte vědět, jak chutná! :)
             </span>

@@ -27,7 +27,7 @@ export default async function Page() {
 
   return (
     <SweetLayout articleList={articleList}>
-      <section className="flex max-w-[1000px]  justify-center items-center text-center mb-10 flex-col w-full">
+      <section className="flex mx-3 max-w-[1000px] px-2 justify-center items-center text-center mb-10 flex-col w-full">
         <div className="mb-6 mt-16">
           <h2 className="text-3xl md:text-4xl font-semibold lg:text-5xl font-oldStandard w-full text-center">
             Bezlepkové recepty
