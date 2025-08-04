@@ -31,12 +31,12 @@ const Cakes = ({ cakes }: cakesProps) => {
   };
 
   return (
-    <div className="flex flex-wrap gap-4 md:gap-10 justify-center max-w-[1000px] w-full">
+    <div className="flex flex-wrap gap-4 md:gap-10 px-1 justify-center max-w-[1000px] w-full">
       {cakes.map((cake, i) => {
         return (
           <div
             key={i}
-            className="border-[1px] border-[#061E4C] rounded-xl md:min-w-[250px] hover:bg-[#061E4C] hover:ease-in-out hover:duration-300  hover:text-white flex flex-col w-[45%] md:w-[30%] p-2 text-center"
+            className="border-[1px] mb-3 md:mb-6 border-[#061E4C] rounded-xl md:min-w-[250px] hover:bg-[#061E4C] hover:ease-in-out hover:duration-300  hover:text-white flex flex-col w-[45%] md:w-[30%] p-2 text-center"
           >
             <div
               onClick={() => handleModal(i)}
@@ -46,7 +46,7 @@ const Cakes = ({ cakes }: cakesProps) => {
                 <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md flex items-center h-full w-full justify-center"></div>
               )}
               <Image
-                className=" object-cover rounded-xl h-full w-full duration-300 ease-in-out group-hover:brightness-50 self-center flex"
+                className=" object-cover rounded-xl h-[250px] w-full duration-300 ease-in-out group-hover:brightness-50 self-center flex"
                 src={cake.src}
                 alt={cake.alt}
                 title={cake.title}
@@ -58,7 +58,7 @@ const Cakes = ({ cakes }: cakesProps) => {
                 <MdArrowForwardIos className="h-14 w-14 rotate-90 text-white" />
               </span>
             </div>
-            <div className="font-dancing lg:text-2xl pt-2 self-center items-center flex">
+            <div className="font-dancing text-xl lg:text-2xl pt-2 self-center items-center flex">
               {cake.title}
             </div>
           </div>

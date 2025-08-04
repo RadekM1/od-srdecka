@@ -35,12 +35,12 @@ const BlogArticleList = ({ blogList, section }: ProductGallery) => {
 
   return (
     <>
-      <div className="flex self-center items-center w-full justify-center flex-wrap gap-3">
+      <div className="flex self-center items-center w-full justify-center flex-wrap gap-3 md:gap-5 lg:gap-7">
         {filteredArticles.map((article, i) => {
           return (
             <div
               key={i}
-              className="w-[47%] md:w-[32%] self-start h-full min-h-full group font-dancing border-[1px] border-[#061E4C] rounded-2xl hover:bg-[#061E4C] hover:ease-in-out hover:duration-500  hover:text-white flex flex-col  text-center"
+              className="w-[47%] md:w-[30%] mb-5 lg:mb-8 self-start h-full min-h-full group font-dancing border-[1px] border-[#061E4C] rounded-2xl hover:bg-[#061E4C] hover:ease-in-out hover:duration-500  hover:text-white flex flex-col  text-center"
             >
               <Link
                 href={`/blog/${section}/${article.slug}`}
@@ -65,7 +65,7 @@ const BlogArticleList = ({ blogList, section }: ProductGallery) => {
                   </span>
                 </div>
 
-                <div className="text-[#061E4C] min-h-[56px] lg:text-2xl group-hover:text-white ">
+                <div className="text-[#061E4C] min-h-[70px] lg:text-2xl group-hover:text-white ">
                   {article.title}
                 </div>
               </Link>

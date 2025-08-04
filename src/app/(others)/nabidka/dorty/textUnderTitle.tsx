@@ -3,12 +3,12 @@ import Link from "next/link";
 const TextUnderTitle = () => {
   return (
     <>
-      <p className="text-center px-2 text-xl lg:text-2xl font-oldStandard font-semibold ">
+      <p className="text-center px-2 max-w-[1000px] text-xl lg:text-2xl font-oldStandard font-semibold ">
         Nepečeme pouze svatební a narozeninové dorty. Naše dorty si můžete
         objednat k různým příležitostem (křtiny, promoce, jen tak pro radost k
         nedělnímu kafíčku...).
       </p>
-      <p className="text-center text-xl font-oldStandard lg:text-2xl pt-10 pb-14 px-2 ">
+      <p className="text-center text-xl max-w-[1000px] font-oldStandard lg:text-2xl pt-10 pb-14 px-2 ">
         Neváhejte nás kontaktovat a my vám rády pomůžeme osladit jakoukoliv vaši
         speciální událost!
       </p>

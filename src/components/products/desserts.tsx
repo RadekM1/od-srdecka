@@ -37,7 +37,7 @@ const Desserts = ({ desserts }: dessertProps) => {
           <div
             key={i}
             onClick={() => handleModal(i)}
-            className="border-[1px] border-[#061E4C] cursor-pointer rounded-xl hover:bg-[#061E4C] hover:ease-in-out hover:duration-300  hover:text-white flex flex-col w-[30%] sm:w-[21%] md:w-[16%] p-2 text-center"
+            className="border-[1px] mb-3 md:mb-6mb-3 md:mb-6 border-[#061E4C] cursor-pointer rounded-xl hover:bg-[#061E4C] hover:ease-in-out hover:duration-300  hover:text-white flex flex-col w-[30%] sm:w-[21%] md:w-[16%] p-2 text-center"
           >
             <div className=" group relative font-oldStandard w-full h-full object-cover">
               {!loaded[i] && (
