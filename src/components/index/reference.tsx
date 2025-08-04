@@ -7,7 +7,6 @@ const reference = [
   { src: "/reference/ref3.png", alt: "referenční print screen" },
   { src: "/reference/ref4.png", alt: "referenční print screen" },
   { src: "/reference/ref5.png", alt: "referenční print screen" },
-  { src: "/reference/ref6.png", alt: "referenční print screen" },
   { src: "/reference/ref7.png", alt: "referenční print screen" },
 ];
 
