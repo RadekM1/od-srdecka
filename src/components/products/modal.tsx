@@ -42,7 +42,7 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
     <AnimatePresence>
       {isShowing && (
         <motion.div
-          className="fixed top-0 left-0 z-20 flex items-center justify-center w-screen h-screen bg-[#272727]/65"
+          className="fixed top-0 left-0 z-100 flex items-center justify-center w-screen h-screen bg-[#272727]/65"
           aria-labelledby="header-2a content-2a"
           aria-modal="true"
           tabIndex={-1}
