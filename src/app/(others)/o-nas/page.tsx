@@ -77,7 +77,8 @@ const Page = () => {
             target="_blank"
           >
             instagramu
-          </a>{" "}
+          </a>
+          .
         </p>
       </section>
       <Gallery />
