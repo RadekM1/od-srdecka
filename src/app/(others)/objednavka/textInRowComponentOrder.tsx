@@ -34,6 +34,7 @@ const TextInRowComponentOrder = () => {
               >
                 nabídce
               </Link>
+              .
             </span>
             <p className="font-oldStandard text-2xl font-semibold pt-10 pr-2 sm:pr-10 text-red-400 texxt-start w-full">
               Objednávejte prosím s dostatečným předstihem a zajistěte si svůj

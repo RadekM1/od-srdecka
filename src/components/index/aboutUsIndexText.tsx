@@ -9,7 +9,7 @@ const AboutUsComponentIndexAsideImg = () => {
             Srdéčka.{" "}
             <span className="font-semibold">Pečeme dorty a sladké bary</span>
           </div>
-          <div className="font-semibold mb-4">k různým příležitostem</div>
+          <div className="font-semibold mb-4">k různým příležitostem.</div>
         </div>
       </div>
     </>
