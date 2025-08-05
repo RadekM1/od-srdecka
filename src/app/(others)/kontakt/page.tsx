@@ -80,7 +80,7 @@ const Page = () => {
           Aktuality
         </p>
         <ul className="font-oldStandard mt-2 text-start pl-3 sm:pl-7 list-disc text-base">
-          <li className="text-base md:px-3 mb-1 lg:text-lg text-nowrap">
+          <li className="text-base md:px-3 mb-1 lg:text-lg">
             Všechny <span className="font-semibold">novinky a aktuality</span>{" "}
             můžete sledovat i na našem{" "}
             <a
@@ -92,8 +92,16 @@ const Page = () => {
             </a>
             .
           </li>
-          <li className="text-base md:px-3 mb-1 lg:text-lg text-nowrap">
-            Máme dokonce instagramový účet o bezlepkovém pečení.
+          <li className="text-base md:px-3 mb-1 lg:text-lg">
+            Máme dokonce instagramový profil o{" "}
+            <a
+              href="https://www.instagram.com/odsrdecka_bezlepku/?igsh=MWU5Y3hyc3hydWhiMg%3D%3D#"
+              className="font-semibold hover:no-underline underline"
+              target="_blank"
+            >
+              bezlepkovém pečení
+            </a>
+            .
           </li>
         </ul>
       </div>
