@@ -20,7 +20,7 @@ interface MiniGalleryProps {
 
 const MiniGallery = ({ item, index }: MiniGalleryProps) => {
   return (
-    <div className="max-w-[350px]  w-full  mx-6 flex  justify-between flex-col">
+    <div className="max-w-[350px]  w-full  lg:mx-6 flex  justify-between flex-col">
       <div className="my-12 mt-8  mb-6">
         <span className="text-3xl md:text-4xl  lg:text-5xl font-dancing  w-full text-center">
           {/*// eslint-disable-next-line*/}
@@ -34,7 +34,7 @@ const MiniGallery = ({ item, index }: MiniGalleryProps) => {
             <div className="h-full mb-2 relative group w-full">
               <Link href={item.link}>
                 <Image
-                  className=" object-scale-down rounded-xl max-w-[150px] md:max-w-[320px] h-max duration-300 ease-in-out group-hover:brightness-50 self-center flex"
+                  className=" object-scale-down rounded-xl max-w-[150px] sm:max-w-[240px] md:max-w-[320px] h-max duration-300 ease-in-out group-hover:brightness-50 self-center flex"
                   src={item.src}
                   alt={item.alt}
                   title={item.title}

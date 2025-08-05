@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const itemsList = [
-  "Typy objednávek",
   "Dorty - svatební, narozeninové, jiné příležitosti",
   "Sladké bary",
   "Krabička dezertů",

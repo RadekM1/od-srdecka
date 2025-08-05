@@ -2,7 +2,7 @@ import MiniGallery from "@/components/UI/miniGallery";
 
 const offerProps = [
   {
-    src: "/gallery-site/dort-galerie.png",
+    src: "/gallery-main-page/gallery-cakes.png",
     title: "Dorty",
     alt: "obrázek dortu",
     link: "/galerie/dorty-svatebni",
@@ -26,7 +26,7 @@ const offerProps = [
     ],
   },
   {
-    src: "/gallery-site/sladky-bar-galerie.png",
+    src: "/gallery-main-page/gallery-deserts.png",
     title: "Sladký bar",
     alt: "obrázek sladkého baru",
     link: "/galerie/sladky-bar",

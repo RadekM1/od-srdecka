@@ -20,7 +20,7 @@ const TextUnderTitle = () => {
         </Link>{" "}
         nebo využít{" "}
         <span className="font-semibold">kontaktní formulář níže</span>. Rády se
-        vám ozveme zpět co <span className="text-nowrap">nejdříve zpět.</span>
+        vám ozveme co <span className="text-nowrap">nejdříve zpět.</span>
       </span>
     </div>
   );
