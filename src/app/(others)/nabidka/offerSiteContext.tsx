@@ -4,14 +4,14 @@ import { MdArrowForwardIos } from "react-icons/md";
 
 const offerProps = [
   {
-    src: "/offer-site/dort.png",
+    src: "/gallery-main-page/gallery-cakes.png",
     title: "Dorty",
     alt: "obrázek dortu",
     link: "/nabidka/dorty",
     sectionTitle: "Dorty",
   },
   {
-    src: "/offer-site/sladky-bar.png",
+    src: "/gallery-main-page/gallery-deserts.png",
     title: "Dezerty",
     alt: "obrázek sladkého baru",
     link: "/nabidka/dezerty",
@@ -39,7 +39,7 @@ const OfferSiteContext = () => {
                   <div className="flex justify-center flex-shrink items-center">
                     <span className="relative">
                       <Image
-                        className=" object-scale-down md:max-w-[350px] p-2 duration-300 ease-in-out group-hover:brightness-50 self-center flex"
+                        className=" object-scale-down max-w-[150px] sm:max-w-[240px] md:max-w-[320px] p-2 duration-300 ease-in-out group-hover:brightness-50 self-center flex"
                         src={item.src}
                         alt={item.alt}
                         title={item.title}
