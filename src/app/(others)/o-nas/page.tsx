@@ -72,7 +72,7 @@ const Page = () => {
           <span className="font-semibold">novinky a aktuality</span> můžete
           sledovat na našem{" "}
           <a
-            href="https://www.instagram.com/odsrdecka_bezlepku/"
+            href="https://www.instagram.com/odsrdecka/"
             className="font-semibold hover:no-underline underline"
             target="_blank"
           >
