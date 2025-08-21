@@ -6,7 +6,7 @@ const NotesUnderTable = ({ fetchedNotes }: { fetchedNotes: string[] }) => {
       <span className="text-start">
         Možnost upéct také{" "}
         <span className="font-semibold">bezlepkové a bezlaktózové verze</span>{" "}
-        dortu (za příplatek), avšak mohou tam být stopy těchto alergenů.
+        dortu (za příplatek), avšak mohou obsahovat stopy těchto alergenů.
       </span>
       <span className="text-start">
         Veškeré alergeny jsou vyznačeny u jednotlivých příchutí dortů.

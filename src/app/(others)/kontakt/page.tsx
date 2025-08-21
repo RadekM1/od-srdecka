@@ -93,7 +93,7 @@ const Page = () => {
             .
           </li>
           <li className="text-base md:px-3 mb-1 lg:text-lg">
-            Máme dokonce instagramový profil o{" "}
+            Máme instagramový profil o{" "}
             <a
               href="https://www.instagram.com/odsrdecka_bezlepku/?igsh=MWU5Y3hyc3hydWhiMg%3D%3D#"
               className="font-semibold hover:no-underline underline"

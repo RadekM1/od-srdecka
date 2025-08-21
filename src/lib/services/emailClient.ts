@@ -21,7 +21,8 @@ export const emailClient = async (data: FormSchema) => {
 
     const name = validator.escape(data.name.trim());
     const lastName = validator.escape(data.lastName.trim());
-    const email = validator.normalizeEmail(data.email)!;
+    const normalizedEmail = validator.normalizeEmail(data.email);
+    const email = normalizedEmail || data.email;
     const tel = data.tel ? validator.escape(data.tel.trim()) : "";
 
     const noteRaw = data.note || "";
@@ -53,7 +54,7 @@ export const emailClient = async (data: FormSchema) => {
     await transporter.sendMail({
       from: '"Od Srdéčka" <info@odsrdecka.cz>',
       to: process.env.EMAIL_DESTINATION,
-      replyTo: process.env.EMAIL_DESTINATION,
+      replyTo: email,
       subject,
       text: `
       Nová zpráva od ${name} ${lastName}

@@ -32,7 +32,7 @@ const TextInRowComponentOrder = () => {
                 href="tel:+420733506548"
                 className="mt-10 font-oldStandard hover:underline text-nowrap"
               >
-                +420 733 506 548
+                <span className="text-xs">+</span>420 733 506 548
               </Link>
             </li>
           </ul>

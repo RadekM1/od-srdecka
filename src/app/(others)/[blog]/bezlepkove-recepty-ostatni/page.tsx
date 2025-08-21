@@ -60,8 +60,8 @@ export default async function Page() {
               , na kterém sdílíme bezlepkové tipy a recepty, protože jedné z nás
               byla diagnostikovaná celiakie. “Bezlepkářů” máme v okolí spoustu,
               a tak jsme se rozhodly vytvořit si tady srdéčkovou bezlepkovou
-              komunitu a sdílet nejenom sladké dobroty pro lepší den.
-              Vyzkoušejte a dejte vědět, jak chutná! :)
+              komunitu a sdílet nejen sladké dobroty pro lepší den. Vyzkoušejte
+              a dejte vědět, jak chutná! :)
             </span>
           </div>
         </div>
