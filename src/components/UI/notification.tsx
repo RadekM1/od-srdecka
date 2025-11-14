@@ -21,7 +21,7 @@ export const Notification = () => {
   }, []);
 
   return (
-    <div className="w-full p-5 font-oldStandard bg-[#061E4C] text-white h-64 rounded-2xl  ">
+    <div className="w-full p-5 font-oldStandard bg-[#061E4C] text-white min-h-64 rounded-2xl  ">
       <div className="flex justify-center flex-col w-full">
         {loading && (
           <div role="status" className="animate-pulse">

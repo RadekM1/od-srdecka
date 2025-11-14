@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
+import typography from "@tailwindcss/typography";
 
 export default {
   darkMode: ["class"],
@@ -104,16 +106,13 @@ export default {
     DEFAULT: {
       css: {
         li: {
-          color: "#061E4C", 
+          color: "#061E4C",
           "&::marker": {
-            color: "#061E4C", 
+            color: "#061E4C",
           },
         },
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require('@tailwindcss/typography')
-  ],
+  plugins: [animate, typography],
 } satisfies Config;

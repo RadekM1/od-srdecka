@@ -26,7 +26,7 @@ export const desserts: DessertProductSchema[] = [
       "Vanilka s višní",
     ],
     price: 28,
-    notes: 'test hodně velké poznámky protože moc místa !'
+    notes: "test hodně velké poznámky protože moc místa !",
   },
   {
     src: "/nabidka/dezerty/tartaletky.png",

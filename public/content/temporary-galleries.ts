@@ -452,7 +452,6 @@ export const dessertsGallery = [
   },
 ];
 
-
 export const blogGallery = [
   {
     src: "/blog/blog1.png",
