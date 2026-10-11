@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import LightBox from "./lightbox";
-import { useState } from "react";
-import { WpImageSchema } from "@/schema/article";
+import Image from 'next/image';
+import LightBox from './lightbox';
+import { useState } from 'react';
+import { WpImageSchema } from '@/schema/article';
 
 interface ArticleGalleryProps {
   firstImg: WpImageSchema;
@@ -14,14 +14,14 @@ interface ArticleGalleryProps {
 const ArticleGallery = ({
   firstImg,
   secondImg,
-  thirdImg,
+  thirdImg
 }: ArticleGalleryProps) => {
   const [activeId, setActiveId] = useState<number>(0);
   const [toggler, setToggler] = useState<boolean>(false);
   const [loaded, setLoaded] = useState<boolean[]>(
     new Array([firstImg, secondImg, thirdImg].filter(Boolean).length).fill(
-      false,
-    ),
+      false
+    )
   );
 
   const handleImgClick = (i: number) => {
@@ -30,7 +30,7 @@ const ArticleGallery = ({
   };
 
   const handleLoad = (i: number) => {
-    setLoaded((prev) => {
+    setLoaded(prev => {
       const tempLoaded = [...prev];
       tempLoaded[i] = true;
       return tempLoaded;
@@ -40,34 +40,34 @@ const ArticleGallery = ({
   const filteredGallery: WpImageSchema[] = [
     firstImg,
     secondImg,
-    thirdImg,
+    thirdImg
   ].filter(Boolean);
 
-  const preparedGallery = filteredGallery?.map((image) => ({
+  const preparedGallery = filteredGallery?.map(image => ({
     alt: image.alt,
     src: image.sizes.large,
     media_type: image.type,
-    thumbnail: image.sizes.medium_large,
+    thumbnail: image.sizes.medium_large
   }));
 
   return (
     <>
-      <div className="w-full gap-1 md:gap-3  flex-row md:flex-col flex flex-shrink md:max-w-[250px]">
+      <div className="flex w-full flex-shrink flex-row gap-1 md:max-w-[250px] md:flex-col md:gap-3">
         {preparedGallery.map((image, i) => {
           return (
             <div
               key={i}
               onClick={() => handleImgClick(i)}
-              className="flex-col cursor-pointer relative w-full items-start justify-start hover:brightness-50 duration-300 ease-in-out object-cover"
+              className="relative w-full cursor-pointer flex-col items-start justify-start object-cover duration-300 ease-in-out hover:brightness-50"
             >
               {!loaded[i] && (
-                <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md flex items-center h-full w-full justify-center"></div>
+                <div className="absolute inset-0 flex h-full w-full animate-pulse items-center justify-center rounded-md bg-gray-200"></div>
               )}
               <Image
                 height={368}
                 onLoad={() => handleLoad(i)}
                 width={350}
-                className={`object-cover self-start h-[150px] md:h-[250px] lg:h-[350px] rounded-xl w-full`}
+                className={`h-[150px] w-full self-start rounded-xl object-cover md:h-[250px] lg:h-[350px]`}
                 src={image.thumbnail}
                 alt={image.alt}
               />

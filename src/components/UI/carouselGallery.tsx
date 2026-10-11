@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import React, { useState, useMemo } from "react";
-import { ImgGallery } from "../../schema/uiObjects";
-import LightBox from "./lightbox";
-import { RxVideo } from "react-icons/rx";
-import Image from "next/image";
+import React, { useState, useMemo } from 'react';
+import { ImgGallery } from '../../schema/uiObjects';
+import LightBox from './lightbox';
+import { RxVideo } from 'react-icons/rx';
+import Image from 'next/image';
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
-} from "../../components/UI/carousel";
+  CarouselItem
+} from '../../components/UI/carousel';
 
 interface CarouselProps {
   props: ImgGallery[];
@@ -26,23 +26,23 @@ const CarouselGallery = ({ props }: CarouselProps) => {
       const j = i * 3;
       gallery[i] = {
         srcOne:
-          props[j].media_type === "image"
+          props[j].media_type === 'image'
             ? props[j].src
-            : (props[j].thumbnail ?? "error"),
+            : (props[j].thumbnail ?? 'error'),
         typeOne: props[j].media_type,
         altOne: props[j].alt,
         srcTwo:
-          props[j + 1].media_type === "image"
+          props[j + 1].media_type === 'image'
             ? props[j + 1].src
-            : (props[j + 1].thumbnail ?? "error"),
+            : (props[j + 1].thumbnail ?? 'error'),
         altTwo: props[j + 1].alt,
         typeTwo: props[j + 1].media_type,
         srcThree:
-          props[j + 2].media_type === "image"
+          props[j + 2].media_type === 'image'
             ? props[j + 2].src
-            : (props[j + 2].thumbnail ?? "error"),
+            : (props[j + 2].thumbnail ?? 'error'),
         altThree: props[j + 2].alt,
-        typeThree: props[j + 2].media_type,
+        typeThree: props[j + 2].media_type
       };
     }
     return gallery;
@@ -55,19 +55,19 @@ const CarouselGallery = ({ props }: CarouselProps) => {
 
   return (
     <>
-      <Carousel className="w-full select-none items-center ">
+      <Carousel className="w-full select-none items-center">
         <CarouselContent className="w-full">
           {preparedGallery.map((img, i) => {
             return (
-              <CarouselItem key={i} className="sm:basis-1/2 px-1 lg:basis-1/3">
+              <CarouselItem key={i} className="px-1 sm:basis-1/2 lg:basis-1/3">
                 <div className="flex h-full flex-col">
                   <div
                     onClick={() => handleImgClick(i * 3)}
-                    className="flex group w-full hover:brightness-50 relative ease-in-out duration-300 cursor-pointer"
+                    className="group relative flex w-full cursor-pointer duration-300 ease-in-out hover:brightness-50"
                   >
-                    {img.typeOne === "video" && (
-                      <div className="absolute w-10 h-10 right-0">
-                        <RxVideo className="group-hover:text-gray-500 text-gray-300 h-8 w-8 duration-300 ease-in-out" />
+                    {img.typeOne === 'video' && (
+                      <div className="absolute right-0 h-10 w-10">
+                        <RxVideo className="h-8 w-8 text-gray-300 duration-300 ease-in-out group-hover:text-gray-500" />
                       </div>
                     )}
                     <Image
@@ -75,21 +75,21 @@ const CarouselGallery = ({ props }: CarouselProps) => {
                       height={320}
                       src={img.srcOne}
                       alt={img.altOne}
-                      className="rounded-xl border-white object-cover carousel-img"
+                      className="carousel-img rounded-xl border-white object-cover"
                       //data-index={(i * 3) + 1}
-                      style={{ width: "500px", height: "320px" }}
+                      style={{ width: '500px', height: '320px' }}
                     />
                   </div>
                 </div>
-                <div style={{ width: "16px" }}>&nbsp;</div>
+                <div style={{ width: '16px' }}>&nbsp;</div>
                 <div className="flex h-[320px] flex-col">
                   <div
                     onClick={() => handleImgClick(i * 3 + 1)}
-                    className="flex hover:brightness-50 w-full relative ease-in-out duration-300 cursor-pointer"
+                    className="relative flex w-full cursor-pointer duration-300 ease-in-out hover:brightness-50"
                   >
-                    {img.typeTwo === "video" && (
-                      <div className="absolute w-10 h-10 right-0">
-                        <RxVideo className="group-hover:text-gray-500 text-gray-300 h-8 w-8 duration-300 ease-in-out" />
+                    {img.typeTwo === 'video' && (
+                      <div className="absolute right-0 h-10 w-10">
+                        <RxVideo className="h-8 w-8 text-gray-300 duration-300 ease-in-out group-hover:text-gray-500" />
                       </div>
                     )}
                     <Image
@@ -97,19 +97,19 @@ const CarouselGallery = ({ props }: CarouselProps) => {
                       height={160}
                       src={img.srcTwo}
                       alt={img.altTwo}
-                      className="rounded-xl object-cover carousel-img"
+                      className="carousel-img rounded-xl object-cover"
                       //data-index={(i * 3) + 1}
-                      style={{ width: "500px", height: "156px" }}
+                      style={{ width: '500px', height: '156px' }}
                     />
                   </div>
                   <div className="h-[8px] text-white">&nbsp;</div>
                   <div
                     onClick={() => handleImgClick(i * 3 + 2)}
-                    className="flex w-full relative hover:brightness-50 ease-in-out duration-300 flex-grow cursor-pointer"
+                    className="relative flex w-full flex-grow cursor-pointer duration-300 ease-in-out hover:brightness-50"
                   >
-                    {img.typeThree === "video" && (
-                      <div className="absolute w-10 h-10 right-0">
-                        <RxVideo className="group-hover:text-gray-500 text-gray-300 h-8 w-8 duration-300 ease-in-out" />
+                    {img.typeThree === 'video' && (
+                      <div className="absolute right-0 h-10 w-10">
+                        <RxVideo className="h-8 w-8 text-gray-300 duration-300 ease-in-out group-hover:text-gray-500" />
                       </div>
                     )}
                     <Image
@@ -117,9 +117,9 @@ const CarouselGallery = ({ props }: CarouselProps) => {
                       height={160}
                       src={img.srcThree}
                       alt={img.altThree}
-                      className="rounded-xl h-full object-cover carousel-img"
+                      className="carousel-img h-full rounded-xl object-cover"
                       //data-index={(i * 3) + 2}
-                      style={{ width: "500px", height: "156px" }}
+                      style={{ width: '500px', height: '156px' }}
                     />
                   </div>
                 </div>

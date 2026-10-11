@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import Link from "next/link";
+import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 interface MenuPopoverProps {
   popoverOpen: boolean;
@@ -16,14 +16,14 @@ const MenuPopover = ({
   id,
   targetedPopover,
   menuItems,
-  index,
+  index
 }: MenuPopoverProps) => {
   const popOverRef = useRef<HTMLDivElement>(null);
 
   const menuStyle = index
-    ? "bg-white text-[#061E4C] "
-    : "bg-[#061E4C]  text-white";
-  const itemStyle = index ? " hover:text-[#374b6f]" : "";
+    ? 'bg-white text-[#061E4C] '
+    : 'bg-[#061E4C]  text-white';
+  const itemStyle = index ? ' hover:text-[#374b6f]' : '';
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -36,11 +36,11 @@ const MenuPopover = ({
     };
 
     if (popoverOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [popoverOpen]);
 
@@ -49,7 +49,7 @@ const MenuPopover = ({
       {popoverOpen && id === targetedPopover && menuItems && (
         <div
           ref={popOverRef}
-          className={`py-3 px-5 ${index ? "top-12 rounded-2xl" : "top-9 rounded-b-2xl"} absolute flex flex-col shadow-md text-xl right-1/2 w-[200px] translate-x-1/2 ${menuStyle} z-50  `}
+          className={`px-5 py-3 ${index ? 'top-12 rounded-2xl' : 'top-9 rounded-b-2xl'} absolute right-1/2 flex w-[200px] translate-x-1/2 flex-col text-xl shadow-md ${menuStyle} z-50`}
         >
           {Array.isArray(menuItems) &&
             menuItems.map((item, i) => {
@@ -57,7 +57,7 @@ const MenuPopover = ({
                 <li key={i} className="my-1">
                   <Link href={item.link}>
                     <div
-                      className={`relative my-1 ${itemStyle} hover:font-semibold  cursor-pointer text-nowrap `}
+                      className={`relative my-1 ${itemStyle} cursor-pointer text-nowrap hover:font-semibold`}
                     >
                       <span>{item.label}</span>
                     </div>

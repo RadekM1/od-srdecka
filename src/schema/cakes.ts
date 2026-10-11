@@ -1,29 +1,29 @@
-import { z } from "zod";
-import { wpImageSchema } from "./article";
+import { z } from 'zod';
+import { wpImageSchema } from './article';
 
 export const cakeProductSchema = z.object({
   src: z.string(),
   alt: z.string(),
   title: z.string(),
   allergens: z.string(),
-  variants: z.array(z.string()).nullable(),
+  variants: z.array(z.string()).nullable()
 });
 
 export const cakePriceList = z.object({
   title: z.string(),
-  textRows: z.array(z.string()),
+  textRows: z.array(z.string())
 });
 
 export const cakeGallerySectionSchema = z.object({
   url: z.string(),
   label: z.string(),
-  position: z.string(),
+  position: z.string()
 });
 
 export const blogSectionSchema = z.object({
   url: z.string(),
   label: z.string(),
-  position: z.string(),
+  position: z.string()
 });
 
 export const fetchedCake = z.object({
@@ -42,8 +42,8 @@ export const fetchedCake = z.object({
     dalsi_varianta_8: z.string().optional(),
     dalsi_varianta_9: z.string().optional(),
     dalsi_varianta_10: z.string().optional(),
-    alergeny: z.string(),
-  }),
+    alergeny: z.string()
+  })
 });
 
 export const fetchedCakes = z.array(fetchedCake);

@@ -1,8 +1,8 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 export const refGallerySchema = z.object({
   src: z.string(),
-  alt: z.string(),
+  alt: z.string()
 });
 
 export const imgGallerySchema = z.object({
@@ -10,7 +10,7 @@ export const imgGallerySchema = z.object({
   alt: z.string(),
   media_type: z.string(),
   type: z.string().optional(),
-  thumbnail: z.string(),
+  thumbnail: z.string()
 });
 
 export type RefGallery = z.infer<typeof refGallerySchema>;

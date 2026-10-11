@@ -1,40 +1,40 @@
-import BlogSections from "../blogSections";
-import OthersLayout from "./others-layout";
-import { wpFetchBlogArticlesOther } from "@/lib/fetch/articles-others-fetch";
-import { Metadata } from "next";
+import BlogSections from '../blogSections';
+import OthersLayout from './others-layout';
+import { wpFetchBlogArticlesOther } from '@/lib/fetch/articles-others-fetch';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Dorty a sladké bary z Kašavy - bezlepkové recepty ostatní",
+  title: 'Dorty a sladké bary z Kašavy - bezlepkové recepty ostatní',
   description:
-    "Objevte osvědčené bezlepkové recepty. Pečeme s láskou v Kašavě ve Zlínském kraji. Inspirujte se a pečte s námi.",
+    'Objevte osvědčené bezlepkové recepty. Pečeme s láskou v Kašavě ve Zlínském kraji. Inspirujte se a pečte s námi.',
   icons: {
-    icon: "/favicon.ico",
+    icon: '/favicon.ico'
   },
-  keywords: ["dorty", "sladké bary", "dorty zlínský kraj"],
-  authors: [{ name: "Radek Morong", url: "https://www.radekmorong.cz" }],
+  keywords: ['dorty', 'sladké bary', 'dorty zlínský kraj'],
+  authors: [{ name: 'Radek Morong', url: 'https://www.radekmorong.cz' }],
   alternates: {
-    canonical: "https://www.odsrdecka.cz/bezlepkove-recepty-ostatni",
-  },
+    canonical: 'https://www.odsrdecka.cz/bezlepkove-recepty-ostatni'
+  }
 };
 
 const blogSections = [
   {
-    url: "/blog/bezlepkove-recepty-sladke",
-    label: "Sladké recepty",
-    position: "left-[15%]  md:left-[20%] ",
+    url: '/blog/bezlepkove-recepty-sladke',
+    label: 'Sladké recepty',
+    position: 'left-[15%]  md:left-[20%] '
   },
   {
-    url: "/blog/bezlepkove-recepty-ostatni",
-    label: "Ostatní recepty",
-    position: "right-[15%]  md:right-[20%] ",
-  },
+    url: '/blog/bezlepkove-recepty-ostatni',
+    label: 'Ostatní recepty',
+    position: 'right-[15%]  md:right-[20%] '
+  }
 ];
 
 export const revalidate = 10;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  return [{ blog: "bezlepkove-recepty-ostatni" }];
+  return [{ blog: 'bezlepkove-recepty-ostatni' }];
 }
 
 export default async function Page() {
@@ -42,17 +42,17 @@ export default async function Page() {
 
   return (
     <OthersLayout articleList={articleList}>
-      <section className="flex mx-3 max-w-[1000px] px-2 justify-center items-center text-center mb-10 flex-col w-full">
+      <section className="mx-3 mb-10 flex w-full max-w-[1000px] flex-col items-center justify-center px-2 text-center">
         <div className="mb-6 mt-16">
-          <h2 className="text-3xl md:text-4xl font-semibold lg:text-5xl font-oldStandard w-full text-center">
+          <h2 className="w-full text-center font-oldStandard text-3xl font-semibold md:text-4xl lg:text-5xl">
             Bezlepkové recepty
           </h2>
-          <div className="w-full p-5 md:m-10 flex flex-col md:w-[1000px]">
-            <span className="text-start md:text-center text-xl lg:text-2xl font-oldStandard px-2 ">
-              Tento bezlepkový blog vznikl původně jako{" "}
+          <div className="flex w-full flex-col p-5 md:m-10 md:w-[1000px]">
+            <span className="px-2 text-start font-oldStandard text-xl md:text-center lg:text-2xl">
+              Tento bezlepkový blog vznikl původně jako{' '}
               <a
                 href="https://www.instagram.com/odsrdecka_bezlepku/"
-                className="font-semibold hover:no-underline underline"
+                className="font-semibold underline hover:no-underline"
                 target="_blank"
               >
                 instagramový profil
@@ -65,9 +65,9 @@ export default async function Page() {
             </span>
           </div>
         </div>
-        <div className="mt-20 mb-14 relative flex w-full  justify-center items-center mx-4 max-w-[1000px]">
+        <div className="relative mx-4 mb-14 mt-20 flex w-full max-w-[1000px] items-center justify-center">
           <img
-            className="absolute top-1/2  -translate-y-1/2 w-full"
+            className="absolute top-1/2 w-full -translate-y-1/2"
             src="/others/line.svg"
             alt="oddělovací linka"
           />

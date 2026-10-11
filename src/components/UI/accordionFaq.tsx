@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import * as React from 'react';
+import * as AccordionPrimitive from '@radix-ui/react-accordion';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
 const AccordionFaq = AccordionPrimitive.Root;
 
@@ -11,9 +11,9 @@ const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
 >(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item ref={ref} className={cn("", className)} {...props} />
+  <AccordionPrimitive.Item ref={ref} className={cn('', className)} {...props} />
 ));
-AccordionItem.displayName = "AccordionItem";
+AccordionItem.displayName = 'AccordionItem';
 
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
@@ -23,8 +23,8 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-2 px-1 lg:px-5 text-base lg:text-xl md:mx-5 font-oldStandard data-[state=open]:font-semibold text-start transition-all [&[data-state=open]>img]:rotate-180",
-        className,
+        'flex flex-1 items-center justify-between px-1 py-2 text-start font-oldStandard text-base transition-all data-[state=open]:font-semibold md:mx-5 lg:px-5 lg:text-xl [&[data-state=open]>img]:rotate-180',
+        className
       )}
       {...props}
     >
@@ -45,10 +45,10 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden md:mx-2  bg-white/80 rounded-lg text-[#061E4C] text-base font-oldStandard  transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="overflow-hidden rounded-lg bg-white/80 font-oldStandard text-base text-[#061E4C] transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down md:mx-2"
     {...props}
   >
-    <div className={cn("pb-0 pt-0", className)}>{children}</div>
+    <div className={cn('pb-0 pt-0', className)}>{children}</div>
   </AccordionPrimitive.Content>
 ));
 

@@ -6,9 +6,9 @@ interface SectionTitleProps {
 const SectionTitleBlue = ({ title, isIndex }: SectionTitleProps) => {
   return (
     <div
-      className={` ${isIndex ? "lg:py-20 py-12" : "py-10"}  w-full bg-[#061E4C]`}
+      className={` ${isIndex ? 'py-12 lg:py-20' : 'py-10'} w-full bg-[#061E4C]`}
     >
-      <span className="text-3xl text-white   md:text-4xl font-semibold lg:text-5xl font-oldStandard w-full text-center">
+      <span className="w-full text-center font-oldStandard text-3xl font-semibold text-white md:text-4xl lg:text-5xl">
         {title}
       </span>
     </div>

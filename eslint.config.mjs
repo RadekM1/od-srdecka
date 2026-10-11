@@ -1,25 +1,15 @@
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+import js from '@eslint/js';
+import next from 'eslint-config-next';
+import nextTypescript from 'eslint-config-next/typescript';
+import prettierRecommended from 'eslint-plugin-prettier/recommended';
+import { defineConfig, globalIgnores } from 'eslint/config';
 
-const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname,
-  recommendedConfig: js.configs.recommended,
-});
-
-const eslintConfig = [
-  ...compat.config({
-    extends: [
-      "eslint:recommended",
-      "next",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended",
-    ],
-    parser: "@typescript-eslint/parser",
-    plugins: ["@typescript-eslint"],
-  }),
-  {
-    ignores: [".next/*", ".prettierrc.js", "out/*"],
-  },
-];
+const eslintConfig = defineConfig([
+  js.configs.recommended,
+  ...next,
+  ...nextTypescript,
+  prettierRecommended,
+  globalIgnores(['.next/**', '.prettierrc.mjs', 'out/**'])
+]);
 
 export default eslintConfig;

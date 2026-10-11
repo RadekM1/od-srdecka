@@ -2,28 +2,24 @@ import {
   AccordionFaq,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
-} from "../../../components/UI/accordionFaq";
-import { getFaq } from "@/lib/fetch/get-faq";
+  AccordionTrigger
+} from '../../../components/UI/accordionFaq';
+import { getFaq } from '@/lib/fetch/get-faq';
 
 const faqContext = await getFaq();
 
 const Faq = () => {
   return (
-    <AccordionFaq
-      type="single"
-      collapsible
-      className="w-full mt-16 text-start "
-    >
+    <AccordionFaq type="single" collapsible className="mt-16 w-full text-start">
       {faqContext.map((item, i) => {
         return (
           <AccordionItem
-            className="shadow-sm rounded-xl text-start shadow-gray-400 my-4"
+            className="my-4 rounded-xl text-start shadow-sm shadow-gray-400"
             key={i}
             value={`item-${i}`}
           >
             <AccordionTrigger>{item.question}</AccordionTrigger>
-            <AccordionContent className=" p-2 ">
+            <AccordionContent className="p-2">
               <p className="whitespace-pre-line">{item.answer}</p>
             </AccordionContent>
           </AccordionItem>

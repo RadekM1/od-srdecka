@@ -1,10 +1,10 @@
-"use client";
-import Image from "next/image";
-import { useState } from "react";
+'use client';
+import Image from 'next/image';
+import { useState } from 'react';
 
 interface LineAddBtnProps {
   index: number;
-  // eslint-disable-next-line
+
   setIndex: (showAll: number) => void;
   label: string;
   // eslint-disable-next-line
@@ -19,7 +19,7 @@ const LineAddBtn = ({
   label,
   array,
   filteredArray,
-  addNumber,
+  addNumber
 }: LineAddBtnProps) => {
   const [disabled, setDisabled] = useState<boolean>(false);
 
@@ -33,16 +33,16 @@ const LineAddBtn = ({
   };
 
   return (
-    <div className="mt-20 mb-14 relative flex flex-col items-center w-full  max-w-[1000px]">
+    <div className="relative mb-14 mt-20 flex w-full max-w-[1000px] flex-col items-center">
       <img
-        className="absolute top-1/2 -translate-y-1/2 w-full"
+        className="absolute top-1/2 w-full -translate-y-1/2"
         src="/others/line.svg"
         alt="oddělovací linka"
       />
       <button
         disabled={disabled}
         onClick={handleClick}
-        className="bg-[#061E4C] hover:text-[#061E4C] disabled:bg-white duration-300 ease-in-out absolute -translate-y-1/2 -top-1/2 shadow-md disabled:hover:bg-none disabled:text-gray-300 disabled:hover:text-gray-300 disabled:cursor-not-allowed hover:bg-white border-[#061E4C] border-[1px] shadow-gray-600 rounded-full text-white text-base md:text-xl px-3 py-1 font-dancing z-10"
+        className="absolute -top-1/2 z-10 -translate-y-1/2 rounded-full border-[1px] border-[#061E4C] bg-[#061E4C] px-3 py-1 font-dancing text-base text-white shadow-md shadow-gray-600 duration-300 ease-in-out hover:bg-white hover:text-[#061E4C] disabled:cursor-not-allowed disabled:bg-white disabled:text-gray-300 disabled:hover:bg-none disabled:hover:text-gray-300 md:text-xl"
       >
         {label}
       </button>

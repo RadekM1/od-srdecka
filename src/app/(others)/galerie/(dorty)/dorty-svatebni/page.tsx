@@ -1,8 +1,8 @@
-import ProductGallery from "@/components/UI/productGallery";
+import ProductGallery from '@/components/UI/productGallery';
 
-import { getGalleries } from "@/lib/fetch/get-galleries";
+import { getGalleries } from '@/lib/fetch/get-galleries';
 
-const cakesGallery = await getGalleries("galerie-dorty-svatebni");
+const cakesGallery = await getGalleries('galerie-dorty-svatebni');
 
 const Page = () => {
   return (

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 interface IndexSectionLineProps {
   sectionAnchor: boolean;
@@ -6,13 +6,13 @@ interface IndexSectionLineProps {
 
 const IndexSectionLine = ({ sectionAnchor }: IndexSectionLineProps) => {
   return (
-    <div className="flex w-full mt-8 select-none items-center justify-center">
+    <div className="mt-8 flex w-full select-none items-center justify-center">
       <Image
-        src={"/heartsLine.svg"}
+        src={'/heartsLine.svg'}
         alt="oddělovač sekce"
         width={1283}
         height={20}
-        className={`w-5/6 self-center ${sectionAnchor ? "mt-14" : "my-14"} `}
+        className={`w-5/6 self-center ${sectionAnchor ? 'mt-14' : 'my-14'} `}
       />
     </div>
   );

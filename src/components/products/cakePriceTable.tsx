@@ -1,4 +1,4 @@
-import { CakePriceList } from "@/schema/cakes";
+import { CakePriceList } from '@/schema/cakes';
 
 interface CakePriceListProps {
   priceList: CakePriceList[];
@@ -6,18 +6,18 @@ interface CakePriceListProps {
 
 const CakePriceTable = ({ priceList }: CakePriceListProps) => {
   return (
-    <div className="max-w-[1000px] text-sm lg:text-base p-4 mb-10 text-white bg-[#061E4C] font-dancing flex flex-col md:flex-row w-[90%] rounded-xl ">
+    <div className="mb-10 flex w-[90%] max-w-[1000px] flex-col rounded-xl bg-[#061E4C] p-4 font-dancing text-sm text-white md:flex-row lg:text-base">
       {priceList.map((cake, i) => {
         return (
           <div
             key={i}
-            className="flex pl-4 text-2xl md:text-2xl lg:text-4xl text-start p-2 w-full flex-col"
+            className="flex w-full flex-col p-2 pl-4 text-start text-2xl md:text-2xl lg:text-4xl"
           >
             <span className="my-4 text-center">{cake.title}</span>
-            <ul className="font-oldStandard text-start pl-3 list-disc text-base">
+            <ul className="list-disc pl-3 text-start font-oldStandard text-base">
               {cake.textRows.map((row, j) => {
                 return (
-                  <li key={j} className="text-sm mb-1 lg:text-base text-nowrap">
+                  <li key={j} className="mb-1 text-nowrap text-sm lg:text-base">
                     {row}
                   </li>
                 );

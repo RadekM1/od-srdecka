@@ -1,62 +1,62 @@
-import PageTitle from "@/components/pageTitle";
-import Faq from "./faq";
-import Gallery from "@/components/gallery";
-import { Metadata } from "next";
+import PageTitle from '@/components/pageTitle';
+import Faq from './faq';
+import Gallery from '@/components/gallery';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Časté dotazy (FAQ) | Od Srdéčka",
+  title: 'Časté dotazy (FAQ) | Od Srdéčka',
   description:
-    "Máte otázky ohledně našich dortů, objednávek, alergenů nebo trvanlivosti? Zde najdete odpovědi na vše, co vás zajímá.",
+    'Máte otázky ohledně našich dortů, objednávek, alergenů nebo trvanlivosti? Zde najdete odpovědi na vše, co vás zajímá.',
   alternates: {
-    canonical: "https://www.odsrdecka.cz/dotazy",
+    canonical: 'https://www.odsrdecka.cz/dotazy'
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: '/favicon.ico'
   },
   keywords: [
-    "časté dotazy",
-    "FAQ",
-    "otázky a odpovědi",
-    "alergeny",
-    "složení",
-    "objednávka dortu",
-    "trvanlivost",
-    "Od Srdéčka",
-    "Kašava",
+    'časté dotazy',
+    'FAQ',
+    'otázky a odpovědi',
+    'alergeny',
+    'složení',
+    'objednávka dortu',
+    'trvanlivost',
+    'Od Srdéčka',
+    'Kašava'
   ],
-  authors: [{ name: "Radek Morong", url: "https://www.radekmorong.cz" }],
+  authors: [{ name: 'Radek Morong', url: 'https://www.radekmorong.cz' }],
 
   openGraph: {
-    title: "Časté dotazy (FAQ) | Od Srdéčka",
+    title: 'Časté dotazy (FAQ) | Od Srdéčka',
     description:
-      "Najděte odpovědi na otázky ohledně našich dortů, objednávek a alergenů.",
-    url: "https://www.odsrdecka.cz/dotazy",
-    siteName: "Od Srdéčka",
+      'Najděte odpovědi na otázky ohledně našich dortů, objednávek a alergenů.',
+    url: 'https://www.odsrdecka.cz/dotazy',
+    siteName: 'Od Srdéčka',
     images: [
       {
-        url: "https://odsrdecka.cz/index/team.png",
+        url: 'https://odsrdecka.cz/index/team.png',
         width: 1200,
         height: 630,
-        alt: "Odpovědi na časté dotazy - Od Srdéčka",
-      },
+        alt: 'Odpovědi na časté dotazy - Od Srdéčka'
+      }
     ],
-    locale: "cs_CZ",
-    type: "website",
+    locale: 'cs_CZ',
+    type: 'website'
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Časté dotazy (FAQ) | Od Srdéčka",
+    card: 'summary_large_image',
+    title: 'Časté dotazy (FAQ) | Od Srdéčka',
     description:
-      "Najděte odpovědi na otázky ohledně našich dortů, objednávek a alergenů.",
-    images: ["https://odsrdecka.cz/index/team.png"],
-  },
+      'Najděte odpovědi na otázky ohledně našich dortů, objednávek a alergenů.',
+    images: ['https://odsrdecka.cz/index/team.png']
+  }
 };
 const Page = () => {
   return (
     <>
-      <section className="flex max-w-6xl px-3 lg:px-10 mb-10 flex-col w-full">
+      <section className="mb-10 flex w-full max-w-6xl flex-col px-3 lg:px-10">
         <PageTitle title="Nejčastější dotazy" />
-        <p className="mb-5 text-xl mt-16 lg:text-2xl font-oldStandard">
+        <p className="mb-5 mt-16 font-oldStandard text-xl lg:text-2xl">
           Máte otázky? Možná už máme odpověď právě tady.
         </p>
         <Faq />

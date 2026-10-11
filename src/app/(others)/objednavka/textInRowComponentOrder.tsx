@@ -1,42 +1,42 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const itemsList = [
-  "Dorty - svatební, narozeninové, jiné příležitosti",
-  "Sladké bary",
-  "Krabička dezertů",
-  "Dárkové poukazy",
+  'Dorty - svatební, narozeninové, jiné příležitosti',
+  'Sladké bary',
+  'Krabička dezertů',
+  'Dárkové poukazy'
 ];
 
 const TextInRowComponentOrder = () => {
   return (
     <>
-      <div className="flex z-10 mb-5 md:mb-0 font-abhaya  w-full flex-row ">
-        <div className="w-full flex justify-start gap-5 items-start text-xl lg:text-2xl flex-col flex-grow  h-full">
+      <div className="z-10 mb-5 flex w-full flex-row font-abhaya md:mb-0">
+        <div className="flex h-full w-full flex-grow flex-col items-start justify-start gap-5 text-xl lg:text-2xl">
           <span className="font-oldStandard text-2xl font-semibold">
             Typy objednávek
           </span>
-          <ul className="font-oldStandard text-start pl-3 sm:pl-7 list-disc text-base">
+          <ul className="list-disc pl-3 text-start font-oldStandard text-base sm:pl-7">
             {itemsList.map((item, i) => (
               <li
                 key={i}
-                className="text-base md:px-3 mb-1 lg:text-lg text-nowrap"
+                className="mb-1 text-nowrap text-base md:px-3 lg:text-lg"
               >
                 {item}
               </li>
             ))}
           </ul>
-          <div className="w-full text-start font-oldStandard text-base mb-1 lg:text-lg">
-            Typy dortů a zákusků naleznete v naší{" "}
-            <span className="font-semibold ">
+          <div className="mb-1 w-full text-start font-oldStandard text-base lg:text-lg">
+            Typy dortů a zákusků naleznete v naší{' '}
+            <span className="font-semibold">
               <Link
-                className="underline text-base mb-1 lg:text-lg hover:no-underline duration-300 ease-in-out "
-                href={"/nabidka"}
+                className="mb-1 text-base underline duration-300 ease-in-out hover:no-underline lg:text-lg"
+                href={'/nabidka'}
               >
                 nabídce
               </Link>
               .
             </span>
-            <p className="font-oldStandard text-2xl font-semibold pt-10 pr-2 sm:pr-10 text-red-400 texxt-start w-full">
+            <p className="texxt-start w-full pr-2 pt-10 font-oldStandard text-2xl font-semibold text-red-400 sm:pr-10">
               Objednávejte prosím s dostatečným předstihem a zajistěte si svůj
               termín.
             </p>

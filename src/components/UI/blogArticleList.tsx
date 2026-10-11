@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import LineAddBtn from "./lineAddBtn";
-import Link from "next/link";
-import { ArticlesListSchema } from "@/schema/article";
-import { usePathname } from "next/navigation";
-import { MdArrowForwardIos } from "react-icons/md";
+import { useState } from 'react';
+import Image from 'next/image';
+import LineAddBtn from './lineAddBtn';
+import Link from 'next/link';
+import { ArticlesListSchema } from '@/schema/article';
+import { usePathname } from 'next/navigation';
+import { MdArrowForwardIos } from 'react-icons/md';
 
 interface ProductGallery {
   blogList: ArticlesListSchema[];
@@ -16,17 +16,17 @@ interface ProductGallery {
 const BlogArticleList = ({ blogList, section }: ProductGallery) => {
   const path = usePathname();
   const [index, setIndex] = useState<number>(6);
-  const currentId: number = parseInt(path.split("--")[1]) ?? -1;
+  const currentId: number = parseInt(path.split('--')[1]) ?? -1;
   const filteredArticles = blogList
-    .filter((article) => article.id !== currentId)
+    .filter(article => article.id !== currentId)
     .slice(0, index);
 
   const [loaded, setLoaded] = useState<boolean[]>(
-    new Array(blogList.length).fill(false),
+    new Array(blogList.length).fill(false)
   );
 
   const handleLoad = (i: number) => {
-    setLoaded((prev) => {
+    setLoaded(prev => {
       const tempLoaded = [...prev];
       tempLoaded[i] = true;
       return tempLoaded;
@@ -35,37 +35,37 @@ const BlogArticleList = ({ blogList, section }: ProductGallery) => {
 
   return (
     <>
-      <div className="flex self-center items-center w-full justify-center flex-wrap gap-3 md:gap-5 lg:gap-7">
+      <div className="flex w-full flex-wrap items-center justify-center gap-3 self-center md:gap-5 lg:gap-7">
         {filteredArticles.map((article, i) => {
           return (
             <div
               key={i}
-              className="w-[47%] md:w-[30%] mb-5 lg:mb-8 self-start h-full min-h-full group font-dancing border-[1px] border-[#061E4C] rounded-2xl hover:bg-[#061E4C] hover:ease-in-out hover:duration-500  hover:text-white flex flex-col  text-center"
+              className="group mb-5 flex h-full min-h-full w-[47%] flex-col self-start rounded-2xl border-[1px] border-[#061E4C] text-center font-dancing hover:bg-[#061E4C] hover:text-white hover:duration-500 hover:ease-in-out md:w-[30%] lg:mb-8"
             >
               <Link
                 href={`/blog/${section}/${article.slug}`}
-                className="cursor-pointer  min-h-full p-3 w-full h-full object-cover"
+                className="h-full min-h-full w-full cursor-pointer object-cover p-3"
               >
-                <div className="w-full relative h-full">
+                <div className="relative h-full w-full">
                   {!loaded[i] && (
-                    <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md flex items-center h-full w-full justify-center"></div>
+                    <div className="absolute inset-0 flex h-full w-full animate-pulse items-center justify-center rounded-md bg-gray-200"></div>
                   )}
                   <Image
-                    className={`rounded-2xl relative h-32 mb-1 lg:h-60 object-cover duration-300 ease-in-out group-hover:brightness-50 self-center flex ${loaded[i] ? "opacity-100" : "opacity-0"}`}
-                    src={article.thumbnailSrc ?? "/"}
-                    alt={article.thumbnailAlt ?? ""}
+                    className={`relative mb-1 flex h-32 self-center rounded-2xl object-cover duration-300 ease-in-out group-hover:brightness-50 lg:h-60 ${loaded[i] ? 'opacity-100' : 'opacity-0'}`}
+                    src={article.thumbnailSrc ?? '/'}
+                    alt={article.thumbnailAlt ?? ''}
                     width={500}
                     height={500}
                     loading="eager"
                     onLoad={() => handleLoad(i)}
                     priority={true}
                   />
-                  <span className="absolute top-1/2 -translate-y-1/2 text-sm sm:text-base  px-5 py-2 md:text-xl lg:text-2xl text-nowrap left-1/2 z-20 hidden duration-300 group-hover:block ease-in-out text-white -translate-x-1/2">
+                  <span className="absolute left-1/2 top-1/2 z-20 hidden -translate-x-1/2 -translate-y-1/2 text-nowrap px-5 py-2 text-sm text-white duration-300 ease-in-out group-hover:block sm:text-base md:text-xl lg:text-2xl">
                     <MdArrowForwardIos className="h-14 w-14 text-white" />
                   </span>
                 </div>
 
-                <div className="text-[#061E4C] min-h-[70px] lg:text-2xl group-hover:text-white ">
+                <div className="min-h-[70px] text-[#061E4C] group-hover:text-white lg:text-2xl">
                   {article.title}
                 </div>
               </Link>

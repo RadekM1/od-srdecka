@@ -1,5 +1,5 @@
-import { z } from "zod";
-import { wpImageSchema } from "./article";
+import { z } from 'zod';
+import { wpImageSchema } from './article';
 
 export const dessertProductSchema = z.object({
   src: z.string(),
@@ -8,7 +8,7 @@ export const dessertProductSchema = z.object({
   allergens: z.string(),
   variants: z.array(z.string()).nullable(),
   price: z.number(),
-  notes: z.string().optional(),
+  notes: z.string().optional()
 });
 
 export const fetchedDessert = z.object({
@@ -52,8 +52,8 @@ export const fetchedDessert = z.object({
     dalsi_varianta_31: z.string().optional(),
     dalsi_varianta_32: z.string().optional(),
     alergeny: z.string().optional(),
-    poznamky: z.string().optional(),
-  }),
+    poznamky: z.string().optional()
+  })
 });
 
 export const fetchedDesserts = z.array(fetchedDessert);

@@ -1,14 +1,14 @@
 const HearthSnake = () => {
   return (
-    <section className="text-center select-none flex my-4 flex-col md:flex-row items-start w-full bg-white text-white font-OoohBaby">
+    <section className="my-4 flex w-full select-none flex-col items-start bg-white text-center font-OoohBaby text-white md:flex-row">
       <img
         src="/hearthHorizontal-big.svg"
-        className="w-full hidden lg:block "
+        className="hidden w-full lg:block"
         alt="obrázek spojených srdíček horizontálně"
       />
       <img
         src="/hearthHorizontal.svg"
-        className="w-full block lg:hidden "
+        className="block w-full lg:hidden"
         alt="obrázek spojených srdíček horizontálně"
       />
     </section>

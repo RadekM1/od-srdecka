@@ -1,20 +1,20 @@
-import { ChevronDown } from "./chevronDown";
+import { ChevronDown } from './chevronDown';
 const LaunchSite = () => {
   return (
-    <section className="min-h-screen bg-[#061E4C] h-full flex-col">
-      <div className="text-center lg:px-20 md:mt-12 items-center justify-center gap-8 lg:gap-24 xl:px-44 w-full self-center flex pb-10 flex-col md:flex-row min-h-[70vh] h-full bg-[#061E4C] text-white font-OoohBaby">
-        <div className="flex justify-center max-w-[500px] order-2 w-full md:order-1 items-center">
+    <section className="h-full min-h-screen flex-col bg-[#061E4C]">
+      <div className="flex h-full min-h-[70vh] w-full flex-col items-center justify-center gap-8 self-center bg-[#061E4C] pb-10 text-center font-OoohBaby text-white md:mt-12 md:flex-row lg:gap-24 lg:px-20 xl:px-44">
+        <div className="order-2 flex w-full max-w-[500px] items-center justify-center md:order-1">
           <img
-            className=" h-full w-1/2 md:w-5/6  max-w-[500px] object-contain flex"
+            className="flex h-full w-1/2 max-w-[500px] object-contain md:w-5/6"
             src="/logoMain.svg"
             alt="logo"
           />
         </div>
-        <div className="flex my-16 min-h-max max-w-[500px] md:my-0 w-full order-1 items-center flex-col justify-center font-oldStandard ">
-          <span className="text-3xl mt-8 sm:text-4xl text-nowrap mx-1 justify-center self-center flex opacity-0 font-semibold tracking-wide animate-slideIn delay-500 md:text-4xl lg:text-5xl xl:text-6xl">
+        <div className="order-1 my-16 flex min-h-max w-full max-w-[500px] flex-col items-center justify-center font-oldStandard md:my-0">
+          <span className="animate-slideIn mx-1 mt-8 flex justify-center self-center text-nowrap text-3xl font-semibold tracking-wide opacity-0 delay-500 sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl">
             Dorty a sladké bary
           </span>
-          <span className="text-xl mt-4 animate-slideInTwo opacity-0 lg:text-2xl xl:text-3xl">
+          <span className="animate-slideInTwo mt-4 text-xl opacity-0 lg:text-2xl xl:text-3xl">
             z Kašavy
           </span>
         </div>

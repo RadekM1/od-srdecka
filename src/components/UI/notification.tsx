@@ -1,6 +1,6 @@
-"use client";
-import { useState, useEffect } from "react";
-import { getNotification } from "@/lib/fetch/get-notification";
+'use client';
+import { useState, useEffect } from 'react';
+import { getNotification } from '@/lib/fetch/get-notification';
 
 export const Notification = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -9,34 +9,30 @@ export const Notification = () => {
     obsah: string;
   } | null>(null);
 
-  const fetchNotification = async () => {
-    setLoading(true);
-    const tempNotif = await getNotification();
-    setNotification(tempNotif);
-    setLoading(false);
-  };
-
   useEffect(() => {
-    fetchNotification();
+    getNotification().then(tempNotif => {
+      setNotification(tempNotif);
+      setLoading(false);
+    });
   }, []);
 
   return (
-    <div className="w-full p-5 font-oldStandard bg-[#061E4C] text-white min-h-64 rounded-2xl  ">
-      <div className="flex justify-center flex-col w-full">
+    <div className="min-h-64 w-full rounded-2xl bg-[#061E4C] p-5 font-oldStandard text-white">
+      <div className="flex w-full flex-col justify-center">
         {loading && (
           <div role="status" className="animate-pulse">
-            <div className="h-8 bg-gray-200/50 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
-            <div className="h-4 bg-gray-200/50 rounded-full dark:bg-gray-700 max-w-[330px] mb-2.5"></div>
-            <div className="h-4 bg-gray-200/50 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5"></div>
-            <div className="h-4 bg-gray-200/50 rounded-full dark:bg-gray-700 max-w-[315px] mb-2.5"></div>
-            <div className="h-4 bg-gray-200/50 rounded-full dark:bg-gray-700 max-w-[285px] mb-2.5"></div>
+            <div className="mb-2.5 h-8 max-w-[360px] rounded-full bg-gray-200/50 dark:bg-gray-700"></div>
+            <div className="mb-2.5 h-4 max-w-[330px] rounded-full bg-gray-200/50 dark:bg-gray-700"></div>
+            <div className="mb-2.5 h-4 max-w-[300px] rounded-full bg-gray-200/50 dark:bg-gray-700"></div>
+            <div className="mb-2.5 h-4 max-w-[315px] rounded-full bg-gray-200/50 dark:bg-gray-700"></div>
+            <div className="mb-2.5 h-4 max-w-[285px] rounded-full bg-gray-200/50 dark:bg-gray-700"></div>
           </div>
         )}
         {!loading && notification && (
-          <p className="text-2xl mb-4 text-start">{notification.titulek}</p>
+          <p className="mb-4 text-start text-2xl">{notification.titulek}</p>
         )}
         {!loading && notification && (
-          <p className="text-base whitespace-pre-line lg:text-lg text-start">
+          <p className="whitespace-pre-line text-start text-base lg:text-lg">
             {notification.obsah}
           </p>
         )}

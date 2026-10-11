@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const HomeLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <main className="text-center overflow-hidden flex w-auto flex-col">
+    <main className="flex w-auto flex-col overflow-hidden text-center">
       {children}
     </main>
   );

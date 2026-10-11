@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // Importujeme framer-motion
-import { CakeProductSchema } from "@/schema/cakes";
-import { DessertProductSchema } from "@/schema/desserts";
-import { IoClose } from "react-icons/io5";
+import React, { useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion'; // Importujeme framer-motion
+import { CakeProductSchema } from '@/schema/cakes';
+import { DessertProductSchema } from '@/schema/desserts';
+import { IoClose } from 'react-icons/io5';
 
 interface ModalProps {
   data: CakeProductSchema | DessertProductSchema;
@@ -24,17 +24,17 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
       }
     };
     if (isShowing) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     }
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isShowing]);
 
   useEffect(() => {
-    const html = document.querySelector("html");
+    const html = document.querySelector('html');
     if (html) {
-      html.style.overflowY = isShowing ? "hidden" : "visible";
+      html.style.overflowY = isShowing ? 'hidden' : 'visible';
     }
   }, [isShowing]);
 
@@ -42,7 +42,7 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
     <AnimatePresence>
       {isShowing && (
         <motion.div
-          className="fixed top-0 left-0 z-50 flex items-center justify-center w-screen h-screen bg-[#272727]/65"
+          className="fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-[#272727]/65"
           aria-labelledby="header-2a content-2a"
           aria-modal="true"
           tabIndex={-1}
@@ -53,31 +53,31 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
           transition={{ duration: 0.2 }}
         >
           <motion.div
-            className="flex max-h-[90vh] relative rounded-xl z-100 max-w-2xl w-11/12 flex-col border-[#061E4C] border-[1px] gap-6 overflow-hidden bg-white shadow-xl"
+            className="z-100 relative flex max-h-[90vh] w-11/12 max-w-2xl flex-col gap-6 overflow-hidden rounded-xl border-[1px] border-[#061E4C] bg-white shadow-xl"
             ref={wrapperRef}
             id="modal"
             role="document"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
           >
-            <header id="header-2a" className="flex p-3 items-center gap-4">
-              <div className="flex flex-col h-full pt-5 w-full">
-                <h3 className="flex-1 absolute text-nowrap right-1/2 z-30 text-2xl translate-x-1/2 lg:text-3xl font-dancing">
+            <header id="header-2a" className="flex items-center gap-4 p-3">
+              <div className="flex h-full w-full flex-col pt-5">
+                <h3 className="absolute right-1/2 z-30 flex-1 translate-x-1/2 text-nowrap font-dancing text-2xl lg:text-3xl">
                   {data.title}
                 </h3>
-                <h3 className="flex-1 absolute text-nowrap text-gray-100 select-none top-5 translate-x-[45%] z-20 text-2xl right-1/2 lg:text-3xl font-dancing">
+                <h3 className="absolute right-1/2 top-5 z-20 flex-1 translate-x-[45%] select-none text-nowrap font-dancing text-2xl text-gray-100 lg:text-3xl">
                   {data.title}
                 </h3>
               </div>
               <button
                 onClick={() => setIsShowing(false)}
-                className="inline-flex absolute top-0 right-0 items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded-full justify-self-center whitespace-nowrap"
+                className="absolute right-0 top-0 inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded-full px-5 text-sm font-medium tracking-wide transition duration-300"
                 aria-label="close dialog"
               >
                 <span className="only:-mx-5">
-                  <IoClose className="h-5 w-5 text-gray-400 hover:text-gray-900 duration-300 ease-in-out" />
+                  <IoClose className="h-5 w-5 text-gray-400 duration-300 ease-in-out hover:text-gray-900" />
                 </span>
               </button>
             </header>
@@ -93,11 +93,11 @@ const Modal = ({ data, isShowing, setIsShowing }: ModalProps) => {
                   </li>
                 ))}
               </ul>
-              {"notes" in data && data.notes && (
-                <p className="ml-2 text-base mb-1">{data.notes}</p>
+              {'notes' in data && data.notes && (
+                <p className="mb-1 ml-2 text-base">{data.notes}</p>
               )}
-              <div className="bg-[#061E4C] flex flex-col h-full">
-                <span className="text-base w-full text-center text-white font-thin py-4 tracking-widest font-dancing">
+              <div className="flex h-full flex-col bg-[#061E4C]">
+                <span className="w-full py-4 text-center font-dancing text-base font-thin tracking-widest text-white">
                   alergeny {data.allergens}
                 </span>
               </div>

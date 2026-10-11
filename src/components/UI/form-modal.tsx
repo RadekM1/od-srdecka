@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { IoClose } from "react-icons/io5";
+import React, { useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { IoClose } from 'react-icons/io5';
 
 interface ModalProps {
   data: string;
@@ -21,17 +21,17 @@ const FormModal = ({ data, isShowing, setIsShowing }: ModalProps) => {
       }
     };
     if (isShowing) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     }
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isShowing]);
 
   useEffect(() => {
-    const html = document.querySelector("html");
+    const html = document.querySelector('html');
     if (html) {
-      html.style.overflowY = isShowing ? "hidden" : "visible";
+      html.style.overflowY = isShowing ? 'hidden' : 'visible';
     }
   }, [isShowing]);
 
@@ -39,7 +39,7 @@ const FormModal = ({ data, isShowing, setIsShowing }: ModalProps) => {
     <AnimatePresence>
       {isShowing && (
         <motion.div
-          className="fixed top-0 left-0 z-20 flex items-center justify-center w-screen h-screen bg-[#272727]/65"
+          className="fixed left-0 top-0 z-20 flex h-screen w-screen items-center justify-center bg-[#272727]/65"
           aria-labelledby="header-2a content-2a"
           aria-modal="true"
           tabIndex={-1}
@@ -50,39 +50,39 @@ const FormModal = ({ data, isShowing, setIsShowing }: ModalProps) => {
           transition={{ duration: 0.2 }}
         >
           <motion.div
-            className="flex max-h-[90vh] relative rounded-xl w-11/12 max-w-lg flex-col border-[#061E4C] border-[1px] gap-6 overflow-hidden bg-white shadow-xl"
+            className="relative flex max-h-[90vh] w-11/12 max-w-lg flex-col gap-6 overflow-hidden rounded-xl border-[1px] border-[#061E4C] bg-white shadow-xl"
             ref={wrapperRef}
             id="modal"
             role="document"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
           >
             <header
               id="header-2a"
-              className="flex p-3 font-oldStandard items-center gap-4"
+              className="flex items-center gap-4 p-3 font-oldStandard"
             >
-              <div className="flex flex-col h-full pt-5 w-full">
-                <h3 className="flex-1 absolute right-1/2 z-30 text-2xl translate-x-1/2 lg:text-3xl ">
-                  {data.includes("nepodařilo")
-                    ? "Zpráva nebyla odeslána"
-                    : "Zpráva odeslána"}
+              <div className="flex h-full w-full flex-col pt-5">
+                <h3 className="absolute right-1/2 z-30 flex-1 translate-x-1/2 text-2xl lg:text-3xl">
+                  {data.includes('nepodařilo')
+                    ? 'Zpráva nebyla odeslána'
+                    : 'Zpráva odeslána'}
                 </h3>
               </div>
               <button
                 onClick={() => setIsShowing(false)}
-                className="inline-flex absolute top-0 right-0 items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded-full justify-self-center whitespace-nowrap"
+                className="absolute right-0 top-0 inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded-full px-5 text-sm font-medium tracking-wide transition duration-300"
                 aria-label="close dialog"
               >
                 <span className="only:-mx-5">
-                  <IoClose className="h-5 w-5 text-gray-400 hover:text-gray-900 duration-300 ease-in-out" />
+                  <IoClose className="h-5 w-5 text-gray-400 duration-300 ease-in-out hover:text-gray-900" />
                 </span>
               </button>
             </header>
             <p
-              style={{ whiteSpace: "pre-line" }}
-              className="w-full p-4 text-base text-start"
+              style={{ whiteSpace: 'pre-line' }}
+              className="w-full p-4 text-start text-base"
             >
               {data}
             </p>

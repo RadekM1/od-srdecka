@@ -1,7 +1,7 @@
-import BlogArticleList from "@/components/UI/blogArticleList";
-import React from "react";
-import Gallery from "@/components/gallery";
-import { ReactNode } from "react";
+import BlogArticleList from '@/components/UI/blogArticleList';
+import React from 'react';
+import Gallery from '@/components/gallery';
+import { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -17,7 +17,7 @@ interface Props {
 const OthersLayout = ({ children, articleList }: Props) => {
   return (
     <>
-      <section className="flex mx-3 max-w-[1000px] px-1 justify-center items-center text-center mb-10 flex-col w-full">
+      <section className="mx-3 mb-10 flex w-full max-w-[1000px] flex-col items-center justify-center px-1 text-center">
         {children}
         <BlogArticleList
           section="bezlepkove-recepty-ostatni"

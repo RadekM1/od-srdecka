@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 export const cakePriceSchema = z.object({
   id: z.number(),
@@ -10,8 +10,8 @@ export const cakePriceSchema = z.object({
     dvoupatrovy30Porci: z.string(),
     tripatrovyDort: z.string(),
     firstNote: z.string(),
-    secondNote: z.string(),
-  }),
+    secondNote: z.string()
+  })
 });
 
 export const cakePricesSchema = z.array(cakePriceSchema);

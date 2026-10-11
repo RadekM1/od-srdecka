@@ -1,14 +1,14 @@
-import SectionTitle from "./sectionTitle";
-import CarouselGallery from "./UI/carouselGallery";
-import { getGalleries } from "@/lib/fetch/get-galleries";
+import SectionTitle from './sectionTitle';
+import CarouselGallery from './UI/carouselGallery';
+import { getGalleries } from '@/lib/fetch/get-galleries';
 
-const gallery = await getGalleries("galerie");
+const gallery = await getGalleries('galerie');
 
-await getGalleries("galerie");
+await getGalleries('galerie');
 
 const Gallery = () => {
   return (
-    <div className="w-full mt-12 lg:mt-24 mb-6 flex flex-col self-center items-center">
+    <div className="mb-6 mt-12 flex w-full flex-col items-center self-center lg:mt-24">
       <SectionTitle indexPage={false} title="Prozkoumejte naši galerii" />
       <CarouselGallery props={gallery} />
     </div>

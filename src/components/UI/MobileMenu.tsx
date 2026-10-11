@@ -1,15 +1,15 @@
-import { mobileMenuItems } from "../../../public/content/mobile-menu";
+import { mobileMenuItems } from '../../../public/content/mobile-menu';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
-} from "@/components/UI/accordion";
-import Link from "next/link";
+  AccordionTrigger
+} from '@/components/UI/accordion';
+import Link from 'next/link';
 
 interface MobileMenuProps {
   isSideNavOpen: boolean;
-  // eslint-disable-next-line
+
   setIsSideNavOpen: (isSideNavOpen: boolean) => void;
 }
 
@@ -20,11 +20,11 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
         <aside
           id="nav-menu-4"
           aria-label="Side navigation"
-          className="fixed top-0 mt-14 left-0 w-64 h-full bg-[#061E4C] text-white md:hidden block z-[99] shadow-lg transition-transform transform"
+          className="fixed left-0 top-0 z-[99] mt-14 block h-full w-64 transform bg-[#061E4C] text-white shadow-lg transition-transform md:hidden"
         >
           <nav
             aria-label="side navigation"
-            className="flex-1 divide-y text-white flex flex-col font-oldStandard text-xl divide-slate-100 overflow-auto"
+            className="flex flex-1 flex-col divide-y divide-slate-100 overflow-auto font-oldStandard text-xl text-white"
           >
             <Accordion type="single" collapsible>
               {mobileMenuItems.map((item, i) => {
@@ -32,7 +32,7 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
                   return (
                     <Link
                       key={i}
-                      className="flex flex-1 mx-4 border-b-0 my-2 items-center justify-between py-1 font-medium transition-all hover:text-gray-400 [&[data-state=open]>img]:rotate-180"
+                      className="mx-4 my-2 flex flex-1 items-center justify-between border-b-0 py-1 font-medium transition-all hover:text-gray-400 [&[data-state=open]>img]:rotate-180"
                       href={item.link}
                       onClick={() => setIsSideNavOpen(false)}
                     >
@@ -47,7 +47,7 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
                       {item.menu.map((innerItem, j) => (
                         <Link
                           key={j}
-                          className="self-start text-start text-base hover:font-semibold mx-4"
+                          className="mx-4 self-start text-start text-base hover:font-semibold"
                           href={innerItem.link}
                           onClick={() => setIsSideNavOpen(false)}
                         >
@@ -66,7 +66,7 @@ const MobileMenu = ({ isSideNavOpen, setIsSideNavOpen }: MobileMenuProps) => {
       )}
       {isSideNavOpen && (
         <div
-          className="fixed top-0 bottom-0 backdrop-blur-sm mt-14 bg-gray-700/80 left-0 right-0 lg:hidden"
+          className="fixed bottom-0 left-0 right-0 top-0 mt-14 bg-gray-700/80 backdrop-blur-sm lg:hidden"
           onClick={() => setIsSideNavOpen(false)}
           aria-hidden={true}
         ></div>

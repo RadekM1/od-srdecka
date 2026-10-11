@@ -1,11 +1,11 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 export const articlesListSchema = z.object({
   id: z.number(),
   slug: z.string(),
   title: z.string(),
   thumbnailSrc: z.string(),
-  thumbnailAlt: z.string(),
+  thumbnailAlt: z.string()
 });
 
 export const wpImageSchema = z.object({
@@ -33,25 +33,25 @@ export const wpImageSchema = z.object({
   width: z.number(),
   height: z.number(),
   sizes: z.object({
-    thumbnail: z.string().url(),
-    "thumbnail-width": z.number(),
-    "thumbnail-height": z.number(),
-    medium: z.string().url(),
-    "medium-width": z.number(),
-    "medium-height": z.number(),
-    medium_large: z.string().url(),
-    "medium_large-width": z.number(),
-    "medium_large-height": z.number(),
-    large: z.string().url(),
-    "large-width": z.number(),
-    "large-height": z.number(),
-    "1536x1536": z.string().url(),
-    "1536x1536-width": z.number(),
-    "1536x1536-height": z.number(),
-    "2048x2048": z.string().url(),
-    "2048x2048-width": z.number(),
-    "2048x2048-height": z.number(),
-  }),
+    'thumbnail': z.string().url(),
+    'thumbnail-width': z.number(),
+    'thumbnail-height': z.number(),
+    'medium': z.string().url(),
+    'medium-width': z.number(),
+    'medium-height': z.number(),
+    'medium_large': z.string().url(),
+    'medium_large-width': z.number(),
+    'medium_large-height': z.number(),
+    'large': z.string().url(),
+    'large-width': z.number(),
+    'large-height': z.number(),
+    '1536x1536': z.string().url(),
+    '1536x1536-width': z.number(),
+    '1536x1536-height': z.number(),
+    '2048x2048': z.string().url(),
+    '2048x2048-width': z.number(),
+    '2048x2048-height': z.number()
+  })
 });
 
 export const wpFetchedGallerySchema = z.array(
@@ -59,9 +59,9 @@ export const wpFetchedGallerySchema = z.array(
     id: z.number(),
     acf: z.record(
       z.string().regex(/^obr-(?:[1-9]|[12]\d|3[0-2])$/),
-      z.union([wpImageSchema, z.boolean()]).optional(),
-    ),
-  }),
+      z.union([wpImageSchema, z.boolean()]).optional()
+    )
+  })
 );
 
 export const wpArticleSchema = z.object({
@@ -75,16 +75,16 @@ export const wpArticleSchema = z.object({
   druhy_obrazek: z.union([wpImageSchema, z.literal(false)]).optional(),
   treti_obrazek: z.union([wpImageSchema, z.literal(false)]).optional(),
   seo_nazev: z.string(),
-  meta_popis: z.string(),
+  meta_popis: z.string()
 });
 
 export const wpAcfFetchArticleObject = z.object({
   id: z.number(),
-  acf: wpArticleSchema,
+  acf: wpArticleSchema
 });
 
 export const wpAcfFetchOnlyArticle = z.object({
-  acf: wpArticleSchema,
+  acf: wpArticleSchema
 });
 
 export const wpAcfArticlesFetch = z.array(wpAcfFetchArticleObject);

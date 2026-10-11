@@ -1,11 +1,11 @@
-import HearthSnake from "../../components/index/hearthSnake";
-import React from "react";
+import HearthSnake from '../../components/index/hearthSnake';
+import React from 'react';
 
 const OthersLayout = ({
-  children,
+  children
 }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <main className="text-center font-abhay text-base lg:text-xl overflow-hidden  justify-center items-center w-full flex flex-col">
+    <main className="font-abhay flex w-full flex-col items-center justify-center overflow-hidden text-center text-base lg:text-xl">
       <HearthSnake />
       {children}
       <HearthSnake />
